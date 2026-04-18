@@ -1,5 +1,18 @@
 /* _variables.scss */
 
+/* ========== Tipografia ========== */
+$font-family-base:    'Arial', sans-serif;
+$font-size-base:      1rem;
+$font-sizes: (
+  "1": 2.5rem,
+  "2": 2rem,
+  "3": 1.75rem,
+  "4": 1.5rem,
+  "5": 1.25rem,
+  "6": 1rem
+);
+
+
 /*=============== Paleta Tonos Claros (Light) =====================*/
 $light-primary-sand:    #fad4b2;   
 $light-primary:         #FFFFFF;   
