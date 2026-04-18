@@ -84,3 +84,24 @@ $footer-border-top:   1px solid rgba($light-primary, .15) !default;
 $footer-padding-y:    2.5rem !default;
 $footer-padding-x:    2rem !default;
 $footer-font-size:    .95rem !default;
+
+/* Breakpoints */
+$breakpoint-xs: 480px !default;
+$breakpoint-sm: 768px !default;
+$breakpoint-md: 992px !default;
+$breakpoint-lg: 1200px !default;
+
+/* ========== Espaciados (Formato de Mapa para Automatización) ========== */
+$spacers: (
+  "0": 0px,
+  "1": 5px,
+  "2": 10px,
+  "3": 15px,
+  "4": 20px,
+  "5": 25px,
+  "6": 30px,
+  "7": 35px,
+  "8": 40px,
+  "9": 45px,
+  "10": 50px
+);
