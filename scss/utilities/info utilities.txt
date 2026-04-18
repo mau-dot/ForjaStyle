@@ -1,0 +1,13 @@
+=> utilities/ — Clases de un solo propósito para ajustes rápidos sin escribir CSS nuevo.
+
+_spacing.scss — Clases de márgenes (mt-1, mb-2) y paddings (pt-1, pb-2) en escala del 1 al 5.
+
+_colors.scss — Clases para cambiar color de texto (text-primary) y color de fondo (bg-danger) rápidamente.
+
+_flex.scss — Clases para contenedores flexibles: d-flex, justify-content-center, align-items-center.
+
+_display.scss — Clases para mostrar u ocultar elementos: d-none, d-block, con variantes responsivas.
+
+_text.scss — Clases de tamaño (fs-1 al fs-6), peso (fw-bold, fw-light) y alineación (text-center, text-right).
+
+_borders.scss — Clases para redondeo (rounded, rounded-pill) y sombras (shadow-sm, shadow-lg)
