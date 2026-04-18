@@ -62,3 +62,25 @@ $light-theme: (
   text-color:  $dark-primary-alt,
   text-muted:  #5d3b8c,
 );
+
+// los en encabezados para el modo oscuro y claro se agregaran en tipografia
+
+/* ========== Navbar ========== */     /* !default: Asigna este valor a la variable solo si no ha sido definida antes */
+$navbar-bg:           $dark-primary !default;
+$navbar-text:         $light-primary !default;
+$navbar-hover:        $light-accent-gold !default;
+$navbar-height:       60px !default;
+$navbar-padding-y:    1.2rem !default;
+$navbar-padding-x:    2rem !default;
+$navbar-font-size:    1rem !default;
+$navbar-z-index:      1000 !default;
+$navbar-shadow:       0 2px 6px rgba(0, 0, 0, 0.15) !default;
+
+/* ========== Footer ========== */
+$footer-bg:           $dark-primary-alt !default;
+$footer-text:         $light-primary !default;
+$footer-link-hover:   $light-accent-gold !default;
+$footer-border-top:   1px solid rgba($light-primary, .15) !default;
+$footer-padding-y:    2.5rem !default;
+$footer-padding-x:    2rem !default;
+$footer-font-size:    .95rem !default;
