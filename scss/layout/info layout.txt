@@ -1,0 +1,8 @@
+=>layout/ — Todo lo relacionado a estructura y posicionamiento. Los contenedores, el sistema de columnas y los breakpoints.
+
+_container.scss — Define .container (ancho máximo centrado) y .container-fluid (ancho completo).
+
+_grid.scss — El sistema de 12 columnas con clases .row, .col-12, .col-md-6, .col-lg-4. Usa los breakpoints para ser responsivo.
+
+_breakpoints.scss — Declara los puntos de quiebre: móvil (base), tablet (768px), escritorio (1024px). Todo el framework se apoya en estos valores.
+
