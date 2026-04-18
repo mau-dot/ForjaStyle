@@ -1,0 +1,67 @@
+// _mixins.scss
+@use 'variables' as *;
+
+// ========== Media Queries logica Mobile First ==========
+// La clave del Mobile First es que el estilo base (sin @include) es para móvil,
+// y cada respond-to va agregando cambios para pantallas más grandes
+/*
+    -> usa estas variables 
+    $breakpoint-xs: 480px !default;
+    $breakpoint-sm: 768px !default;
+    $breakpoint-md: 992px !default;
+    $breakpoint-lg: 1200px !default;
+*/
+
+@mixin respond-to($bp) {
+  @if $bp == 'xs' {
+    @media (min-width: $breakpoint-xs) { @content; } // base movil
+  } @else if $bp == 'sm' {
+    @media (min-width: $breakpoint-sm) { @content; } // tablet
+  } @else if $bp == 'md' {
+    @media (min-width: $breakpoint-md) { @content; } //desktop pequeno
+  } @else if $bp == 'lg' {
+    @media (min-width: $breakpoint-lg) { @content; } // desktop grande
+  }
+}
+
+// ========== Flexbox ==========
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ========== Transiciones ==========
+@mixin transition($property: all, $duration: 0.3s, $ease: ease) {
+  transition: $property $duration $ease;
+}
+
+// ========== Truncar texto ==========
+@mixin text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// ========== Sombras ==========
+@mixin shadow($size: 'md') {
+  @if $size == 'sm' { box-shadow: $shadow-sm; }
+  @else if $size == 'md' { box-shadow: $shadow-md; }
+  @else if $size == 'lg' { box-shadow: $shadow-lg; }
+}
+
+// ========== Border Radius ==========
+@mixin rounded($size: 'md') {
+  @if $size == 'sm'   { border-radius: $border-radius-sm; }
+  @else if $size == 'md'   { border-radius: $border-radius-md; }
+  @else if $size == 'lg'   { border-radius: $border-radius-lg; }
+  @else if $size == 'pill' { border-radius: $border-radius-pill; }
+}
