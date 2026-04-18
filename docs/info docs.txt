@@ -1,0 +1,8 @@
+=> docs/ 
+— Sitio de documentación desplegado en GitHub Pages.
+Construido únicamente con el propio framework.
+
+(EJEMPLO)
+index.html — Página de inicio con presentación del framework, paleta de colores y guía de instalación.
+components.html — Muestra cada componente renderizado junto a su bloque de código HTML para copiarlo.
+utilities.html — Muestra todas las clases utilitarias con ejemplos visuales.
