@@ -1,0 +1,26 @@
+/*==========Funcion para retornar una sombre o una luz alrededor de un contenedor=======================*/
+@function shadow($type, $size)
+{
+    @if $type == dark
+    {
+        @if $size == sm{@return $shadow-sm;}
+        @if $size == md{@return $shadow-md;}
+        @if $size == lg{@return $shadow-lg;}
+    }
+    @if $type == light
+    {
+        @if $size == sm{@return $light-sm;}
+        @if $size == md{@return $light-md;}
+        @if $size == lg{@return $light-lg;}
+    }
+}
+/*=====Funcion para espaciados por llave=====================*/
+@function space($key)
+{
+    @return map-get($spacers , $key);
+}
+/*=======FUNCION PARA RETORNAR EL TAMAÑO DE LA TIPOGRAFIA====================*/
+@function font-size($key)
+{
+    @return map-get($font-sizes, $key);
+}
