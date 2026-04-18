@@ -12,6 +12,14 @@ $font-sizes: (
   "6": 1rem
 );
 
+// ========== Pesos tipográficos ==========
+$font-weights: (
+  "light":  300,
+  "normal": 400,
+  "medium": 500,
+  "bold":   700,
+);
+
 
 /*=============== Paleta Tonos Claros (Light) =====================*/
 $light-primary-sand:    #fad4b2;   
