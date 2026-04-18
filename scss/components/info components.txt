@@ -1,0 +1,15 @@
+=> components/ — Las piezas de interfaz listas para usar. El usuario del framework solo necesita agregar la clase y funciona.
+
+_buttons.scss — Botones con 4 variantes de color/estilo (solid, outline), 3 tamaños y estados hover, active y disabled.
+
+_cards.scss — Tarjetas con soporte para header, body, footer e imagen.
+
+_navbar.scss — Barra de navegación con logo, enlaces y comportamiento responsivo.
+
+_alerts.scss — Mensajes de éxito, peligro, advertencia e información.
+
+_forms.scss — Estilos para inputs, selects y checkboxes, incluyendo estados de validación válido/inválido.
+
+_badges.scss — Insignias pequeñas con al menos 4 colores y variante redondeada tipo píldora.
+
+_tables.scss — Tablas con estilo base, variante con bordes y efecto hover por fila.
