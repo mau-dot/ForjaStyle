@@ -1,0 +1,12 @@
+=>base/ 
+—> El núcleo del framework. Aquí viven las variables de colores, tipografía y espaciado; los mixins y funciones de SASS; el reset CSS para normalizar estilos entre navegadores; y los estilos tipográficos globales.
+
+_variables.scss — Define toda la paleta de colores, tamaños de fuente, espaciados y breakpoints del framework. Es el archivo más importante, todos los demás lo consultan.
+
+_mixins.scss — Contiene los media queries reutilizables para Mobile First (respond-to('md')), y mixins de flexbox o transiciones que se repiten en varios componentes.
+
+_functions.scss — Funciones SASS propias como convertir px a rem o calcular variantes de color. Demuestra dominio técnico en la defensa.
+
+_reset.scss — Neutraliza los estilos por defecto del navegador para que el framework se vea igual en Chrome, Firefox y Safari.
+
+_typography.scss — Estilos base para h1-h6, párrafos, links y listas. Define la escala tipográfica global.
