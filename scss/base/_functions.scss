@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 /*==========Funcion para retornar una sombre o una luz alrededor de un contenedor=======================*/
 @function shadow($type, $size)
 {
