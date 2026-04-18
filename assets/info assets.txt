@@ -1,5 +1,5 @@
 => assets/ — Recursos estáticos usados en el sitio de documentación.
 
-fonts/ — Tipografía personalizada si se descarga localmente en lugar de usar Google Fonts.
+fonts/ — Tipografía personalizada si se descarga localmente en lugar de usar Google Fonts (es decir si se descarga una fuente localmente).
 icons/ — Íconos SVG usados en la navbar o en la documentación.
 img/ — Logo del framework e imágenes de ejemplo para las cards de la documentación.
