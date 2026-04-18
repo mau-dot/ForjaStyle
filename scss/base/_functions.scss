@@ -27,3 +27,38 @@ $dark-gray-deep:        #2C2C2C;
 $dark-blue-black:       #111827;   
 $dark-gray-light:       #696969;   
 $dark-red-light:        #e02323;  
+
+
+/* ========== Colores para alertas y feedback ========== */
+$alert-success:              #5fcaa7;
+$alert-info:                 #6dc8da;
+$alert-warning:              #f2b774;
+$alert-danger:               #e67f88;
+
+/* ========== Sombras ========== */
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+/* ========== Opacidades y overlays ========== */
+$overlay-bg: rgba(42, 20, 82, 0.8);
+
+/* ========== Paletas por modo ========== */
+/* Modo Oscuro */
+$dark-theme: (
+  // He ajustado estos nombres para que coincidan con tus nuevas variables oscuras
+  background:  linear-gradient(180deg, $dark-blue-space, $dark-primary, $dark-primary-alt),
+  card-bg:     rgba(58, 38, 103, 0.9),
+  border-color: $dark-primary-alt,
+  text-color:  $light-primary,
+  text-muted:  #a29eb6,
+);
+
+/* Modo Claro */
+$light-theme: (
+  background:  linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%),
+  card-bg:     #f7f5fb,
+  border-color: $light-primary-sand,
+  text-color:  $dark-primary-alt,
+  text-muted:  #5d3b8c,
+);
