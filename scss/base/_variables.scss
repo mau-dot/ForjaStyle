@@ -48,11 +48,17 @@ $alert-info:                 #6dc8da;
 $alert-warning:              #f2b774;
 $alert-danger:               #e67f88;
 
-/* ========== Sombras ========== */
-$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
-$shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
+/*=============colores sombras bordes==============*/
+$light: rgba(255,255,255);
+$shadow: rgba(0,0,0);
 
+/* ========== Sombras ========== */
+$shadow-sm: 0 1px 3px rgba($shadow, 0.1);
+$shadow-md: 0 4px 6px rgba($shadow, 0.15);
+$shadow-lg: 0 10px 20px rgba($shadow,0.2);
+$light-sm: 0 1px 3px rgba($light, 0.1);
+$light-md: 0 4px 6px rgba($light, 0.15);
+$light-lg: 0 10px 20px rgba($light,0.2);
 /* ========== Opacidades y overlays ========== */
 $overlay-bg: rgba(42, 20, 82, 0.8);
 
