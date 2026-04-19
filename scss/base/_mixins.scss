@@ -14,13 +14,15 @@
 
 @mixin respond-to($bp) {
   @if $bp == 'xs' {
-    @media (min-width: $breakpoint-xs) { @content; } // base movil
+    @media (min-width: $breakpoint-xs) { @content; } // movil grande
   } @else if $bp == 'sm' {
     @media (min-width: $breakpoint-sm) { @content; } // tablet
   } @else if $bp == 'md' {
-    @media (min-width: $breakpoint-md) { @content; } //desktop pequeno
+    @media (min-width: $breakpoint-md) { @content; } // laptop
   } @else if $bp == 'lg' {
-    @media (min-width: $breakpoint-lg) { @content; } // desktop grande
+    @media (min-width: $breakpoint-lg) { @content; } // desktop 
+  } @else if $bp == 'xl'{
+    @media (min-width: $breakpoint-xl) { @content; } // desktop grande
   }
 }
 
