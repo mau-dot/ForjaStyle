@@ -1,0 +1,13 @@
+// _breakpoints.scss
+//imports necesario 
+
+@use '../base/variables' as *;
+
+// ==================== Mapa de breakpoints ====================
+// Se toman los variables definidas de _variables.scss y se organixza en un mapa
+
+$breakpoints-map:(
+    'xs': $breakpoint-xs,       //480px - mobil grande
+    
+
+);
