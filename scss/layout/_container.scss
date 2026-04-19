@@ -1,0 +1,26 @@
+// _container.scss
+//imports necesario
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+// ==================== Estilos para el contenedor principal ====================
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    
+}
+
+// ==================== Estilos para el contenedor fluido ====================
+.container-fluid { //se ajusta al 100% del ancho de la pantalla sin importar el breakpoint
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+
