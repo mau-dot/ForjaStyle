@@ -11,7 +11,12 @@
     padding-right: 1rem;
     padding-left: 1rem;
 
-    
+    //bucle para aplicar max-width segun el breakpoint definido en el mapa de breakpoints
+    @each $bp, $max-width in $breakpoints-map {
+        @include respond-to($bp) { //se hace el uso de la funcion respond-to para aplicar los estilos segun el breakpoint
+            max-width: $max-width;
+        }
+    }
 }
 
 // ==================== Estilos para el contenedor fluido ====================
