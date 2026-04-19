@@ -112,11 +112,13 @@ $footer-padding-y:    2.5rem !default;
 $footer-padding-x:    2rem !default;
 $footer-font-size:    .95rem !default;
 
+//variables de punto de quiebre, se usaran para los componentes y los layout (_mixins.scss y _breakpoints.scss)
 /* Breakpoints */
-$breakpoint-xs: 480px !default;
-$breakpoint-sm: 768px !default;
-$breakpoint-md: 992px !default;
-$breakpoint-lg: 1200px !default;
+$breakpoint-xs: 480px !default;   //movil grande
+$breakpoint-sm: 768px !default;   //tablet
+$breakpoint-md: 1024px !default;  //laptop
+$breakpoint-lg: 1280px !default;  //deskpot
+$breakpoint-xl: 1536px !default;  //desktop grande
 
 /* ========== Espaciados (Formato de Mapa para Automatización) ========== */
 $spacers: (
