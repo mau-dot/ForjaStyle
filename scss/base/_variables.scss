@@ -118,11 +118,23 @@ $footer-padding-y:    2.5rem !default;
 $footer-padding-x:    2rem !default;
 $footer-font-size:    .95rem !default;
 
+//variables de punto de quiebre, se usaran para los componentes y los layout (_mixins.scss y _breakpoints.scss)
+
+// < 480px      movil pequeño   --bp-xs
+// 480-767px    movil grande    --bp-sm
+// 768-1023px   tablet          --bp-md
+// 1024-1279px  laptop          --bp-lg
+// 1280-1535px  desktop         --bp-xl
+// ≥ 1536px     desktop grande  --bp-2xl
+
 /* Breakpoints */
-$breakpoint-xs: 480px !default;
-$breakpoint-sm: 768px !default;
-$breakpoint-md: 992px !default;
-$breakpoint-lg: 1200px !default;
+// < 480 ya es un movil pequeno
+$breakpoint-xs: 480px !default;   //movil grande
+$breakpoint-sm: 768px !default;   //tablet
+$breakpoint-md: 1024px !default;  //laptop
+$breakpoint-lg: 1280px !default;  //deskpot
+$breakpoint-xl: 1536px !default;  //desktop grande
+// > 1536 sigue perteneciando a desktops grandes
 
 /* ========== Espaciados (Formato de Mapa para Automatización) ========== */
 $spacers: (
