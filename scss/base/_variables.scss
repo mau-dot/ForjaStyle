@@ -150,3 +150,14 @@ $spacers: (
   "9": 45px,
   "10": 50px
 );
+
+// ========== Mapa de tamanos de contenedores ========== */
+// -> Anchos máximos del contenedor 
+$container-max-widths: (
+  'xs': 460px,
+  'sm': 740px,
+  'md': 960px,
+  'lg': 1200px,
+  'xl': 1400px,
+);
+
