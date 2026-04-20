@@ -3,29 +3,22 @@
 @use '../base/mixins' as *;
 @use '../base/variables' as *;
 
-// ==================== Estilos para el contenedor principal ====================
-.container {
+// ==================== Estilos para el contenedor principal y contenedor fluido (propiedades compartidas) ====================
+.container, .container-fluid { //se aplican estilos comunes para ambos tipos de contenedores
     width: 100%;
     margin-right: auto;
     margin-left: auto;
     padding-right: 1rem;
     padding-left: 1rem;
-
+    box-sizing: border-box; //se asegura que el padding no afecte el ancho total del contenedor
+}
+.container { //se aplica un max-width diferente segun el breakpoint definido en el mapa de breakpoints
     //bucle para aplicar max-width segun el breakpoint definido en el mapa de breakpoints
     @each $bp, $max-width in $container-max-widths {
         @include respond-to($bp) { //se hace el uso de la funcion respond-to para aplicar los estilos segun el breakpoint
             max-width: $max-width;
         }
     }
-}
-
-// ==================== Estilos para el contenedor fluido ====================
-.container-fluid { //se ajusta al 100% del ancho de la pantalla sin importar el breakpoint
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 1rem;
-    padding-left: 1rem;
 }
 
 
