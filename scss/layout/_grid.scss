@@ -4,3 +4,6 @@
 @use '../base/variables' as *;
 @use 'breakpoints' as *;
 
+//definimos las 12 columnas del grid
+$columns:12;
+
