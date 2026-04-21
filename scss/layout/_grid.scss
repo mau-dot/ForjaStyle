@@ -11,7 +11,7 @@ $columns:12;
 // -> para filas
 .row{
     display:flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;//cuando llega a 12 columnas, la siguiente columna se mueve hacia al final de la fila
     margin-right: -0.5rem; //se ajusta el margen para compensar el padding de las columnas
     margin-left: -0.5rem;
 }
@@ -21,6 +21,7 @@ $columns:12;
 //Generar columnas .col-1, .col-2, ..., .col-12
 @for $i from 1 through $columns {
     .col-#{$i} {
+        width: percentage($i / $columns); //se establece el ancho de la columna
         max-width: percentage($i / $columns); //se establece el ancho maximo de la columna
         padding-right: 0.5rem; //se agrega padding para separar las columnas
         padding-left: 0.5rem;
