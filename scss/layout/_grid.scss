@@ -11,7 +11,7 @@ $columns:12;
 // -> para filas
 .row{
     display:flex;
-    flex-wrap: wrap;//cuando llega a 12 columnas, la siguiente columna se mueve hacia al final de la fila
+    flex-wrap: wrap;//cuando llega a 12 columnas, la siguiente columna se mueve hacia al final de fila
     margin-right: -0.5rem; //se ajusta el margen para compensar el padding de las columnas
     margin-left: -0.5rem;
 }
