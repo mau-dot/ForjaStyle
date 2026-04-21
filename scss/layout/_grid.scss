@@ -26,6 +26,7 @@ $columns:12;
         padding-right: 0.5rem; //se agrega padding para separar las columnas
         padding-left: 0.5rem;
         box-sizing: border-box; //se asegura que el padding no afecte el ancho total de la columna
+        word-break: break-word; //se asegura que el contenido dentro de la columna se ajuste correctamente y no desborde
     }
 }
 
@@ -35,6 +36,7 @@ $columns:12;
     padding-right: 0.5rem; //se agrega padding para separar las columnas
     padding-left: 0.5rem;
     box-sizing: border-box; //se asegura que el padding no afecte el ancho total de la columna
+    word-break: break-word;
 }
 
 // -> para columnas con breakpoints (columnas responsivas), se ajusta el ancho segun el breakpoint definido en el mapa de breakpoints
@@ -47,6 +49,7 @@ $columns:12;
                 padding-right: 0.5rem; //se agrega padding para separar las columnas
                 padding-left: 0.5rem;
                 box-sizing: border-box; //se asegura que el padding no afecte el ancho total de la columna
+                word-break: break-word; //se asegura que el contenido dentro de la columna se ajuste correctamente y no desborde(afecta solo al texto)
             }
         }
     }
