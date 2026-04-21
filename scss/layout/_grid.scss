@@ -52,4 +52,24 @@ $columns:12;
     }
 }
 
+// =================== Offsets ====================
+//sirve para empujar los elementos horizontalmente,
+
+@for $i from 1 through $columns - 1{
+    .offset-#{$i}{
+        margin-left: percentage($i / $columns); //se establece el margen izquierdo para empujar la columna
+    }
+}
+
+// -> para offsets con breakpoints (offsets responsivos), se ajusta el margen segun el breakpoint definido en el mapa de breakpoints
+@each $bp, $valor in $breakpoints-map {
+    @include respond-to($bp) { //se hace el uso de la funcion respond-to para aplicar los estilos segun el breakpoint
+        @for $i from 1 through $columns - 1 {
+            .offset-#{$bp}-#{$i} {
+                margin-left: percentage($i / $columns); //se establece el margen izquierdo para empujar la columna
+            }
+        }
+    }
+}
+
 
