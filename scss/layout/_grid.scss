@@ -7,3 +7,12 @@
 //definimos las 12 columnas del grid
 $columns:12;
 
+// =================== Estilos para el sistema de grid ====================
+// -> para filas
+.row{
+    display:flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem; //se ajusta el margen para compensar el padding de las columnas
+    margin-left: -0.5rem;
+}
+
