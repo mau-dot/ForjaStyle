@@ -1,7 +1,9 @@
 /* _variables.scss */
 
 /* ========== Tipografia ========== */
-$font-family-base:    'Arial', sans-serif;
+$font-primary:'Arial';
+$font-fallback: sans-serif;
+$font-family-base: $font-primary, $font-fallback;
 $font-size-base:      1rem;
 $font-sizes: (
   "1": 2.5rem,
@@ -11,6 +13,7 @@ $font-sizes: (
   "5": 1.25rem,
   "6": 1rem
 );
+//font-family: sans-serif
 
 // ========== Pesos tipográficos ==========
 $font-weights: (
@@ -48,13 +51,6 @@ $dark-gray-deep:        #2C2C2C;
 $dark-blue-black:       #111827;   
 $dark-gray-light:       #696969;   
 $dark-red-light:        #e02323;  
-
-
-/* ========== Colores para alertas y feedback ========== */
-$alert-success:              #5fcaa7;
-$alert-info:                 #6dc8da;
-$alert-warning:              #f2b774;
-$alert-danger:               #e67f88;
 
 /*=============colores sombras bordes==============*/
 $light: rgba(255,255,255);
@@ -163,10 +159,10 @@ $container-max-widths: (
 
 //===================Colores de alertas===========================//
 $alert-colors: (
-  "success" :rgba(96, 230, 55, 0.904),
-  "error" :rgba(230, 28, 28, 0.904),
-  "warning" : rgba(226, 192, 42, 0.904),
-  "info" : rgba(90, 136, 236, 0.904)
+  "success" :rgba(96, 230, 55, 0.604),
+  "error" :rgba(230, 28, 28, 0.604),
+  "warning" : rgba(226, 192, 42, 0.604),
+  "info" : rgba(90, 136, 236, 0.604)
 );
 //================Tamaños alertas=========================//
 $alert-widths:

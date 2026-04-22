@@ -54,20 +54,20 @@
 }
 
 // ========== Sombras ==========
-@mixin shadow($size: 'md') {
+@mixin shadow($size: 'sm') {
   @if $size == 'sm' { box-shadow: $shadow-sm; }
   @else if $size == 'md' { box-shadow: $shadow-md; }
   @else if $size == 'lg' { box-shadow: $shadow-lg; }
 }
 //========== LUCES=============
-@mixin light($size: 'md') {
+@mixin light($size: 'sm') {
   @if $size == 'sm' { box-shadow: $light-sm; }
   @else if $size == 'md' { box-shadow: $light-md; }
   @else if $size == 'lg' { box-shadow: $light-lg; }
 }
 
 // ========== Border Radius ==========
-@mixin rounded($size: 'md') {
+@mixin rounded($size: 'sm') {
   @if $size == 'sm'   { border-radius: $border-radius-sm; }
   @else if $size == 'md'   { border-radius: $border-radius-md; }
   @else if $size == 'lg'   { border-radius: $border-radius-lg; }

@@ -7,6 +7,9 @@
     padding: map-get($spacers, "2");
     @include rounded('sm');
     @include shadow('sm');
+    @include font-family($font-fallback);
+    @include color($light-primary);
+
 }
 //loop para tamaño de alertas
 @each $bp, $width in $alerts-widths
@@ -31,3 +34,8 @@
         }
     }
 }
+//funcion para declarar el tipo de alerta
+@function alert_color ($type)
+{
+    @return map-get($alert-colors , $type )
+} 
