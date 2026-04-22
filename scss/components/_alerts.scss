@@ -7,8 +7,8 @@
     padding: map-get($spacers, "2");
     @include rounded('sm');
     @include shadow('sm');
-    font-family($font-fallback);
-    color($light-primary);
+    font-family: $font-fallback;
+    color: $light-primary;
 
 }
 //loop para tamaño de alertas
