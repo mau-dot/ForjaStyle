@@ -59,6 +59,12 @@
   @else if $size == 'md' { box-shadow: $shadow-md; }
   @else if $size == 'lg' { box-shadow: $shadow-lg; }
 }
+//========== LUCES=============
+@mixin light($size: 'md') {
+  @if $size == 'sm' { box-shadow: $light-sm; }
+  @else if $size == 'md' { box-shadow: $light-md; }
+  @else if $size == 'lg' { box-shadow: $light-lg; }
+}
 
 // ========== Border Radius ==========
 @mixin rounded($size: 'md') {
