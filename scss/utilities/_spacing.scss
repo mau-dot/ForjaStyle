@@ -45,3 +45,15 @@ $spacers: (
     .pb-md-#{$num} { padding-bottom: $val !important; } // Padding Abajo en Laptop
   }
 }
+
+//gap
+@include respond-to('md')
+{
+  @each $num, $val in $spacers
+  {
+    .gap-md-#{$num}
+    {
+      gap: $val !important;
+    }
+  }
+}

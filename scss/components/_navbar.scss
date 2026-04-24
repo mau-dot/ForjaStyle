@@ -6,7 +6,6 @@
     width: 100%;
     background-color: $light-primary;
     color: $dark-primary-alt;
-    text-shadow: $shadow-sm;
     font-family: $font-fallback;
     
     position: sticky;
@@ -17,8 +16,11 @@
     {
         text-decoration: none;
         color: inherit;
-        font-family: inherit;
         text-shadow: $shadow-sm;
         font-weight: 500;
+        &:hover
+        {
+            transform: scale(map-get($scales , "xs" ))
+        }
     }
 }
