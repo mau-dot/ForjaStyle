@@ -1,0 +1,48 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75rem;
+    font-weight: $font-weights-bold; 
+    line-height: 1;
+    color: $light-primary; //Texto blanco por defecto
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    @include rounded('sm'); // Redondeo basico por defecto
+    @include transition(all, 0.2s);
+
+    //Variantes de Color
+    
+    //Primario (Azul)
+    &-primary {
+        background-color: $light-blue;
+    }
+
+    //Exito (Verde)
+    &-success {
+        background-color: $light-green;
+    }
+
+    //Advertencia (Amarillo/Dorado) - Texto oscuro para contraste
+    &-warning {
+        background-color: $light-calid-yellow;
+        color: $dark-primary;
+    }
+
+    //Peligro (Rojo)
+    &-danger {
+        background-color: $dark-red-light;
+    }
+
+    
+
+    // Tipo Pildora
+    &-pill {
+        @include rounded('pill');
+        padding-right: 0.8em;
+        padding-left: 0.8em;
+    }
+}
