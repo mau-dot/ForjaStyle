@@ -25,7 +25,7 @@ $font-weights: (
 
 
 /*=============== Paleta Tonos Claros (Light) =====================*/
-$light-primary-sand:    #fad4b2;   
+$light-primary-sand:    rgb(250, 212, 178);   
 $light-primary:         #FFFFFF;   
 $light-accent-gold:     #d4af37;   
 $light-blue:            #0074D9;   
@@ -40,7 +40,7 @@ $light-sand:            #F4A460;
 
 /*============== Paleta Tonos Oscuros (Dark) ====================*/
 $dark-primary:          #0D0D0D;   
-$dark-primary-alt:      #1A1A1A;   
+$dark-primary-alt:      #1a1a1a;   
 $dark-red-deep:         #2B0000;   
 $dark-red:              #8B0000;   
 $dark-blue-space:       #001F3F;   
@@ -180,4 +180,12 @@ $alert-font-sizes:
   "md": 1.50rem,
   "lg": 1.75rem,
   "xl": 2.0rem
+);
+$scales:
+(
+  "xs":1.010,
+  "sm":1.025,
+  "md":1.05,
+  "lg":1.075,
+  "xl":1.1,
 );
