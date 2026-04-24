@@ -1,0 +1,24 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as*;
+
+.navbar
+{
+    width: 100%;
+    background-color: $light-primary;
+    color: $dark-primary-alt;
+    text-shadow: $shadow-sm;
+    font-family: $font-fallback;
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    &__link
+    {
+        text-decoration: none;
+        color: inherit;
+        font-family: inherit;
+        text-shadow: $shadow-sm;
+        font-weight: 500;
+    }
+}
