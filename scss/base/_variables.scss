@@ -178,3 +178,25 @@ $container-max-widths: (
   'lg': 1200px,
   'xl': 1400px,
 );
+
+
+/* ========== mapas para Flexbox ========== */
+//alineacion main axis
+$justify-content-values:(
+  "start" : flex-start,
+  "center": center,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly
+);
+//alinacion cross axis
+$align-items-values: (
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "stretch": stretch
+);
+/* ========== mapas para Display ========== */
+$display-values: (none, block, inline, inline-block, flex);
+$breakpoints-keys: ('xs', 'sm', 'md', 'lg', 'xl');
