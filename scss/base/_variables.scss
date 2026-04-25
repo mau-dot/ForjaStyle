@@ -197,6 +197,29 @@ $align-items-values: (
   "end": flex-end,
   "stretch": stretch
 );
+
+$align-content-values: (
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+  "stretch": stretch
+);
+
+$align-self-values: (
+  "auto": auto,
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "baseline": baseline,
+  "stretch": stretch
+);
+
+
+
 /* ========== mapas para Display ========== */
 $display-values: (none, block, inline, inline-block, flex);
 $breakpoints-keys: ('xs', 'sm', 'md', 'lg', 'xl');
+
+
