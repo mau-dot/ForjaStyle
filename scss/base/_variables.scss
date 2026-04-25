@@ -178,3 +178,16 @@ $container-max-widths: (
   'lg': 1200px,
   'xl': 1400px,
 );
+
+
+/* ========== mapas para Flexbox ========== */
+//alineacion main axis
+$justify-content-values:(
+  "start" : flex-start,
+  "center": center,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly
+);
+//alinacion 
