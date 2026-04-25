@@ -11,19 +11,21 @@
     cursor: pointer;
     user-select: none;
     border: 1px solid transparent;
-    padding: 0.6rem 1.2rem;
     font-size: $font-size-base;
     line-height: 1.5;
     text-decoration: none;
-    @include rounded('md'); // llamamos a rounded (border) que esta en el mixin
-    @include transition;   // llamamos a transition(animaciones) que esta en el mixin
+    @include rounded('md'); 
+    @include transition;   
 
     width: 100%;
     padding: 0.8rem 1rem;
     margin-bottom: 1rem;
 
-    //mapa para cada dispositivo 
-    //aqui asignamos los cambios que tendran los botones para cada dispositivo
+   
+    // Usamos el token de texto por defecto por si el boton no tiene variante
+    color: var(--text-color); 
+    transition: all 0.3s ease;
+
     $btn-responsive-data: (
         "xs": (margin-bottom: 0.5rem),
         "sm": (width: auto, padding: 0.6rem 1.2rem, margin-bottom: 0),
@@ -32,20 +34,14 @@
         "xl": (padding: 1rem 2.2rem)
     );
 
-    //loop para cada dispositivo 
     @each $device, $styles in $btn-responsive-data {
-        
-        // se llama al mixin respond-to usando el nombre del dispositivo
-        @include respond-to($device) { //device sera una variable temporal que ira cambiando segun el tamaño
-            
-            // se recorre cada propiedad (como padding) y su valor
-            @each $property, $value in $styles { //style es un variable temporan que represeta el valor que se esta guardando
-                #{$property}: $value; //property el la propiedad (ejem: width) //value es el valor asignado
+        @include respond-to($device) { 
+            @each $property, $value in $styles { 
+                #{$property}: $value; 
             }
         }
     }
 
-    // ESTADO: Disabled
     &:disabled, &.disabled {
         opacity: 0.5;
         cursor: not-allowed;
@@ -54,11 +50,11 @@
     }
 }
 
-//VARIANTES DE TAMAÑO 
+// VARIANTES DE TAMAÑO
 .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.875rem; }
 .btn-lg { padding: 0.8rem 1.5rem; font-size: 1.25rem; }
 
-//VARIANTES DE COLOR Y ESTILO 
+// VARIANTES DE COLOR Y ESTILO
 $btn-variants: (
     "primary": $light-accent-gold,
     "success": $light-green,
@@ -71,9 +67,11 @@ $btn-variants: (
     .btn-#{$name} {
         background-color: $color;
         border-color: $color;
+        
+        // El texto del boton solido suele ser blanco o negro fijo para contraste
+        // pero podemos usar var(--background) si queremos que sea reactivo
         color: if(lightness($color) > 70, $dark-primary, $light-primary);
 
-        // ESTADOS: Hover y Active 
         &:hover {
             background-color: darken($color, 10%);
             border-color: darken($color, 12%);
@@ -87,6 +85,11 @@ $btn-variants: (
     .btn-outline-#{$name} {
         background-color: transparent;
         border-color: $color;
+        
+        
+        // En lugar de color fijo, el texto de un outline puede ser el color semántico
+        // pero si el tema es oscuro, a veces es mejor que sea blanco para legibilidad.
+        // Aquí lo dejamos fijo al color semántico pero el fondo de la página ayudará.
         color: $color;
 
         &:hover {
