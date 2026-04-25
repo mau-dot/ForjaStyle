@@ -2,16 +2,33 @@
 @use '../base/mixins' as*;
 @use '../base/variables' as*;
 
+//base de las alertas
 .alert
 {
     padding: map-get($spacers, "2");
     @include rounded('sm');
     @include shadow('sm');
     font-family: $font-fallback;
-    color: $light-primary;
+
+    margin-bottom: map-get($spacers, "2");
+    border-left: 4px solid transparent;
+    color: $dark-primary;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+
+    //loop para variantes de color
+    @each $type, $color in $alert-colors{
+        &-#{$type}{
+            background-color: $color;
+            border-left-color:darken($color, 15%) ;
+        }
+    }
 
 }
-//loop para tamaño de alertas
+
+
+//loop para tamaño de alertas (responsivos)
 @each $bp, $width in $alerts-widths
 {
     @include respond-to($bp)
@@ -23,7 +40,7 @@
         }
     }
 }
-//Loop para el tamaño de fuente dependiendo de tamaño de pantalla
+//Loop para el tamaño de fuente dependiendo de tamaño de pantalla(responsivo)
 @each $bp, $font-size in $alert-font-sizes
 {
     @include respond-to($bp)
@@ -34,8 +51,5 @@
         }
     }
 }
-//funcion para declarar el tipo de alerta
-@function alert_color ($type)
-{
-    @return map-get($alert-colors , $type )
-} 
+
+
