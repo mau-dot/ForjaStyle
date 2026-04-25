@@ -1,0 +1,26 @@
+@use '../base/variables' as *;
+//colores de textos
+.text-primary   { color: $light-blue !important; }
+.text-accent    { color: $light-accent-gold !important; }
+.text-success   { color: $alert-success !important; }
+.text-danger    { color: $alert-danger !important; }
+.text-warning   { color: $alert-warning !important; }
+.text-light     { color: $light-primary !important; }
+.text-dark      { color: $dark-primary !important; }
+.text-muted     { color: $dark-gray-light !important; }
+
+//colores de fondos
+.bg-primary     { background-color: $light-blue !important; }
+.bg-dark        { background-color: $dark-primary !important; }
+.bg-dark-alt    { background-color: $dark-primary-alt !important; }
+.bg-success     { background-color: $alert-success !important; }
+.bg-danger      { background-color: $alert-danger !important; }
+.bg-warning     { background-color: $alert-warning !important; }
+.bg-light       { background-color: $light-primary !important; }
+.bg-sand        { background-color: $light-primary-sand !important; }
+
+//colores de bordes, SOLO SE DEFINEN COLORES
+.border-primary { border-color: $light-blue !important; }
+.border-accent  { border-color: $light-accent-gold !important; }
+.border-danger  { border-color: $alert-danger !important; }
+.border-success { border-color: $alert-success !important; }

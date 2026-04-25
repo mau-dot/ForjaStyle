@@ -1,7 +1,12 @@
 /* _variables.scss */
 
+<<<<<<< HEAD
 /* ========== Tipografía ========== */
 $font-primary: 'Arial';
+=======
+/* ========== Tipografia ========== */
+$font-primary:'Arial';
+>>>>>>> a2f0ee350c2a5577e2c0a424a39624f9f73804ed
 $font-fallback: sans-serif;
 $font-family-base: $font-primary, $font-fallback;
 $font-size-base:      1rem;
@@ -14,6 +19,7 @@ $font-sizes: (
   "5": 1.25rem,
   "6": 1rem
 );
+//font-family: sans-serif
 
 $font-weights: (
   "light":  300,
@@ -22,7 +28,11 @@ $font-weights: (
   "bold":   700,
 );
 
+<<<<<<< HEAD
 /*=============== Paleta Tonos Claros (Variables SASS) =====================*/
+=======
+/*=============== Paleta Tonos Claros (Light) =====================*/
+>>>>>>> a2f0ee350c2a5577e2c0a424a39624f9f73804ed
 $light-primary-sand:    rgb(250, 212, 178);   
 $light-primary:         #FFFFFF;   
 $light-accent-gold:     #d4af37;   
@@ -63,6 +73,7 @@ $alert-colors: (
   "danger":  $alert-danger,
 );
 
+<<<<<<< HEAD
 /* ========== Sombras (CORREGIDAS) ========== */
 $shadow-base-color: rgba(0, 0, 0, 0.2);
 
@@ -70,6 +81,15 @@ $shadow-sm: 0 1px 3px rgba($shadow-base-color, 0.1);
 $shadow-md: 0 4px 6px rgba($shadow-base-color, 0.15);
 $shadow-lg: 0 10px 20px rgba($shadow-base-color, 0.2);
 
+=======
+/* ========== Sombras ========== */
+$shadow-sm: 0 1px 3px rgba($shadow, 0.1);
+$shadow-md: 0 4px 6px rgba($shadow, 0.15);
+$shadow-lg: 0 10px 20px rgba($shadow,0.2);
+$light-sm: 0 1px 3px rgba($light, 0.1);
+$light-md: 0 4px 6px rgba($light, 0.15);
+$light-lg: 0 10px 20px rgba($light,0.2);
+>>>>>>> a2f0ee350c2a5577e2c0a424a39624f9f73804ed
 /* ========== Opacidades y overlays ========== */
 $overlay-bg: rgba(42, 20, 82, 0.8);
 
@@ -142,17 +162,17 @@ $breakpoint-xl: 1536px !default;
 
 /* ESPACIADOS DE PX A REM (Corregido para consistencia) */
 $spacers: (
-  "0": 0,
-  "1": 0.3125rem, // 5px
-  "2": 0.625rem,  // 10px
-  "3": 0.9375rem, // 15px
-  "4": 1.25rem,   // 20px
-  "5": 1.5625rem, // 25px
-  "6": 1.875rem,  // 30px
-  "7": 2.1875rem, // 35px
-  "8": 2.5rem,    // 40px
-  "9": 2.8125rem, // 45px
-  "10": 3.125rem  // 50px
+  "0": 0px,
+  "1": 5px,
+  "2": 10px,  
+  "3": 15px,
+  "4": 20px,
+  "5": 25px,
+  "6": 30px,
+  "7": 35px,
+  "8": 40px,
+  "9": 45px,
+  "10": 50px
 );
 
 $container-max-widths: (

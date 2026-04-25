@@ -1,0 +1,52 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+
+
+
+
+@each $num, $val in $spacers {
+  //margin
+  .m-#{$num}  { margin: $val !important; }         // En los 4 lados
+  .mt-#{$num} { margin-top: $val !important; }    // Arriba (Top)
+  .mb-#{$num} { margin-bottom: $val !important; } // Abajo (Bottom)
+  .ms-#{$num} { margin-left: $val !important; }   // Izquierda (Start)
+  .me-#{$num} { margin-right: $val !important; }  // Derecha (End)
+  .mx-#{$num} { margin-left: $val !important; margin-right: $val !important; } // Horizontal (Izquierda y Derecha)
+  .my-#{$num} { margin-top: $val !important; margin-bottom: $val !important; } // Vertical (Arriba y Abajo)
+
+  //paddings
+  .p-#{$num}  { padding: $val !important; }        // En los 4 lados
+  .pt-#{$num} { padding-top: $val !important; }    // Arriba
+  .pb-#{$num} { padding-bottom: $val !important; } // Abajo
+  .ps-#{$num} { padding-left: $val !important; }   // Izquierda
+  .pe-#{$num} { padding-right: $val !important; }  // Derecha
+  .px-#{$num} { padding-left: $val !important; padding-right: $val !important; } // Horizontal
+  .py-#{$num} { padding-top: $val !important; padding-bottom: $val !important; } // Vertical
+}
+
+
+@include respond-to('md') {
+  @each $num, $val in $spacers {
+    //estas clases llevan md para idenficiarlas que son responsivas 
+    .m-md-#{$num}  { margin: $val !important; }         // Margen total en Laptop
+    .mt-md-#{$num} { margin-top: $val !important; }    // Margen Arriba en Laptop
+    .mb-md-#{$num} { margin-bottom: $val !important; } // Margen Abajo en Laptop
+    
+    .p-md-#{$num}  { padding: $val !important; }        // Padding total en Laptop
+    .pt-md-#{$num} { padding-top: $val !important; }    // Padding Arriba en Laptop
+    .pb-md-#{$num} { padding-bottom: $val !important; } // Padding Abajo en Laptop
+  }
+}
+
+//gap
+@include respond-to('md')
+{
+  @each $num, $val in $spacers
+  {
+    .gap-md-#{$num}
+    {
+      gap: $val !important;
+    }
+  }
+}

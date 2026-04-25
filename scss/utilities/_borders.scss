@@ -1,0 +1,41 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+//bordes
+
+.rounded-sm { 
+    @include rounded('sm'); //redondeo ligero de 4px 
+}
+
+.rounded { 
+    @include rounded('md'); //redondeo estandar de 8px
+}
+
+.rounded-lg { 
+    @include rounded('lg'); //redondeo pronunciado de 16px
+}
+
+.rounded-pill { 
+    @include rounded('pill'); //redondeo total de 999px
+}
+
+.rounded-0 { 
+    border-radius: 0; //sin ningun redondeo
+}
+
+//SOMBRAS
+.shadow-sm { 
+    @include shadow('sm'); // Sombra sutil: 0 1px 3px
+}
+
+.shadow { 
+    @include shadow('md'); // Sombra media: 0 4px 6px
+}
+
+.shadow-lg { 
+    @include shadow('lg'); // Sombra fuerte: 0 10px 20px
+}
+
+.shadow-none { 
+    box-shadow: none; //elimina cualquier sombra
+}

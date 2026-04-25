@@ -1,0 +1,25 @@
+@use '../base/variables' as *;
+
+//utilidaes de tamaño ejem: fs-1, fs-2
+
+@each $name, $size in $font-sizes {
+  .fs-#{$name} {
+    font-size: $size !important;
+  }
+}
+//utilidades de grosor ejemplo: fw-bold, fw-light
+@each $name, $weight in $font-weights {
+  .fw-#{$name} {
+    font-weight: $weight !important;
+  }
+}
+ 
+//alineacion y otros helpers
+.text-center  { text-align: center !important; }
+.text-start   { text-align: left !important; }
+.text-end     { text-align: right !important; }
+.text-justify { text-align: justify !important; }
+
+.text-uppercase { text-transform: uppercase !important; }
+.text-lowercase { text-transform: lowercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
