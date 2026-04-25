@@ -1,0 +1,86 @@
+
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.card {
+    //colores dinamicos
+    background-color: var(--card-bg);    // Fondo: blanco en light, morado/negro en dark
+    color: var(--text-color);           // Texto: negro en light, blanco en dark
+    border: 1px solid var(--border-color); // Borde que se adapta para no brillar mucho
+    
+    //estructura layout
+    display: flex;
+    flex-direction: column;  // Apila header, body y footer hacia abajo
+    min-width: 0;
+    word-wrap: break-word;  // Evita que el texto largo rompa la tarjeta
+
+    //rounded y shadow reutilizables del mixin
+    @include rounded('md'); // Aplica el radio de borde definido en variables
+    @include shadow('sm');  // Aplica una sombra sutil
+    
+    //transisiion para que cambie god el color cuando se cambie de color de theme
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    overflow: hidden; 
+
+    margin-bottom: map-get($spacers, "4"); // usamos 1.5rem que es equivalente a 24px
+
+    //hover
+    &:hover {
+        @include shadow('lg');      //la sombra crece al pasar el mouse por encima
+        transform: translateY(-5px); 
+    }
+
+    
+    // Imagen de la tarjeta
+    &__img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;              // Ajusta la imagen sin deformarla
+    }
+
+    //Header
+    &__header {
+        padding: map-get($spacers, "3") map-get($spacers, "4");
+        background-color: rgba($light-accent-gold, 0.05); // Un toque de color de marca muy suave
+        border-bottom: 1px solid var(--border-color);
+        font-weight: map-get($font-weights, "bold");
+    }
+
+    //Body
+    &__body {
+        flex: 1 1 auto;                 
+        padding: map-get($spacers, "4"); 
+    }
+
+    //Footer
+    &__footer {
+        padding: map-get($spacers, "3") map-get($spacers, "4");
+        background-color: rgba($light-accent-gold, 0.05);
+        border-top: 1px solid var(--border-color);
+    }
+
+    // RESPONSIVIDAD (Media Queries)
+    @include respond-to('sm') {
+        max-width: 18rem; // En celulares grandes/tablets toma un ancho fijo
+    }
+
+    @include respond-to('lg') {
+        max-width: 22rem; // En pantallas grandes es un poco más ancha
+    }
+}
+
+//CONTENEDOR DE GRUPO (Grid) Sirve para que en el celular se vea una sola columna y en la computadora se vean 3.
+.card-group {
+    display: grid;
+    grid-template-columns: 1fr;         // 1 columna en móvil
+    gap: map-get($spacers, "4");
+
+    @include respond-to('md') {
+        grid-template-columns: repeat(2, 1fr); // 2 columnas en tablet
+    }
+
+    @include respond-to('xl') {
+        grid-template-columns: repeat(3, 1fr); // 3 columnas en desktop pro
+    }
+}
