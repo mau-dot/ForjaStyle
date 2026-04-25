@@ -190,4 +190,10 @@ $justify-content-values:(
   "around": space-around,
   "evenly": space-evenly
 );
-//alinacion 
+//alinacion cross axis
+$align-items-values: (
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "stretch": stretch
+);
