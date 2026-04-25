@@ -1,0 +1,79 @@
+//=== _grid.scss ===
+//imports necesario
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+@use 'breakpoints' as *;
+
+//definimos las 12 columnas del grid
+$columns:12;
+
+// =================== Estilos para el sistema de grid ====================
+// -> para filas
+.row{
+    display:flex;
+    flex-wrap: wrap;//cuando llega a 12 columnas, la siguiente columna se mueve hacia al final de fila
+    margin-right: -0.5rem; //se ajusta el margen para compensar el padding de las columnas
+    margin-left: -0.5rem;
+    gap: 1rem; //se agrega un gap entre las filas para separar las filas
+}
+
+// -> para columnas base
+
+//Generar columnas .col-1, .col-2, ..., .col-12
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        width: percentage($i / $columns); //se establece el ancho de la columna
+        max-width: percentage($i / $columns); //se establece el ancho maximo de la columna
+        padding-right: 0.5rem; //se agrega padding para separar las columnas
+        padding-left: 0.5rem;
+        box-sizing: border-box; //se asegura que el padding no afecte el ancho total de la columna
+        word-break: break-word; //se asegura que el contenido dentro de la columna se ajuste correctamente y no desborde
+    }
+}
+
+// -> para col sin numero, se ajusta al ancho disponible
+.col {
+    flex-grow: 1;//se permite que la columna crezca para llenar el espacio disponible
+    padding-right: 0.5rem; //se agrega padding para separar las columnas
+    padding-left: 0.5rem;
+    box-sizing: border-box; //se asegura que el padding no afecte el ancho total de la columna
+    word-break: break-word;
+}
+
+// -> para columnas con breakpoints (columnas responsivas), se ajusta el ancho segun el breakpoint definido en el mapa de breakpoints
+@each $bp, $valor in $breakpoints-map {
+    @include respond-to($bp) { //se hace el uso de la funcion respond-to para aplicar los estilos segun el breakpoint
+        @for $i from 1 through $columns {
+            .col-#{$bp}-#{$i} {
+                width: percentage($i / $columns); //se establece el ancho de la columna
+                max-width: percentage($i / $columns); //se establece el ancho maximo de la columna
+                padding-right: 0.5rem; //se agrega padding para separar las columnas
+                padding-left: 0.5rem;
+                box-sizing: border-box; //se asegura que el padding no afecte el ancho total de la columna
+                word-break: break-word; //se asegura que el contenido dentro de la columna se ajuste correctamente y no desborde(afecta solo al texto)
+            }
+        }
+    }
+}
+
+// =================== Offsets ====================
+//sirve para empujar los elementos horizontalmente,
+
+@for $i from 1 through $columns - 1{
+    .offset-#{$i}{
+        margin-left: percentage($i / $columns); //se establece el margen izquierdo para empujar la columna
+    }
+}
+
+// -> para offsets con breakpoints (offsets responsivos), se ajusta el margen segun el breakpoint definido en el mapa de breakpoints
+@each $bp, $valor in $breakpoints-map {
+    @include respond-to($bp) { //se hace el uso de la funcion respond-to para aplicar los estilos segun el breakpoint
+        @for $i from 1 through $columns - 1 {
+            .offset-#{$bp}-#{$i} {
+                margin-left: percentage($i / $columns); //se establece el margen izquierdo para empujar la columna
+            }
+        }
+    }
+}
+
+

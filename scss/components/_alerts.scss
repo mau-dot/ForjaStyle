@@ -1,0 +1,41 @@
+//imports necesarios
+@use '../base/mixins' as*;
+@use '../base/variables' as*;
+
+.alert
+{
+    padding: map-get($spacers, "2");
+    @include rounded('sm');
+    @include shadow('sm');
+    font-family: $font-fallback;
+    color: $light-primary;
+
+}
+//loop para tamaño de alertas
+@each $bp, $width in $alerts-widths
+{
+    @include respond-to($bp)
+    {
+        .alert
+        {
+            max-width: $width;
+            margin: 0 auto;
+        }
+    }
+}
+//Loop para el tamaño de fuente dependiendo de tamaño de pantalla
+@each $bp, $font-size in $alert-font-sizes
+{
+    @include respond-to($bp)
+    {
+        .alert
+        {
+            font-size: $font-size;
+        }
+    }
+}
+//funcion para declarar el tipo de alerta
+@function alert_color ($type)
+{
+    @return map-get($alert-colors , $type )
+} 
