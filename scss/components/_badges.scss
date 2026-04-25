@@ -5,41 +5,54 @@
     display: inline-block;
     padding: 0.35em 0.65em;
     font-size: 0.75rem;
-    font-weight: $font-weights-bold; 
+    font-weight: map-get($font-weights, "bold"); 
     line-height: 1;
-    color: $light-primary; //Texto blanco por defecto
+    
+    //dinamico cambia de color segun el tema claro o oscuro
+    color: var(--text-color); 
+    
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    @include rounded('sm'); // Redondeo basico por defecto
+    @include rounded('sm'); 
     @include transition(all, 0.2s);
-
-    //Variantes de Color
     
-    //Primario (Azul)
+    // hace god el cambio de color al activar el modo oscuro
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    // --- Variantes de Color Semánticas (Dinámicas) ---
+    
     &-primary {
-        background-color: $light-blue;
+        //dinamico cambia de tonalidad segun el tema claro o oscuro
+        background-color: var(--alert-info); 
+        border: 1px solid rgba($light-blue, 0.2);
     }
 
-    //Exito (Verde)
     &-success {
-        background-color: $light-green;
+        //dinamico cambia de tonalidad segun el tema claro o oscuro
+        background-color: var(--alert-success);
+        border: 1px solid rgba($alert-success, 0.2);
     }
 
-    //Advertencia (Amarillo/Dorado) - Texto oscuro para contraste
     &-warning {
-        background-color: $light-calid-yellow;
-        color: $dark-primary;
+        //dinamico cambia de tonalidad segun el tema claro o oscuro
+        background-color: var(--alert-warning);
+        border: 1px solid rgba($alert-warning, 0.2);
     }
 
-    //Peligro (Rojo)
     &-danger {
-        background-color: $dark-red-light;
+        //dinamico cambia de tonalidad segun el tema claro o oscuro
+        background-color: var(--alert-danger);
+        border: 1px solid rgba($alert-danger, 0.2);
     }
 
-    
+    &-info {
+        //dinamico cambia de tonalidad segun el tema claro o oscuro
+        background-color: var(--alert-info);
+        border: 1px solid rgba($alert-info, 0.2);
+    }
 
-    // Tipo Pildora
+    // --- Variantes de Forma ---
     &-pill {
         @include rounded('pill');
         padding-right: 0.8em;
