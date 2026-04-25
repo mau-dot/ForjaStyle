@@ -1,41 +1,56 @@
-//imports necesarios
-@use '../base/mixins' as*;
-@use '../base/variables' as*;
 
-.alert
-{
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+//Base de las alertas
+.alert {
     padding: map-get($spacers, "2");
     @include rounded('sm');
     @include shadow('sm');
     font-family: $font-fallback;
-    color: $light-primary;
 
+    margin-bottom: map-get($spacers, "2");
+    border-left: 5px solid transparent; // Aumentamos un poco el grosor para el "estilo"
+    
+    
+    //ahora el texto es una variable dinamica dependiendo del tema que este usando 
+    color: var(--text-color); 
+    
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    
+    // haceme mas god el cambio de colores cuando se active el script de modo oscuro
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    //Loop para variantes
+    @each $type, $color in $alert-colors {
+        &-#{$type} {
+            //cambio de temas claro y scuro
+            //el fondo llama a uan variable dinamica 
+            background-color: var(--alert-#{$type});
+            
+            // El borde izquierdo se queda FIJO con el color de SASS ($)
+            border-left-color: darken($color, 15%);
+        }
+    }
 }
-//loop para tamaño de alertas
-@each $bp, $width in $alerts-widths
-{
-    @include respond-to($bp)
-    {
-        .alert
-        {
+
+//Loop para tamaño de alertas (Responsivo)
+@each $bp, $width in $alerts-widths {
+    @include respond-to($bp) {
+        .alert {
             max-width: $width;
             margin: 0 auto;
         }
     }
 }
-//Loop para el tamaño de fuente dependiendo de tamaño de pantalla
-@each $bp, $font-size in $alert-font-sizes
-{
-    @include respond-to($bp)
-    {
-        .alert
-        {
+
+//Loop para tamaño de fuente (Responsivo)
+@each $bp, $font-size in $alert-font-sizes {
+    @include respond-to($bp) {
+        .alert {
             font-size: $font-size;
         }
     }
 }
-//funcion para declarar el tipo de alerta
-@function alert_color ($type)
-{
-    @return map-get($alert-colors , $type )
-} 

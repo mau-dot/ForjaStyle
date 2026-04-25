@@ -26,3 +26,9 @@
 {
     @return map-get($font-sizes, $key);
 }
+
+//funcion para declarar el tipo de alerta
+@function alert_color($type)
+{
+    @return map-get($alert-colors , $type )
+} 
