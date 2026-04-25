@@ -1,8 +1,11 @@
 /* _variables.scss */
 
-/* ========== Tipografia ========== */
-$font-family-base:    'Arial', sans-serif;
+/* ========== Tipografía ========== */
+$font-primary: 'Arial';
+$font-fallback: sans-serif;
+$font-family-base: $font-primary, $font-fallback;
 $font-size-base:      1rem;
+
 $font-sizes: (
   "1": 2.5rem,
   "2": 2rem,
@@ -19,8 +22,8 @@ $font-weights: (
   "bold":   700,
 );
 
-/*=============== Paleta Tonos Claros (Light) =====================*/
-$light-primary-sand:    #fad4b2;   
+/*=============== Paleta Tonos Claros (Variables SASS) =====================*/
+$light-primary-sand:    rgb(250, 212, 178);   
 $light-primary:         #FFFFFF;   
 $light-accent-gold:     #d4af37;   
 $light-blue:            #0074D9;   
@@ -33,9 +36,9 @@ $light-cream:           #FFF3E0;
 $light-calid-yellow:    #FFCC66;   
 $light-sand:            #F4A460;   
 
-/*============== Paleta Tonos Oscuros (Dark) ====================*/
+/*============== Paleta Tonos Oscuros (Variables SASS) ====================*/
 $dark-primary:          #0D0D0D;   
-$dark-primary-alt:      #1A1A1A;   
+$dark-primary-alt:      #1a1a1a;   
 $dark-red-deep:         #2B0000;   
 $dark-red:              #8B0000;   
 $dark-blue-space:       #001F3F;   
@@ -47,10 +50,11 @@ $dark-blue-black:       #111827;
 $dark-gray-light:       #696969;   
 $dark-red-light:        #e02323;   
 
-$alert-success:  rgba(96, 230, 55, 0.604);   // verde
-$alert-info:     rgba(90, 136, 236, 0.604);  // azul
-$alert-warning:  rgba(226, 192, 42, 0.604);  // amarillo
-$alert-danger:   rgba(230, 28, 28, 0.604);   // rojo
+/* ========== Alertas ========== */
+$alert-success:  rgba(96, 230, 55, 0.604);
+$alert-info:     rgba(90, 136, 236, 0.604);
+$alert-warning:  rgba(226, 192, 42, 0.604);
+$alert-danger:   rgba(230, 28, 28, 0.604);
 
 $alert-colors: (
   "success": $alert-success,
@@ -59,29 +63,23 @@ $alert-colors: (
   "danger":  $alert-danger,
 );
 
-/* ========== Sombras ========== */
-$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
-$shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
+/* ========== Sombras (CORREGIDAS) ========== */
+$shadow-base-color: rgba(0, 0, 0, 0.2);
+
+$shadow-sm: 0 1px 3px rgba($shadow-base-color, 0.1);
+$shadow-md: 0 4px 6px rgba($shadow-base-color, 0.15);
+$shadow-lg: 0 10px 20px rgba($shadow-base-color, 0.2);
 
 /* ========== Opacidades y overlays ========== */
 $overlay-bg: rgba(42, 20, 82, 0.8);
 
-// ========== Border Radius ==========
+/* ========== Border Radius ========== */
 $border-radius-sm:      4px;
 $border-radius-md:      8px;
 $border-radius-lg:      16px;
 $border-radius-pill:    999px;
 
-/* ========== Paletas por modo (Mantenidas) ========== */
-$dark-theme: (
-  background:   linear-gradient(180deg, $dark-blue-space, $dark-primary, $dark-primary-alt),
-  card-bg:      rgba(58, 38, 103, 0.9),
-  border-color: $dark-primary-alt,
-  text-color:   $light-primary,
-  text-muted:   #a29eb6,
-);
-
+/* ========== Diseño de Temas (Tokens) ========== */
 $light-theme: (
   background:   linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%),
   card-bg:      #f7f5fb,
@@ -90,10 +88,23 @@ $light-theme: (
   text-muted:   #5d3b8c,
 );
 
-/*GENERACION DE VARIABLES DINAMICAS PARA CSS */
+$dark-theme: (
+  background:   linear-gradient(180deg, $dark-blue-space, $dark-primary, $dark-primary-alt),
+  card-bg:      rgba(58, 38, 103, 0.9),
+  border-color: $dark-primary-alt,
+  text-color:   $light-primary,
+  text-muted:   #a29eb6,
+);
+
+/* GENERACION DE VARIABLES DINAMICAS PARA CSS */
 :root {
   @each $name, $value in $light-theme {
     --#{$name}: #{$value};
+  }
+  
+  // Tokens de alerta también disponibles en CSS
+  @each $name, $value in $alert-colors {
+    --alert-#{$name}: #{$value};
   }
 }
 
@@ -103,16 +114,16 @@ $light-theme: (
   }
 }
 
-/* ========== Navbar & Footer (Mantenidos) ========== */
-$navbar-bg:           $dark-primary !default;
-$navbar-text:         $light-primary !default;
+/* ========== Navbar & Footer (Ajustados para Temas) ========== */
+$navbar-bg:           var(--background) !default;
+$navbar-text:         var(--text-color) !default;
 $navbar-hover:        $light-accent-gold !default;
 $navbar-height:       60px !default;
 $navbar-padding-y:    1.2rem !default;
 $navbar-padding-x:    2rem !default;
 $navbar-font-size:    1rem !default;
 $navbar-z-index:      1000 !default;
-$navbar-shadow:       0 2px 6px rgba(0, 0, 0, 0.15) !default;
+$navbar-shadow:       $shadow-md !default;
 
 $footer-bg:           $dark-primary-alt !default;
 $footer-text:         $light-primary !default;
@@ -122,14 +133,14 @@ $footer-padding-y:    2.5rem !default;
 $footer-padding-x:    2rem !default;
 $footer-font-size:    .95rem !default;
 
-/* Breakpoints (Mantenidos) */
+/* Breakpoints */
 $breakpoint-xs: 480px !default;
 $breakpoint-sm: 768px !default;
 $breakpoint-md: 1024px !default;
 $breakpoint-lg: 1280px !default;
 $breakpoint-xl: 1536px !default;
 
-/*ESPACIADOS DE PX A REM */
+/* ESPACIADOS DE PX A REM (Corregido para consistencia) */
 $spacers: (
   "0": 0,
   "1": 0.3125rem, // 5px
