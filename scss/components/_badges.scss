@@ -23,21 +23,26 @@
 
     //Exito (Verde)
     &-success {
-        background-color: $light-green;
+        background-color: $alert-success;
+        color: $dark-primary;
     }
 
     //Advertencia (Amarillo/Dorado) - Texto oscuro para contraste
     &-warning {
-        background-color: $light-calid-yellow;
+        background-color: $alert-warning;
         color: $dark-primary;
     }
 
     //Peligro (Rojo)
     &-danger {
-        background-color: $dark-red-light;
+        background-color: $alert-danger;
+        //queda con  $light-primary
     }
 
-    
+    &-info {
+        background-color: $alert-info;
+        //queda con  $light-primary
+    }
 
     // Tipo Pildora
     &-pill {
