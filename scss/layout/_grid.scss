@@ -14,6 +14,7 @@ $columns:12;
     flex-wrap: wrap;//cuando llega a 12 columnas, la siguiente columna se mueve hacia al final de fila
     margin-right: -0.5rem; //se ajusta el margen para compensar el padding de las columnas
     margin-left: -0.5rem;
+    gap: 1rem; //se agrega un gap entre las filas para separar las filas
 }
 
 // -> para columnas base
