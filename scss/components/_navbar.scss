@@ -1,26 +1,85 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as*;
+@use '../utilities/flex' as*;
 
 .navbar
 {
     width: 100%;
-    background-color: $light-primary;
-    color: $dark-primary-alt;
+    background-color: var(--background);
+    color: var(--text-color);
     font-family: $font-fallback;
-    
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: $navbar-z-index;
+    box-shadow: $navbar-shadow;
+    padding: $navbar-padding-y $navbar-padding-x;
 
     &__link
     {
         text-decoration: none;
-        color: inherit;
         text-shadow: $shadow-sm;
         font-weight: 500;
         &:hover
         {
             transform: scale(map-get($scales , "xs" ))
+        }
+    }
+    &__logo
+    {
+        display: inline-flex;
+        align-items: center;
+        
+        img
+        {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            @include transition(transform);
+            &:hover 
+            {
+                transform: scale(1.05);
+            }
+        }
+
+    }
+    &__menu
+    {
+        list-style: none;
+        margin: 0;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--menu-bg);
+        color:var(--text-color);
+
+        //despliega el menu al clickear el boton
+        &.is-active
+        {
+            display: flex;
+        }
+
+        //comportamiento que seguira luego de pantallas de laptop pequeños en adelante
+        @media(min-width: $breakpoint-md){
+            position:static;
+            display: flex !important;
+            flex-direction: row;
+            width: auto;
+            background: transparent;
+        }
+        &__toggle {
+        display: block; // Se ve en móvil
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: inherit;
+        cursor: pointer;
+
+        @media (min-width: $breakpoint-md) {
+            display: none; // Desaparece en desktop
+        }
         }
     }
 }
