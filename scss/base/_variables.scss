@@ -63,6 +63,23 @@ $alert-colors: (
   "danger":  $alert-danger,
 );
 
+$alerts-widths:
+(
+  'xs': 100%,
+  'sm': 500px,
+  'md': 700px,
+  'lg': 900px,
+  'xl': 1000px
+);
+$alert-font-sizes:
+(
+  "xs": 1rem,
+  "sm": 1.25rem,
+  "md": 1.50rem,
+  "lg": 1.75rem,
+  "xl": 2.0rem
+);
+
 /* ========== Sombras (Corregidas) ========== */
 $shadow-base-color: rgba(0, 0, 0, 0.2);
 
