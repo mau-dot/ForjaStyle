@@ -1,0 +1,97 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// estilo base del boton
+.btn {
+    display: inline-block; 
+    font-family: $font-family-base;
+    font-weight: 500; 
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.6rem 1.2rem;
+    font-size: $font-size-base;
+    line-height: 1.5;
+    text-decoration: none;
+    @include rounded('md'); // llamamos a rounded (border) que esta en el mixin
+    @include transition;   // llamamos a transition(animaciones) que esta en el mixin
+
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+
+    //mapa para cada dispositivo 
+    //aqui asignamos los cambios que tendran los botones para cada dispositivo
+    $btn-responsive-data: (
+        "xs": (margin-bottom: 0.5rem),
+        "sm": (width: auto, padding: 0.6rem 1.2rem, margin-bottom: 0),
+        "md": (padding: 0.7rem 1.4rem, font-size: 1.1rem),
+        "lg": (padding: 0.8rem 1.8rem),
+        "xl": (padding: 1rem 2.2rem)
+    );
+
+    //loop para cada dispositivo 
+    @each $device, $styles in $btn-responsive-data {
+        
+        // se llama al mixin respond-to usando el nombre del dispositivo
+        @include respond-to($device) { //device sera una variable temporal que ira cambiando segun el tamaño
+            
+            // se recorre cada propiedad (como padding) y su valor
+            @each $property, $value in $styles { //style es un variable temporan que represeta el valor que se esta guardando
+                #{$property}: $value; //property el la propiedad (ejem: width) //value es el valor asignado
+            }
+        }
+    }
+
+    // ESTADO: Disabled
+    &:disabled, &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
+    }
+}
+
+//VARIANTES DE TAMAÑO 
+.btn-sm { padding: 0.4rem 0.8rem; font-size: 0.875rem; }
+.btn-lg { padding: 0.8rem 1.5rem; font-size: 1.25rem; }
+
+//VARIANTES DE COLOR Y ESTILO 
+$btn-variants: (
+    "primary": $light-accent-gold,
+    "success": $light-green,
+    "danger":  $dark-red-light,
+    "info":    $light-blue-bright
+);
+
+@each $name, $color in $btn-variants {
+    // Estilo solid
+    .btn-#{$name} {
+        background-color: $color;
+        border-color: $color;
+        color: if(lightness($color) > 70, $dark-primary, $light-primary);
+
+        // ESTADOS: Hover y Active 
+        &:hover {
+            background-color: darken($color, 10%);
+            border-color: darken($color, 12%);
+        }
+        &:active {
+            background-color: darken($color, 15%);
+        }
+    }
+
+    // Estilo Borde (Outline)
+    .btn-outline-#{$name} {
+        background-color: transparent;
+        border-color: $color;
+        color: $color;
+
+        &:hover {
+            background-color: $color;
+            color: if(lightness($color) > 70, $dark-primary, $light-primary);
+        }
+    }
+}

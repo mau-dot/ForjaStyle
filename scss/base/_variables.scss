@@ -1,7 +1,9 @@
 /* _variables.scss */
 
 /* ========== Tipografia ========== */
-$font-family-base:    'Arial', sans-serif;
+$font-primary:'Arial';
+$font-fallback: sans-serif;
+$font-family-base: $font-primary, $font-fallback;
 $font-size-base:      1rem;
 $font-sizes: (
   "1": 2.5rem,
@@ -11,6 +13,7 @@ $font-sizes: (
   "5": 1.25rem,
   "6": 1rem
 );
+//font-family: sans-serif
 
 $font-weights: (
   "light":  300,
@@ -20,7 +23,7 @@ $font-weights: (
 );
 
 /*=============== Paleta Tonos Claros (Light) =====================*/
-$light-primary-sand:    #fad4b2;   
+$light-primary-sand:    rgb(250, 212, 178);   
 $light-primary:         #FFFFFF;   
 $light-accent-gold:     #d4af37;   
 $light-blue:            #0074D9;   
@@ -35,7 +38,7 @@ $light-sand:            #F4A460;
 
 /*============== Paleta Tonos Oscuros (Dark) ====================*/
 $dark-primary:          #0D0D0D;   
-$dark-primary-alt:      #1A1A1A;   
+$dark-primary-alt:      #1a1a1a;   
 $dark-red-deep:         #2B0000;   
 $dark-red:              #8B0000;   
 $dark-blue-space:       #001F3F;   
@@ -60,10 +63,12 @@ $alert-colors: (
 );
 
 /* ========== Sombras ========== */
-$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
-$shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
-
+$shadow-sm: 0 1px 3px rgba($shadow, 0.1);
+$shadow-md: 0 4px 6px rgba($shadow, 0.15);
+$shadow-lg: 0 10px 20px rgba($shadow,0.2);
+$light-sm: 0 1px 3px rgba($light, 0.1);
+$light-md: 0 4px 6px rgba($light, 0.15);
+$light-lg: 0 10px 20px rgba($light,0.2);
 /* ========== Opacidades y overlays ========== */
 $overlay-bg: rgba(42, 20, 82, 0.8);
 
@@ -131,17 +136,17 @@ $breakpoint-xl: 1536px !default;
 
 /*ESPACIADOS DE PX A REM */
 $spacers: (
-  "0": 0,
-  "1": 0.3125rem, // 5px
-  "2": 0.625rem,  // 10px
-  "3": 0.9375rem, // 15px
-  "4": 1.25rem,   // 20px
-  "5": 1.5625rem, // 25px
-  "6": 1.875rem,  // 30px
-  "7": 2.1875rem, // 35px
-  "8": 2.5rem,    // 40px
-  "9": 2.8125rem, // 45px
-  "10": 3.125rem  // 50px
+  "0": 0px,
+  "1": 5px,
+  "2": 10px,  
+  "3": 15px,
+  "4": 20px,
+  "5": 25px,
+  "6": 30px,
+  "7": 35px,
+  "8": 40px,
+  "9": 45px,
+  "10": 50px
 );
 
 $container-max-widths: (

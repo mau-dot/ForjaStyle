@@ -1,0 +1,22 @@
+// _breakpoints.scss
+//imports necesario 
+
+@use '../base/variables' as *;
+
+// ==================== Mapa de breakpoints ====================
+// Se toman los variables definidas de _variables.scss y se organixza en un mapa
+
+$breakpoints-map:(
+    'xs': $breakpoint-xs,       //480px - mobil grande
+    'sm': $breakpoint-sm,       //768px - tablet
+    'md': $breakpoint-md,       //1024px - laptop
+    'lg': $breakpoint-lg,       //1280px - desktop 
+    'xl': $breakpoint-xl        //1536px - desktop grande
+);
+
+// ==================== funcion para obtener breakpoints ====================
+//esta funcion se puede usar para obtener el valor de un breakpoint dado su nombre, por ejemplo: get-breakpoint('sm') retornara -> 768px
+@function get-breakpoint($name) {
+    @return map-get($breakpoints-map, $name);
+}
+
