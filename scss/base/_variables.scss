@@ -12,14 +12,12 @@ $font-sizes: (
   "6": 1rem
 );
 
-// ========== Pesos tipográficos ==========
 $font-weights: (
   "light":  300,
   "normal": 400,
   "medium": 500,
   "bold":   700,
 );
-
 
 /*=============== Paleta Tonos Claros (Light) =====================*/
 $light-primary-sand:    #fad4b2;   
@@ -47,14 +45,19 @@ $dark-green:            #0B6623;
 $dark-gray-deep:        #2C2C2C;   
 $dark-blue-black:       #111827;   
 $dark-gray-light:       #696969;   
-$dark-red-light:        #e02323;  
+$dark-red-light:        #e02323;   
 
+$alert-success:  rgba(96, 230, 55, 0.604);   // verde
+$alert-info:     rgba(90, 136, 236, 0.604);  // azul
+$alert-warning:  rgba(226, 192, 42, 0.604);  // amarillo
+$alert-danger:   rgba(230, 28, 28, 0.604);   // rojo
 
-/* ========== Colores para alertas y feedback ========== */
-$alert-success:              #5fcaa7;
-$alert-info:                 #6dc8da;
-$alert-warning:              #f2b774;
-$alert-danger:               #e67f88;
+$alert-colors: (
+  "success": $alert-success,
+  "info":    $alert-info,
+  "warning": $alert-warning,
+  "danger":  $alert-danger,
+);
 
 /* ========== Sombras ========== */
 $shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -70,29 +73,37 @@ $border-radius-md:      8px;
 $border-radius-lg:      16px;
 $border-radius-pill:    999px;
 
-/* ========== Paletas por modo ========== */
-/* Modo Oscuro */
+/* ========== Paletas por modo (Mantenidas) ========== */
 $dark-theme: (
-  // He ajustado estos nombres para que coincidan con tus nuevas variables oscuras
-  background:  linear-gradient(180deg, $dark-blue-space, $dark-primary, $dark-primary-alt),
-  card-bg:     rgba(58, 38, 103, 0.9),
+  background:   linear-gradient(180deg, $dark-blue-space, $dark-primary, $dark-primary-alt),
+  card-bg:      rgba(58, 38, 103, 0.9),
   border-color: $dark-primary-alt,
-  text-color:  $light-primary,
-  text-muted:  #a29eb6,
+  text-color:   $light-primary,
+  text-muted:   #a29eb6,
 );
 
-/* Modo Claro */
 $light-theme: (
-  background:  linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%),
-  card-bg:     #f7f5fb,
+  background:   linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%),
+  card-bg:      #f7f5fb,
   border-color: $light-primary-sand,
-  text-color:  $dark-primary-alt,
-  text-muted:  #5d3b8c,
+  text-color:   $dark-primary-alt,
+  text-muted:   #5d3b8c,
 );
 
-// los en encabezados para el modo oscuro y claro se agregaran en tipografia
+/*GENERACION DE VARIABLES DINAMICAS PARA CSS */
+:root {
+  @each $name, $value in $light-theme {
+    --#{$name}: #{$value};
+  }
+}
 
-/* ========== Navbar ========== */     /* !default: Asigna este valor a la variable solo si no ha sido definida antes */
+[data-theme="dark"] {
+  @each $name, $value in $dark-theme {
+    --#{$name}: #{$value};
+  }
+}
+
+/* ========== Navbar & Footer (Mantenidos) ========== */
 $navbar-bg:           $dark-primary !default;
 $navbar-text:         $light-primary !default;
 $navbar-hover:        $light-accent-gold !default;
@@ -103,7 +114,6 @@ $navbar-font-size:    1rem !default;
 $navbar-z-index:      1000 !default;
 $navbar-shadow:       0 2px 6px rgba(0, 0, 0, 0.15) !default;
 
-/* ========== Footer ========== */
 $footer-bg:           $dark-primary-alt !default;
 $footer-text:         $light-primary !default;
 $footer-link-hover:   $light-accent-gold !default;
@@ -112,41 +122,28 @@ $footer-padding-y:    2.5rem !default;
 $footer-padding-x:    2rem !default;
 $footer-font-size:    .95rem !default;
 
-//variables de punto de quiebre, se usaran para los componentes y los layout (_mixins.scss y _breakpoints.scss)
+/* Breakpoints (Mantenidos) */
+$breakpoint-xs: 480px !default;
+$breakpoint-sm: 768px !default;
+$breakpoint-md: 1024px !default;
+$breakpoint-lg: 1280px !default;
+$breakpoint-xl: 1536px !default;
 
-// < 480px      movil pequeño   --bp-xs
-// 480-767px    movil grande    --bp-sm
-// 768-1023px   tablet          --bp-md
-// 1024-1279px  laptop          --bp-lg
-// 1280-1535px  desktop         --bp-xl
-// ≥ 1536px     desktop grande  --bp-2xl
-
-/* Breakpoints */
-// < 480 ya es un movil pequeno
-$breakpoint-xs: 480px !default;   //movil grande
-$breakpoint-sm: 768px !default;   //tablet
-$breakpoint-md: 1024px !default;  //laptop
-$breakpoint-lg: 1280px !default;  //deskpot
-$breakpoint-xl: 1536px !default;  //desktop grande
-// > 1536 sigue perteneciando a desktops grandes
-
-/* ========== Espaciados (Formato de Mapa para Automatización) ========== */
+/*ESPACIADOS DE PX A REM */
 $spacers: (
-  "0": 0px,
-  "1": 5px,
-  "2": 10px,
-  "3": 15px,
-  "4": 20px,
-  "5": 25px,
-  "6": 30px,
-  "7": 35px,
-  "8": 40px,
-  "9": 45px,
-  "10": 50px
+  "0": 0,
+  "1": 0.3125rem, // 5px
+  "2": 0.625rem,  // 10px
+  "3": 0.9375rem, // 15px
+  "4": 1.25rem,   // 20px
+  "5": 1.5625rem, // 25px
+  "6": 1.875rem,  // 30px
+  "7": 2.1875rem, // 35px
+  "8": 2.5rem,    // 40px
+  "9": 2.8125rem, // 45px
+  "10": 3.125rem  // 50px
 );
 
-// ========== Mapa de tamanos de contenedores ========== */
-// -> Anchos máximos del contenedor 
 $container-max-widths: (
   'xs': 460px,
   'sm': 740px,
@@ -154,4 +151,3 @@ $container-max-widths: (
   'lg': 1200px,
   'xl': 1400px,
 );
-
