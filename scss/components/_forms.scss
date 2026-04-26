@@ -1,0 +1,77 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.form {
+    width: 100%;
+
+    // Contenedor de cada campo Label Input
+    &__group {
+        display: flex;
+        flex-direction: column; // Mobile First: Etiqueta arriba, input abajo
+        gap: space("2"); 
+        margin-bottom: space("4");
+    }
+
+    // Estilo de la etiqueta Label
+    &__label {
+        font-size: font-size("6");
+        font-weight: map-get($font-weights, "medium");
+        color: var(--text-color);
+    }
+
+    // Estilo del campo de entrada (Input, Select, Textarea)
+    &__control {
+        width: 100%;
+        padding: space("3") space("4");
+        font-size: font-size("6");
+        font-family: $font-family-base;
+        color: var(--text-color);
+        background-color: var(--card-bg); // Fondo dinámico para dark/light mode
+        border: 1px solid var(--border-color);
+        @include rounded('sm');
+        @include transition(all, 0.3s, ease);
+
+        // Comportamiento del texto de relleno
+        &::placeholder {
+            color: var(--text-muted);
+            opacity: 0.8;
+        }
+
+        // Efecto Focus (Cuando el usuario da clic para escribir)
+        &:focus {
+            outline: none;
+            border-color: var(--primary); // Se pinta del color principal
+            @include shadow('sm'); // Tu mixin de sombra
+        }
+
+        // Estado deshabilitado
+        &:disabled {
+            background-color: var(--menu-bg);
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+
+    // Texto de ayuda
+    &__text {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-top: space("1");
+    }
+    &__row {
+        display: flex;
+        flex-direction: column;
+        gap: space("3");
+
+        @include respond-to('md') {
+            flex-direction: row; // En laptop se ponen uno al lado del otro
+            gap: space("4");
+
+            // Asegura que los grupos internos tomen el mismo ancho
+            .form__group {
+                flex: 1;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
