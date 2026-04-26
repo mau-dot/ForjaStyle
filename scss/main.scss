@@ -1,0 +1,46 @@
+/* ==========================================================================
+   MAIN.SCSS - Punto de entrada del Framework
+   ========================================================================== */
+
+/* 1. BASE (Configuración y Resets)
+  Aunque _variables y _mixins se importan en cada archivo, si en tu archivo 
+  _variables.scss (o en un _theme.scss) definiste las variables nativas en el :root, 
+  debes importarlo aquí para que se impriman en el CSS final.
+*/
+@use 'base/variables';
+@use 'base/mixins';
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/functions';
+
+/* 2. LAYOUT */
+@use 'layout/breakpoints';
+@use 'layout/container';
+@use 'layout/grid';
+
+/* 3. COMPONENTS (Bloques de interfaz)
+  Los componentes van al final porque son las estructuras más complejas.
+  Si un componente necesita sobreescribir algo, al estar abajo en la cascada,
+  tendrá la jerarquía necesaria.
+*/
+@use 'components/navbar';
+@use 'components/header';
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/alerts';
+@use 'components/badges';
+@use 'components/tables';
+@use 'components/forms';
+@use 'components/footer';
+
+/* 4. UTILITIES (Clases utilitarias)
+  Las utilidades van al final de la cascada. De esta manera, si necesitas 
+  sobreescribir el estilo de un componente directamente en el HTML 
+  (ej. un margen o un color), la utilidad siempre ganará.*/
+@use 'utilities/display';
+@use 'utilities/flex';
+@use 'utilities/spacing';
+@use 'utilities/colors';
+@use 'utilities/borders';
+@use 'utilities/effects'; 
+
