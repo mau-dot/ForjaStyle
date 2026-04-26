@@ -1,26 +1,37 @@
+/* _colors.scss */
 @use '../base/variables' as *;
-//colores de textos
-.text-primary   { color: $light-blue !important; }
-.text-accent    { color: $light-accent-gold !important; }
-.text-success   { color: $alert-success !important; }
-.text-danger    { color: $alert-danger !important; }
-.text-warning   { color: $alert-warning !important; }
-.text-light     { color: $light-primary !important; }
-.text-dark      { color: $dark-primary !important; }
-.text-muted     { color: $dark-gray-light !important; }
 
-//colores de fondos
-.bg-primary     { background-color: $light-blue !important; }
-.bg-dark        { background-color: $dark-primary !important; }
-.bg-dark-alt    { background-color: $dark-primary-alt !important; }
-.bg-success     { background-color: $alert-success !important; }
-.bg-danger      { background-color: $alert-danger !important; }
-.bg-warning     { background-color: $alert-warning !important; }
-.bg-light       { background-color: $light-primary !important; }
-.bg-sand        { background-color: $light-primary-sand !important; }
+/* =============================== Colores Dinamicos =============================== */
+//cambian de color dinamicamente gracias a los mapas de theme-light y theme-dark
 
-//colores de bordes, SOLO SE DEFINEN COLORES
-.border-primary { border-color: $light-blue !important; }
-.border-accent  { border-color: $light-accent-gold !important; }
-.border-danger  { border-color: $alert-danger !important; }
-.border-success { border-color: $alert-success !important; }
+//lista de colores
+$theme-colors: "primary", "accent", "success", "danger", "warning", "light", "dark";
+//bucle each para generar clases de colores dinamicos
+@each $color in $theme-colors {
+  .text-#{$color} {
+    color: var(--#{$color}) !important; //color de texto dinamico
+  }
+  .bg-#{$color} {
+    background-color: var(--#{$color}) !important; //color de fondo dinamico
+  }
+  .border-#{$color} {
+    border-color: var(--#{$color}) !important; //color de borde dinamico
+  }
+}
+
+//clases dinamicas adicionales (fuera del bucle por tener nombres de variables distintos)
+.text-muted  { color: var(--text-muted) !important; }
+.bg-dark-alt { background-color: var(--card-bg) !important; }
+.border-muted { border-color: var(--text-muted) !important; }
+
+/* =============================== Colores Estaticos =============================== */
+// colores fijos que no cambian con el tema, para elementos especificos, para darle libertad a los componentes de usar colores fijos sin depender del tema 
+//y da libertad a los usuarios de usar colores fijos sin preocuparse por el tema activo
+@each $name, $value in $static-colors {
+  .text-#{$name}   { color: $value !important; }
+  .bg-#{$name}     { background-color: $value !important; }
+  .border-#{$name} { border-color: $value !important; }
+}
+
+
+
