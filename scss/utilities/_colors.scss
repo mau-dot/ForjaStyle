@@ -1,2 +1,27 @@
+/* _colors.scss */
 @use '../base/variables' as *;
-//colores de textos
+
+/* =============================== Colores Dinamicos =============================== */
+//cambian de color dinamicamente gracias a los mapas de theme-light y theme-dark
+
+//lista de colores
+$theme-colors: "primary", "accent", "success", "danger", "warning", "light", "dark";
+//bucle each para generar clases de colores dinamicos
+@each $color in $theme-colors {
+  .text-#{$color} {
+    color: var(--#{$color}) !important; //color de texto dinamico
+  }
+  .bg-#{$color} {
+    background-color: var(--#{$color}) !important; //color de fondo dinamico
+  }
+  .border-#{$color} {
+    border-color: var(--#{$color}) !important; //color de borde dinamico
+  }
+}
+
+// Clases dinámicas adicionales (fuera del bucle por tener nombres de variables distintos)
+.text-muted  { color: var(--text-muted) !important; }
+.bg-dark-alt { background-color: var(--card-bg) !important; }
+.border-muted { border-color: var(--muted) !important; }
+
+
