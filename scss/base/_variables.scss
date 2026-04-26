@@ -104,6 +104,16 @@ $light-theme: (
   border-color: $light-primary-sand,
   text-color:   $dark-primary-alt,
   text-muted:   #5d3b8c,
+
+  // Colores Base (Modo Claro)
+
+  primary:      $light-blue,
+  accent:       $light-accent-gold,
+  success:      $alert-success,
+  danger:       $alert-danger,
+  warning:      $alert-warning,
+  light:        $light-primary,   // Blanco
+  dark:         $dark-primary     // Negro
 );
 
 $dark-theme: (
@@ -113,6 +123,16 @@ $dark-theme: (
   border-color: $dark-primary-alt,
   text-color:   $light-primary,
   text-muted:   #a29eb6,
+
+  // Colores Base (Modo Oscuro) - Ajustados para buen contraste
+
+  primary:      $light-blue-bright, // Azul más claro para que se lea en fondo oscuro
+  accent:       $light-calid-yellow,
+  success:      $light-green,
+  danger:       $dark-red-light,
+  warning:      $light-calid-yellow,
+  light:        $dark-gray-deep,    // .bg-light ahora pintará oscuro
+  dark:         $light-primary      // .bg-dark ahora pintará claro
 );
 
 /* GENERACION DE VARIABLES DINAMICAS PARA CSS */
