@@ -1,6 +1,5 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as*;
-@use '../utilities/flex' as*;
 
 .navbar
 {
@@ -19,6 +18,10 @@
         text-decoration: none;
         text-shadow: $shadow-sm;
         font-weight: 500;
+        color: inherit;
+        //transicion para efectos hover
+        @include transition(transform, 0.3s, ease);
+
         &:hover
         {
             transform: scale(map-get($scales , "xs" ))
@@ -35,12 +38,10 @@
             width: auto;
             object-fit: contain;
             @include transition(transform);
-            &:hover 
-            {
-                transform: scale(1.05);
-            }
         }
-
+        &:hover img {
+            transform: scale(1.05);
+        }
     }
     &__menu
     {
@@ -62,14 +63,15 @@
         }
 
         //comportamiento que seguira luego de pantallas de laptop pequeños en adelante
-        @media(min-width: $breakpoint-md){
-            position:static;
+        @include respond-to('md') {
+            position: static;
             display: flex !important;
             flex-direction: row;
             width: auto;
             background: transparent;
         }
-        &__toggle {
+    }
+    &__toggle {
         display: block; // Se ve en móvil
         background: transparent;
         border: none;
@@ -77,9 +79,8 @@
         color: inherit;
         cursor: pointer;
 
-        @media (min-width: $breakpoint-md) {
+        @include respond-to('md') {
             display: none; // Desaparece en desktop
-        }
         }
     }
 }
