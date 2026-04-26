@@ -1,0 +1,45 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as * ;
+
+.footer
+{
+    min-height: 25vh;
+    background-color: var(--background);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: map-get($spacers , "3" );
+    padding: $footer-padding-y $footer-padding-x;
+    font-size: map-get($font-sizes , "3" );
+    &__title
+    {
+        font-size: map-get($font-sizes , "2" );
+        font-weight: map-get($font-weights , "normal" );
+    }
+    &__subtitle
+    {
+        font-size: map-get($font-sizes , "4" );
+        font-weight: map-get($font-weights , "medium" );
+    }
+    &__parraf
+    {
+        font-size: map-get($font-sizes , "6" );
+        opacity: 0.8;
+    }
+    &__link
+    {
+        font-size: map-get($font-sizes , "6" );
+        text-decoration: none;
+        font-weight: map-get($font-weights , "medium" );
+    }
+    &__logo
+    {
+        max-width: 150px;
+        height: auto;
+        object-fit: contain;
+    }
+}
