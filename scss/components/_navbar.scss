@@ -24,7 +24,7 @@
 
         &:hover
         {
-            transform: scale(map-get($scales , "xs" ))
+            transform: scale(1.05);
         }
     }
     &__logo
