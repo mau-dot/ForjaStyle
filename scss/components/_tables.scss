@@ -27,7 +27,7 @@
   }
 
   th {
-    font-weight: $font-weight-bold; // Usando tu variable de pesos
+    font-weight: map-get($font-weights, "bold");
     color: var(--text-muted);
     background-color: rgba(128, 128, 128, 0.05); // Un fondo muy sutil para el encabezado
   }
