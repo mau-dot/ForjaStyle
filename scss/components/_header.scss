@@ -10,23 +10,24 @@
     justify-content: center;
     text-align: center;
     width: 100%;
+    gap: space("3");
     background-color: var(--background);
     color: var(--text-color);
-    padding: map-get($spacers , "8" ) map-get($spacers , "4");
+    padding: space("8") space("4");
     font-family: $font-fallback;
-    font-size: map-get($font-sizes , "4" );
-    @media (min-width: $breakpoint-md) {
-        gap: map-get($spacers , "3");
-        font-size: map-get($font-sizes , "2" ); 
+    font-size: font-size("4");
+    text-shadow: $shadow-sm;
+    @include respond-to('md') {
+        gap: space("3");
+        font-size: font-size("2"); 
     }
-    &__title
-    {
-        margin:0;
-        font-size: map-get($font-sizes , "3" );
-            @media (min-width: $breakpoint-md)
-            {
-                font-size: map-get($font-sizes ,"1" );
-            }   
+    &__title {
+        margin: 0;
+        font-size: font-size("3");
+
+        @include respond-to('md') {
+            font-size: font-size("1");
+        }   
     }
     &__subtitle
     {
@@ -36,5 +37,22 @@
             {
                 font-size: map-get($font-sizes ,"2" );
             }   
+    }
+    &__actions {
+        display: flex;
+        flex-direction: column; // En celular, botones apilados
+        gap: space("3");
+        margin-top: space("5"); // Separación del subtítulo
+
+        @include respond-to('md') {
+            flex-direction: row; // En laptop, botones uno al lado del otro
+        }
+    }
+     &__logo
+    {
+        max-width: 150px;
+        height: auto;
+        object-fit: contain;
+        color: inherit;
     }
 }
