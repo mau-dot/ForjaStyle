@@ -1,0 +1,25 @@
+/* _display.scss */
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+// ==========================================
+// CLASES BASE (Aplica desde el celular)
+// ==========================================
+@each $val in $display-values {
+    .d-#{$val} { 
+        display: $val !important; 
+    }
+}
+
+// ==========================================
+// VARIANTES RESPONSIVAS (xs, sm, md, lg, xl)
+// ==========================================
+@each $bp in $breakpoints-keys {
+    @include respond-to($bp) {
+        @each $val in $display-values {
+            .d-#{$bp}-#{$val} { 
+                display: $val !important; 
+            }
+        }
+    }
+}
