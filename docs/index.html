@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+
+
+    <!-- LUIS Y CARLOS ACA FIJENSE EN COMO FUNCIONAN LOS BOTONES DE MENU Y DE CAMBIO DE TEMA, PARA QUE LOS PUEDAN USAR DESPUES O COLOCARLO DONDE QUIERAN, SI TIENEN DUDAS ME AVISAN -->
+    <nav class="navbar shadow-sm">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="navbar__logo">
+          <span class="text-primary font-weight-bold" style="font-size: 1.5rem">MiFramework UI</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn-sm btn-outline-info d-md-none mb-0 btn-theme-toggle">🌓</button>
+          <button id="btn-menu" class="btn-sm btn-outline-primary d-md-none mb-0">☰</button>
+        </div>
+
+        <ul id="nav-menu" class="navbar__menu align-items-center gap-3 mb-0">
+          <li><a href="#" class="navbar__link">Inicio</a></li>
+          <li><a href="#" class="navbar__link">Componentes</a></li>
+          <li><a href="#" class="navbar__link">Documentación</a></li>
+          <li>
+            <button class="btn btn-sm btn-outline-info mb-0 px-2 btn-theme-toggle">🌓 Tema</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+    <header class="header mb-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-xs-11 col-sm-10 col-md-9 col-lg-8 col-xl-7">
+            <h1 class="header__title mb-3">Escalabilidad Total</h1>
+            <p class="header__subtitle mb-4 text-muted">
+              breakpoints en: 460px (xs), 740px (sm), 960px (md), 1200px (lg) y
+              1400px (xl).
+              <br />
+              si tu novio te deja sola, dimelo y yo paso a buscarte
+            </p>
+            <div
+              class="d-flex flex-column flex-sm-row justify-content-center gap-3"
+            >
+              <button class="btn btn-primary btn-lg mb-0">Ver Guía</button>
+              <button class="btn btn-outline-info btn-lg mb-0">
+                Repositorio
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mb-5">
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">Notificaciones Dinámicas</h2>
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="alert alert-success d-flex flex-column flex-md-row align-items-md-center gap-3"
+            >
+              <span class="badge badge-success">SISTEMA</span>
+              <p class="mb-0">
+                <strong>HOLA MUNDO:</strong> El archivo
+                <code>main.css</code> XDDD kalo Lapa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">Tarjetas Multicolumna</h2>
+        <div class="row">
+          <div
+            class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4"
+          >
+            <div class="card h-100 shadow-sm hover-scale-sm">
+              <div class="card__header">Móvil & Tablet</div>
+              <div class="card__body">
+                <h3 class="h5">Layout Fluido</h3>
+                <p class="text-muted small">
+                  Esta tarjeta cambia su ancho automaticamente en los 5 niveles
+                  de resolucion.
+                </p>
+              </div>
+              <div class="card__footer bg-transparent border-0">
+                <span class="badge badge-primary">Full Responsive</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4"
+          >
+            <div class="card h-100 shadow-sm hover-scale-sm">
+              <div class="card__header">Breakpoint XS</div>
+              <div class="card__body">
+                <h3 class="h5">460px Check</h3>
+                <p class="text-muted small">
+                  Ajustes específicos para teléfonos grandes o tablets en modo
+                  vertical.
+                </p>
+              </div>
+              <div class="card__footer bg-transparent border-0">
+                <span class="badge badge-info">XS Support</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4"
+          >
+            <div class="card h-100 shadow-sm hover-scale-sm">
+              <div class="card__header">Breakpoint XL</div>
+              <div class="card__body">
+                <h3 class="h5">1400px Check</h3>
+                <p class="text-muted small">
+                  En pantallas de escritorio grandes, aprovechamos el espacio
+                  con 4 columnas.
+                </p>
+              </div>
+              <div class="card__footer bg-transparent border-0">
+                <span class="badge badge-warning">XL Active</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4"
+          >
+            <div class="card h-100 shadow-sm hover-scale-sm">
+              <div class="card__header">Modularidad</div>
+              <div class="card__body">
+                <h3 class="h5">Reusabilidad</h3>
+                <p class="text-muted small">
+                  Clases atómicas combinadas con componentes BEM para un código
+                  limpio.
+                </p>
+              </div>
+              <div class="card__footer bg-transparent border-0">
+                <span class="badge badge-danger">Optimization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="mb-4 border-bottom pb-2">Control de Columnas en Tablas</h2>
+        <div class="table-responsive shadow rounded">
+          <table class="table table-striped table-hover mb-0">
+            <thead>
+              <tr>
+                <th>Componente</th>
+                <th class="d-none d-sm-table-cell">XS/SM</th>
+                <th class="d-none d-md-table-cell">MD/LG</th>
+                <th class="d-none d-xl-table-cell">XL</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Grid System</td>
+                <td class="d-none d-sm-table-cell text-muted">Active</td>
+                <td class="d-none d-md-table-cell text-muted">Optimized</td>
+                <td class="d-none d-xl-table-cell text-muted">Ultra-Wide</td>
+                <td><span class="badge badge-success">100%</span></td>
+              </tr>
+              <tr>
+                <td>Flex Utilities</td>
+                <td class="d-none d-sm-table-cell text-muted">Active</td>
+                <td class="d-none d-md-table-cell text-muted">Optimized</td>
+                <td class="d-none d-xl-table-cell text-muted">Ultra-Wide</td>
+                <td><span class="badge badge-success">100%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white py-5 mt-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-2">© 2024 MiFramework UI - Potenciado por SASS</p>
+            <div class="d-flex justify-content-center gap-3">
+              <span class="text-muted small">XS</span>
+              <span class="text-muted small">SM</span>
+              <span class="text-muted small">MD</span>
+              <span class="text-muted small">LG</span>
+              <span class="text-muted small">XL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
