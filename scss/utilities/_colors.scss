@@ -19,9 +19,11 @@ $theme-colors: "primary", "accent", "success", "danger", "warning", "light", "da
   }
 }
 
-// Clases dinámicas adicionales (fuera del bucle por tener nombres de variables distintos)
+//clases dinamicas adicionales (fuera del bucle por tener nombres de variables distintos)
 .text-muted  { color: var(--text-muted) !important; }
 .bg-dark-alt { background-color: var(--card-bg) !important; }
-.border-muted { border-color: var(--muted) !important; }
+.border-muted { border-color: var(--text-muted) !important; }
+
+
 
 
