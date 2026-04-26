@@ -1,0 +1,52 @@
+/* _effects.scss */
+
+@use '../base/mixins' as *;
+
+/* ======================= Utilidades de Cursor ======================= */
+.cursor-pointer { cursor: pointer !important; }
+.cursor-default { cursor: default !important; }
+.cursor-not-allowed { cursor: not-allowed !important; }
+
+/* ======================= Transiciones Base ======================= */
+// Clases para aplicar suavidad a cualquier cambio (hover, focus, etc.)
+.transition-base { @include transition(all, 0.3s, ease); }
+.transition-fast { @include transition(all, 0.15s, ease-in-out); }
+.transition-slow { @include transition(all, 0.5s, ease); }
+
+/* ======================= Efectos Hover (Transformaciones) ======================= */
+
+// 1. Escalar hacia arriba (Efecto de acercamiento)
+.hover-scale-up {
+  @include transition(transform, 0.3s, ease);
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}
+
+// 2. Escalar hacia abajo (Efecto de presion/boton)
+.hover-scale-down {
+  @include transition(transform, 0.2s, ease);
+  &:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+  }
+}
+
+// 3. Levantar (Flotar hacia arriba, para tarjetas)
+.hover-lift {
+  @include transition(transform, 0.3s, ease);
+  &:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+}
+
+// 4. Brillo / Opacidad ( para imagenes o botones fantasma)
+.hover-opacity {
+  @include transition(opacity, 0.3s, ease);
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
