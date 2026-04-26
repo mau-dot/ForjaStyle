@@ -23,7 +23,7 @@
 }
 
 // -------------bucles--------------
-//blucle each para generar clases de anchura de bordes aplicado tambien en los direccionales(border-width)
+//blucle each para generar clases de anchura de border base aplicado tambien en los direccionales(border-width)
 @each $num, $width in $border-widths {
     .border-#{$num} { 
         border-width: $width !important; //clases para diferentes grosores de borde
@@ -46,6 +46,26 @@
         border-left-style: solid !important; //asegura que el estilo del borde izquierdo sea solido
     }
 }
+
+//blucle each para generar clases de estilo de bordes aplica para border base y bordes direccionales(border-style)
+@each $name, $style in $border-styles {
+    .border-#{$name} { 
+        border-style: $style !important; //clases para diferentes estilos de borde
+    }
+    .border-top-#{$name} { 
+        border-top-style: $style !important; //clases para diferentes estilos de borde en la parte superior
+    }
+    .border-right-#{$name} { 
+        border-right-style: $style !important; //clases para diferentes estilos de borde en la parte derecha
+    }
+    .border-bottom-#{$name} { 
+        border-bottom-style: $style !important; //clases para diferentes estilos de borde en la parte inferior
+    }
+    .border-left-#{$name} { 
+        border-left-style: $style !important; //clases para diferentes estilos de borde en la parte izquierda
+    }
+}
+
 
 
 /* ======================= Bordes Redondeados (border-radius) ======================= */
