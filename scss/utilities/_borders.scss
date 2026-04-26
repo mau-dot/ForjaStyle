@@ -1,8 +1,54 @@
 @use '../base/variables' as *;
 @use '../base/mixins' as *;
 
-//bordes
+/* _borders.scss */
 
+/* ======================= Bordes y direcciones  ======================= */
+//border general basico(1px solido)
+.border { 
+    border: 1px solid currentColor !important; //borde basico de 1px solido con color actual del texto
+}
+//border direccionales basicos
+.border-top { 
+    border-top: 1px solid currentColor !important; //borde solo en la parte superior
+}
+.border-right { 
+    border-right: 1px solid currentColor !important; //borde solo en la parte derecha
+}
+.border-bottom { 
+    border-bottom: 1px solid currentColor !important; //borde solo en la parte inferior
+}
+.border-left { 
+    border-left: 1px solid currentColor !important; //borde solo en la parte izquierda
+}
+
+// -------------bucles--------------
+//blucle each para generar clases de anchura de bordes aplicado tambien en los direccionales(border-width)
+@each $num, $width in $border-widths {
+    .border-#{$num} { 
+        border-width: $width !important; //clases para diferentes grosores de borde
+        border-style: solid !important; //asegura que el estilo del borde sea solido
+    }
+    .border-top-#{$num} { 
+        border-top-width: $width !important; //clases para diferentes grosores de borde en la parte superior
+        border-top-style: solid !important; //asegura que el estilo del borde superior sea solido
+    }
+    .border-right-#{$num} { 
+        border-right-width: $width !important; //clases para diferentes grosores de borde en la parte derecha
+        border-right-style: solid !important; //asegura que el estilo del borde derecho sea solido
+    }
+    .border-bottom-#{$num} { 
+        border-bottom-width: $width !important; //clases para diferentes grosores de borde en la parte inferior
+        border-bottom-style: solid !important; //asegura que el estilo del borde inferior sea solido
+    }
+    .border-left-#{$num} { 
+        border-left-width: $width !important; //clases para diferentes grosores de borde en la parte izquierda
+        border-left-style: solid !important; //asegura que el estilo del borde izquierdo sea solido
+    }
+}
+
+
+/* ======================= Bordes Redondeados (border-radius) ======================= */
 .rounded-sm { 
     @include rounded('sm'); //redondeo ligero de 4px 
 }
