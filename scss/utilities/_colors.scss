@@ -24,6 +24,14 @@ $theme-colors: "primary", "accent", "success", "danger", "warning", "light", "da
 .bg-dark-alt { background-color: var(--card-bg) !important; }
 .border-muted { border-color: var(--text-muted) !important; }
 
+/* =============================== Colores Estaticos =============================== */
+// colores fijos que no cambian con el tema, para elementos especificos, para darle libertad a los componentes de usar colores fijos sin depender del tema 
+//y da libertad a los usuarios de usar colores fijos sin preocuparse por el tema activo
+@each $name, $value in $static-colors {
+  .text-#{$name}   { color: $value !important; }
+  .bg-#{$name}     { background-color: $value !important; }
+  .border-#{$name} { border-color: $value !important; }
+}
 
 
 
