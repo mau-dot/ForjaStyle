@@ -150,6 +150,39 @@ $dark-theme: (
   }
 }
 
+/* ========== Mapa de Colores Estaticos ========== */
+$static-colors: (
+  "white":           $light-primary,
+  "black":           $dark-primary,
+  "transparent":     transparent,
+  
+  // Tonos Claros
+  "sand":            $light-primary-sand,
+  "gold":            $light-accent-gold,
+  "blue":            $light-blue,
+  "blue-bright":     $light-blue-bright,
+  "pale-blue":       $light-pale-blue,
+  "green":           $light-green,
+  "green-neon":      $light-green-neon,
+  "secondary":       $light-secondary,
+  "cream":           $light-cream,
+  "calid-yellow":    $light-calid-yellow,
+  
+  // Tonos Oscuros
+  "primary-alt":     $dark-primary-alt,
+  "red-deep":        $dark-red-deep,
+  "red":             $dark-red,
+  "blue-space":      $dark-blue-space,
+  "blue-deep":       $dark-blue-deep,
+  "green-deep":      $dark-green-deep,
+  "dark-green":      $dark-green,
+  "gray-deep":       $dark-gray-deep,
+  "blue-black":      $dark-blue-black,
+  "gray-light":      $dark-gray-light,
+  "red-light":       $dark-red-light
+);
+
+
 /* ========== Navbar & Footer ========== */
 $navbar-bg:           var(--background) !default;
 $navbar-text:         var(--text-color) !default;
