@@ -1,0 +1,64 @@
+/* _tables.scss */
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+/* ======================= Contenedor Responsivo ======================= */
+// Se usa envolviendo la tabla:ejmplo <div class="table-responsive"><table class="table">...</table></div>
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto; // Activa el scroll horizontal solo si es necesario
+  -webkit-overflow-scrolling: touch; // Mejora el scroll en dispositivos iOS
+  margin-bottom: 1rem;
+}
+
+/* ======================= Tabla Base ======================= */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  vertical-align: top;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+  }
+
+  th {
+    font-weight: $font-weight-bold; // Usando tu variable de pesos
+    color: var(--text-muted);
+    background-color: rgba(128, 128, 128, 0.05); // Un fondo muy sutil para el encabezado
+  }
+}
+
+/* ======================= Variantes ======================= */
+
+// 1. Con Bordes (Bordered)
+.table-bordered {
+  border: 1px solid var(--border-color);
+
+  th, td {
+    border: 1px solid var(--border-color);
+  }
+}
+
+// 2. Efecto Hover en Filas
+.table-hover {
+  tbody tr {
+    @include transition(background-color, 0.2s); // Usando tu mixin de transiciones
+
+    &:hover {
+      background-color: rgba(128, 128, 128, 0.1);
+      cursor: pointer;
+    }
+  }
+}
+
+// 3. Filas Rayadas (Striped)
+.table-striped {
+  tbody tr:nth-of-type(odd) {
+    background-color: rgba(128, 128, 128, 0.03);
+  }
+}
