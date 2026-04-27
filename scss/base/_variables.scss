@@ -100,8 +100,9 @@ $border-radius-pill:    999px;
 $light-theme: (
   background:   linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%),
   card-bg:      #f7f5fb,
+  sidebar-bg:   $light-cream,
   menu-bg:      $light-calid-yellow,
-  border-color: $light-primary-sand,
+  border-color: $dark-blue-black,
   text-color:   $dark-primary-alt,
   text-muted:   #5d3b8c,
 
@@ -119,6 +120,7 @@ $light-theme: (
 $dark-theme: (
   background:   linear-gradient(180deg, $dark-blue-space, $dark-primary, $dark-primary-alt),
   card-bg:      rgba(58, 38, 103, 0.9),
+  sidebar-bg:   $light-cream,
   menu-bg:      $dark-gray-light,
   border-color: $dark-primary-alt,
   text-color:   $light-primary,
