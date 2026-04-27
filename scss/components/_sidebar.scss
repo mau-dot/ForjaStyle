@@ -1,0 +1,58 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.sidebar {
+    width: 100%;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding: space("4");
+    height: auto;
+    
+    @include respond-to('md') {
+        width: 260px;
+        height: calc(100vh - #{$navbar-height});
+        position: sticky;
+        top: $navbar-height;
+        overflow-y: auto;
+    }
+
+    &__title {
+        font-size: font-size("6");
+        font-weight: map-get($font-weights, "bold");
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: space("4");
+        letter-spacing: 1px;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        margin-bottom: space("2");
+    }
+
+    &__link {
+        display: block;
+        padding: space("2") space("3");
+        color: var(--text-color);
+        text-decoration: none;
+        @include rounded('sm');
+        @include transition(all, 0.2s);
+
+        &:hover {
+            background-color: rgba($light-blue, 0.1);
+            color: var(--primary);
+            padding-left: space("4");
+        }
+
+        &.is-active {
+            background-color: var(--primary);
+            color: white;
+            font-weight: map-get($font-weights, "medium");
+        }
+    }
+}
