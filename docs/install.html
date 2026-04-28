@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <title>Instalación - ForjaStyle</title>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="navbar__logo">
+        <span class="text-dark font-weight-bold" style="font-size: 1.5rem">ForjaStyle</span>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn-sm btn-outline-info d-md-none mb-0 btn-theme-toggle">🌓</button>
+        <button id="btn-menu" class="btn-sm btn-outline-primary d-md-none mb-0">☰</button>
+      </div>
+
+      <ul id="nav-menu" class="navbar__menu align-items-center gap-3 mb-0">
+        <li class="hover-scale-up d-inline-block"><a href="index.html" class="navbar__link">Inicio</a></li>
+        <li class="hover-scale-up d-inline-block"><a href="components.html" class="navbar__link">Documentación</a></li>
+        <li class="hover-scale-up d-inline-block"><a href="install.html" class="navbar__link">Instalación</a></li>
+        <li>
+          <button class="btn btn-sm btn-outline-info mb-0 px-2 btn-theme-toggle">🌓 Tema</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="header mb-8">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-9 col-lg-8 text-center">
+          <h1 class="header__title mb-4 mt-6 badge badge-info p-5 fs-3 rounded-pill">¿Quieres instalar nuestra librería?</h1>
+
+          <p class="header__subtitle mb-4 text-muted">
+            Diseño modular y adaptable construido sobre una arquitectura sólida de SASS.
+            Optimizado para ofrecer interfaces rápidas, accesibles y con soporte nativo para temas dinámicos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+    <div class="row">
+      
+      <aside class="col-12 col-md-3 mb-6">
+        <div class="card p-4 shadow-sm border-left-4 border-primary">
+          <h5 class="fw-bold mb-3 text-uppercase fs-6">Contenido</h5>
+          <ul class="list-unstyled m-0">
+            <li class="mb-2"><a href="#cdn" class="text-primary navbar__link">🌍 Implementación CDN</a></li>
+            <li class="mb-2"><a href="#descarga" class="text-dark navbar__link">📦 Descarga Local</a></li>
+            <li class="mb-2"><a href="#verificacion" class="text-dark navbar__link">✅ Verificación</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="col-12 col-md-9">
+
+        <section id="cdn" class="mb-10">
+          <h2 class="fs-2 fw-bold mb-4 border-bottom pb-2">Implementación vía CDN</h2>
+          <p class="text-muted mb-5">La forma más sencilla de comenzar. Solo copia y pega el siguiente enlace en la cabecera de tu archivo HTML.</p>
+          
+          <div class="card border-0 shadow-lg overflow-hidden hover-lift">
+            <div class="bg-dark p-3 d-flex align-items-center gap-2">
+              <span class="badge-danger rounded-pill" style="width: 12px; height: 12px; display: inline-block;"></span>
+              <span class="badge-warning rounded-pill" style="width: 12px; height: 12px; display: inline-block;"></span>
+              <span class="badge-success rounded-pill" style="width: 12px; height: 12px; display: inline-block;"></span>
+              <span class="ms-3 text-white opacity-50 small fw-bold">HTML — head</span>
+            </div>
+            <div class="bg-black p-5" style="background-color: #0D0D0D;">
+              <code class="text-blue-bright fs-6" style="word-break: break-all;">
+                &lt;link <span class="text-gold">rel</span>="stylesheet" <span class="text-gold">href</span>="https://cdn.jsdelivr.net/gh/mau-dot/ForjaStyle@main/css/main.css"&gt;
+              </code>
+            </div>
+          </div>
+        </section>
+
+        <section id="descarga" class="mb-10">
+          <h2 class="fs-2 fw-bold mb-4 border-bottom pb-2">Descarga de main.css</h2>
+          <p class="text-muted mb-5">Si prefieres trabajar de forma local sin depender de una conexión externa, puedes descargar el archivo compilado directamente.</p>
+          
+          <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-1">
+              <div class="card p-6 shadow border-primary text-center hover-scale-up">
+                <div class="mb-4">
+                  <span class="badge badge-primary p-4 rounded-pill fs-2">📦</span>
+                </div>
+                <h3 class="fw-bold mb-2">Archivo compilado v1.0.0</h3>
+                <p class="small text-muted mb-5">Víncula el archivo descargado localmente en tu carpeta de estilos.</p>
+                
+                <a href="https://cdn.jsdelivr.net/gh/mau-dot/ForjaStyle@main/css/main.css" 
+                   download="main.css" 
+                   class="btn btn-lg btn-primary rounded-pill w-100 fw-bold shadow-lg transition-base">
+                   DESCARGAR MAIN.CSS
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="verificacion" class="mb-10">
+          <div class="alert alert-info shadow-sm p-5 border-left-4">
+            <h3 class="fw-bold mb-4 fs-4 text-blue">¿Cómo saber si funciona?</h3>
+            <ul class="list-unstyled m-0">
+              <li class="mb-3 d-flex align-items-center gap-3">
+                <span class="badge badge-success rounded-pill px-3">1</span>
+                <span>El fondo de tu página debería mostrar el <strong>degradado oficial</strong>.</span>
+              </li>
+              <li class="mb-3 d-flex align-items-center gap-3">
+                <span class="badge badge-success rounded-pill px-3">2</span>
+                <span>Prueba el botón "Tema" para verificar que las <strong>Custom Properties</strong> cambien.</span>
+              </li>
+              <li class="d-flex align-items-center gap-3">
+                <span class="badge badge-success rounded-pill px-3">3</span>
+                <span>Envuelve tu contenido en un <code>.container</code> para asegurar el centrado dinámico.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer bg-dark text-white py-8">
+    <div class="container text-center">
+      <h4 class="footer__title text-gold fw-bold mb-2">ForjaStyle UI</h4>
+      <p class="footer__parraf small">Desarrollado para la cátedra de Herramientas de Productividad.</p>
+      <p class="mt-4 opacity-50 small">© 2026 UES - Facultad Multidisciplinaria Oriental</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
