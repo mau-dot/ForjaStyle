@@ -1,5 +1,20 @@
-/* _reset.scss */
+/* ==========================================================================
+   _RESET.SCSS - ForjaStyle Framework
+   ========================================================================== */
 
+/**
+ * 1. BOX MODEL (Crítico)
+ * Aplicamos border-box a todos los elementos para que el padding y el border
+ * no sumen ancho extra al tamaño definido. Esto evita el scroll horizontal.
+ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/**
+ * 2. RESET GLOBAL (Eric Meyer Reset)
+ * Limpiamos estilos por defecto para tener consistencia entre navegadores.
+ */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -13,54 +28,72 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-img {
-	display: block;
-	max-width: 100%;
-	height: auto;
+    display: block;
 }
 
-// 2. Base del Body y configuración del Tema
+/**
+ * 3. CONFIGURACIÓN RAÍZ
+ * Forzamos a que el documento nunca exceda el ancho de la pantalla.
+ */
+html {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-text-size-adjust: 100%; /* Evita cambios de tamaño de fuente en iOS */
+}
+
+/**
+ * 4. BASE DEL BODY Y TEMAS
+ */
 body {
-    // Variables dinámicas para el color y fondo
-    background: var(--background);
-    color: var(--text-color);
-	border-color: var(--border-color);
-    
-    // Aseguramos que el fondo ocupe al menos toda la pantalla visible
+    line-height: 1;
+    width: 100%;
+    overflow-x: hidden; // Elimina definitivamente el scroll lateral
     min-height: 100vh;
     
-    // Transición suave para cuando el JS cambie entre Claro/Oscuro
+    // Variables dinámicas para el color y fondo (Design Tokens)
+    background: var(--background);
+    color: var(--text-color);
+    border-color: var(--border-color);
+    
+    // Transición suave para el cambio de tema (Light/Dark)
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+ol, ul {
+    list-style: none;
+}
 
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/**
+ * 5. MULTIMEDIA RESPONSIVA
+ */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
