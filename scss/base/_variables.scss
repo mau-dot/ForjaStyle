@@ -28,7 +28,7 @@ $light-primary:         #FFFFFF;
 $light-accent-gold:     #d4af37;   
 $light-blue:            #0074D9;   
 $light-blue-bright:     #7FDBFF;   
-$light-pale-blue:       #E0F7FF;   
+$light-pale-blue:       #c2c2c2;   
 $light-green:           #2ECC40;   
 $light-green-neon:      #7FFF00;   
 $light-secondary:       #CCFFCC;   
@@ -100,11 +100,12 @@ $border-radius-pill:    999px;
 $light-theme: (
   background:   linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%),
   card-bg:      #f7f5fb,
-  sidebar-bg:   $light-cream,
+  sidebar-bg:   $light-pale-blue,
   menu-bg:      $light-calid-yellow,
   border-color: $dark-blue-black,
   text-color:   $dark-primary-alt,
   text-muted:   #5d3b8c,
+  navbar-bg:    $light-primary,
 
   // Colores Base (Modo Claro)
 
@@ -125,6 +126,7 @@ $dark-theme: (
   border-color: $dark-primary-alt,
   text-color:   $light-primary,
   text-muted:   #a29eb6,
+  navbar-bg:    rgba($dark-blue-black,0.95),
 
   // Colores Base (Modo Oscuro) - Ajustados para buen contraste
 
