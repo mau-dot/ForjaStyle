@@ -20,10 +20,12 @@
 :root {
   --background: linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%);
   --card-bg: #f7f5fb;
+  --sidebar-bg: #c2c2c2;
   --menu-bg: #FFCC66;
-  --border-color: rgb(250, 212, 178);
+  --border-color: #111827;
   --text-color: #1a1a1a;
   --text-muted: #5d3b8c;
+  --navbar-bg: #FFFFFF;
   --primary: #0074D9;
   --accent: #d4af37;
   --success: rgba(96, 230, 55, 0.604);
@@ -40,10 +42,12 @@
 [data-theme=dark] {
   --background: linear-gradient(180deg, #001F3F, #0D0D0D, #1a1a1a);
   --card-bg: rgba(58, 38, 103, 0.9);
+  --sidebar-bg: #FFF3E0;
   --menu-bg: #696969;
   --border-color: #1a1a1a;
   --text-color: #FFFFFF;
   --text-muted: #a29eb6;
+  --navbar-bg: rgba(17, 24, 39, 0.95);
   --primary: #7FDBFF;
   --accent: #FFCC66;
   --success: #2ECC40;
@@ -1136,7 +1140,7 @@ body {
 */
 .navbar {
   width: 100%;
-  background-color: var(--background);
+  background-color: var(--navbar-bg);
   color: var(--text-color);
   font-family: sans-serif;
   position: sticky;
@@ -3714,15 +3718,15 @@ body {
 }
 
 .text-pale-blue {
-  color: #E0F7FF !important;
+  color: #c2c2c2 !important;
 }
 
 .bg-pale-blue {
-  background-color: #E0F7FF !important;
+  background-color: #c2c2c2 !important;
 }
 
 .border-pale-blue {
-  border-color: #E0F7FF !important;
+  border-color: #c2c2c2 !important;
 }
 
 .text-green {
