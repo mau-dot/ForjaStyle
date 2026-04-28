@@ -80,7 +80,22 @@
     $breakpoint-md: 992px !default;
     $breakpoint-lg: 1200px !default;
 */
-/* _reset.scss */
+/* ==========================================================================
+   _RESET.SCSS - ForjaStyle Framework
+   ========================================================================== */
+/**
+ * 1. BOX MODEL (Crítico)
+ * Aplicamos border-box a todos los elementos para que el padding y el border
+ * no sumen ancho extra al tamaño definido. Esto evita el scroll horizontal.
+ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/**
+ * 2. RESET GLOBAL (Eric Meyer Reset)
+ * Limpiamos estilos por defecto para tener consistencia entre navegadores.
+ */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -108,8 +123,28 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+/**
+ * 3. CONFIGURACIÓN RAÍZ
+ * Forzamos a que el documento nunca exceda el ancho de la pantalla.
+ */
+html {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-text-size-adjust: 100%; /* Evita cambios de tamaño de fuente en iOS */
+}
+
+/**
+ * 4. BASE DEL BODY Y TEMAS
+ */
 body {
   line-height: 1;
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text-color);
+  border-color: var(--border-color);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 ol, ul {
@@ -131,18 +166,13 @@ table {
   border-spacing: 0;
 }
 
+/**
+ * 5. MULTIMEDIA RESPONSIVA
+ */
 img {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-body {
-  background: var(--background);
-  color: var(--text-color);
-  border-color: var(--border-color);
-  min-height: 100vh;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* ==========================================================================
