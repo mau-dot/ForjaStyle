@@ -1,4 +1,0 @@
-=> css/ — 
-El resultado final compilado.
- No se edita manualmente,
-se genera automáticamente desde scss/.
