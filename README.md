@@ -15,7 +15,7 @@
   <strong>Forja Style</strong> es una librería de diseño frontend inspirada en <em>Bootstrap</em>. Ofrece una colección de componentes reutilizables y estilos modernos con una estética inspirada en Cadbury Style. 
 </p>
 
-<h2>✨ Características Principales</h2>
+<h2>Características Principales</h2>
 <ul>
   <li>🎨 Paleta de colores basada en tonos morado oscuro, chocolate y dorado.</li>
   <li>🧩 Componentes CSS listos para usar: botones, tarjetas, formularios, modales, alertas y más.</li>
