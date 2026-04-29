@@ -42,7 +42,7 @@
 [data-theme=dark] {
   --background: linear-gradient(180deg, #001F3F, #0D0D0D, #1a1a1a);
   --card-bg: rgba(58, 38, 103, 0.9);
-  --sidebar-bg: #111827;
+  --sidebar-bg: #1a1a1a;
   --menu-bg: #696969;
   --border-color: #1a1a1a;
   --text-color: #FFFFFF;
@@ -1493,8 +1493,8 @@ img {
     position: sticky;
     top: 60px;
     height: calc(100vh - 60px);
-    top: 60px;
     overflow-y: auto;
+    align-self: flex-start;
   }
 }
 .sidebar__title {
@@ -1951,6 +1951,9 @@ img {
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: space("5");
+}
+.code-block__title {
+  font-family: sans-serif;
 }
 .code-block__header {
   background-color: #121212;

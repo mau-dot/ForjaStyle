@@ -80,3 +80,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Buscamos todos los botones dentro de los code-blocks
+    const copyButtons = document.querySelectorAll('.code-block button');
+
+    copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Buscamos el texto dentro de la etiqueta <code> que está en el mismo bloque
+            const codeBlock = button.closest('.code-block');
+            const codeText = codeBlock.querySelector('code').innerText;
+
+            navigator.clipboard.writeText(codeText).then(() => {
+                const originalText = button.innerText;
+                button.innerText = '¡Copiado!';
+                button.classList.add('btn-success');
+
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.classList.remove('btn-success');
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        });
+    });
+});

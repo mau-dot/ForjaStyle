@@ -7,6 +7,11 @@
     overflow: hidden;
     margin-bottom: space("5");
 
+    &__title
+    {
+        font-family: $font-fallback;
+    }
+
     &__header {
         background-color: #121212; // Un toque más oscuro que el fondo
         padding: space("2") space("4");
