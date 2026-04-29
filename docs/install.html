@@ -22,7 +22,7 @@
 
       <ul id="nav-menu" class="navbar__menu align-items-center gap-3 mb-0">
         <li class="hover-scale-up d-inline-block"><a href="index.html" class="navbar__link">Inicio</a></li>
-        <li class="hover-scale-up d-inline-block"><a href="forja-documentation.html" class="navbar__link">Documentación</a></li>
+        <li class="hover-scale-up d-inline-block"><a href="components.html" class="navbar__link">Documentación</a></li>
         <li class="hover-scale-up d-inline-block"><a href="install.html" class="navbar__link">Instalación</a></li>
         <li>
           <button class="btn btn-sm btn-outline-info mb-0 px-2 btn-theme-toggle">🌓 Tema</button>
@@ -31,24 +31,9 @@
     </div>
   </nav>
 
-  <header class="header mb-8">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-10 col-md-9 col-lg-8 text-center">
-          <h1 class="header__title mb-4 mt-6 badge badge-info p-5 fs-3 rounded-pill">¿Quieres instalar nuestra librería?</h1>
-
-          <p class="header__subtitle mb-4 text-muted">
-            Diseño modular y adaptable construido sobre una arquitectura sólida de SASS.
-            Optimizado para ofrecer interfaces rápidas, accesibles y con soporte nativo para temas dinámicos.
-          </p>
-        </div>
-      </div>
-    </div>
-  </header>
-
   <main class="container mb-5">
     <div class="row">
-      
+
       <aside class="col-12 col-md-3 mb-6">
         <div class="card p-4 shadow-sm border-left-4 border-primary">
           <h5 class="fw-bold mb-3 text-uppercase fs-6">Contenido</h5>
@@ -61,43 +46,57 @@
       </aside>
 
       <div class="col-12 col-md-9">
-
         <section id="cdn" class="mb-10">
-          <h2 class="fs-2 fw-bold mb-4 border-bottom pb-2">Implementación vía CDN</h2>
-          <p class="text-muted mb-5">La forma más sencilla de comenzar. Solo copia y pega el siguiente enlace en la cabecera de tu archivo HTML.</p>
-          
-          <div class="card border-0 shadow-lg overflow-hidden hover-lift">
-            <div class="bg-dark p-3 d-flex align-items-center gap-2">
-              <span class="badge-danger rounded-pill" style="width: 12px; height: 12px; display: inline-block;"></span>
-              <span class="badge-warning rounded-pill" style="width: 12px; height: 12px; display: inline-block;"></span>
-              <span class="badge-success rounded-pill" style="width: 12px; height: 12px; display: inline-block;"></span>
-              <span class="ms-3 text-white opacity-50 small fw-bold">HTML — head</span>
+          <h1 class="fs-2 fw-bold mb-2 pb-2 text-center text-primary">Aqui te mostramos como instalar nuestra libreria!
+          </h1>
+          <h2 class="fs-2 fw-bold mb-4 border-bottom pb-2 text-center ">Implementación vía CDN</h2>
+          <p class="text-muted mb-5 fs-3">La forma más sencilla de comenzar. Solo copia y pega el siguiente enlace en la
+            cabecera de tu archivo HTML.</p>
+
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="code-block shadow-sm">
+                <div class="code-blockheader d-flex justify-content-between align-items-center">
+                  <span class="fs-6 fw-bold p-3">HTML</span>
+                  <button
+                    class="btn btn-sm btn-outline-light text-muted mb-0 py-1 px-2 me-2 d-inline-block w-auto">Copy</button>
+                </div>
+                <div class="code-block__body">
+                  <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mau-dot/ForjaStyle@main/css/main.css"&gt;</code></pre>
+                </div>
+              </div>
             </div>
-            <div class="bg-black p-5" style="background-color: #0D0D0D;">
-              <code class="text-blue-bright fs-6" style="word-break: break-all;">
-                &lt;link <span class="text-gold">rel</span>="stylesheet" <span class="text-gold">href</span>="https://cdn.jsdelivr.net/gh/mau-dot/ForjaStyle@main/css/main.css"&gt;
-              </code>
+
+            <div class="col-12 mt-4">
+              <div class="d-flex align-items-center mb-3">
+                <h6 class="fw-bold mb-0 fs-5">Ejemplo de cómo debe verse en tu código:</h6>
+              </div>
+
+              <div class="rounded border border-dashed bg-white shadow-sm">
+                <img src="img/ejemplo.png" alt="Ubicación del link en el HTML">
+              </div>
+
+              <p class="mt-3 small text-muted">
+                Nota: Coloca el link siempre dentro del <code>&lt;head&gt;</code> de tu documento.
+              </p>
             </div>
           </div>
         </section>
 
         <section id="descarga" class="mb-10">
-          <h2 class="fs-2 fw-bold mb-4 border-bottom pb-2">Descarga de main.css</h2>
-          <p class="text-muted mb-5">Si prefieres trabajar de forma local sin depender de una conexión externa, puedes descargar el archivo compilado directamente.</p>
-          
+          <h2 class="fs-2 fw-bold mb-4 border-bottom pb-2 text-primary">Descarga Local</h2>
+          <p class="text-muted mb-5 fs-3 text-center">Si prefieres trabajar de forma local sin depender de una conexión externa, descarga
+            el archivo compilado. Y solo lo agregas a tu proyecto y LISTO ya puedes utilizar nuestra libreria!</p>
+
           <div class="row">
-            <div class="col-12 col-lg-10 offset-lg-1">
-              <div class="card p-6 shadow border-primary text-center hover-scale-up">
-                <div class="mb-4">
-                  <span class="badge badge-primary p-4 rounded-pill fs-2">📦</span>
-                </div>
-                <h3 class="fw-bold mb-2">Archivo compilado v1.0.0</h3>
-                <p class="small text-muted mb-5">Víncula el archivo descargado localmente en tu carpeta de estilos.</p>
-                
-                <a href="https://cdn.jsdelivr.net/gh/mau-dot/ForjaStyle@main/css/main.css" 
-                   download="main.css" 
-                   class="btn btn-lg btn-primary rounded-pill w-100 fw-bold shadow-lg transition-base">
-                   DESCARGAR MAIN.CSS
+            <div class="col-12 col-lg-8 offset-lg-2">
+              <div class="card p-6 shadow border-primary text-center">
+                <h3 class="fw-bold mb-2">ForjaStyle v1.0.0</h3>
+                <p class="small text-muted mb-5">Incluye todas las utilidades de Flexbox, Grid y componentes básicos.
+                </p>
+                <a href="/css/main.css" download="ForjaStyle-main.css"
+                  class="btn btn-lg btn-primary rounded-pill w-auto px-5 fw-bold shadow-lg d-inline-block">
+                  DESCARGAR ARCHIVO .CSS
                 </a>
               </div>
             </div>
