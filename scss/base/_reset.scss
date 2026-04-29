@@ -47,7 +47,7 @@ footer, header, hgroup, menu, nav, section {
  * Forzamos a que el documento nunca exceda el ancho de la pantalla.
  */
 html {
-    overflow-x: hidden;
+    //overflow-x: hidden; //se deja comantado para poder usar el position: sticky en el header y sidebar
     width: 100%;
     -webkit-text-size-adjust: 100%; /* Evita cambios de tamaño de fuente en iOS */
 }
@@ -58,7 +58,7 @@ html {
 body {
     line-height: 1;
     width: 100%;
-    overflow-x: hidden; // Elimina definitivamente el scroll lateral
+    //overflow-x: hidden; // Elimina definitivamente el scroll lateral(se deja comantado para poder usar el position: sticky en el header y sidebar)
     min-height: 100vh;
     
     // Variables dinámicas para el color y fondo (Design Tokens)
