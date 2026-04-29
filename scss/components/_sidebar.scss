@@ -2,16 +2,13 @@
 @use '../base/mixins' as *;
 
 .sidebar {
-    width: 100%;
     background-color: var(--sidebar-bg);
-    border-right: 1px solid var(--border-color);
     padding: space("4");
-    height: auto;
-    
+    display: block;
     @include respond-to('md') {
-        width: 260px;
-        height: calc(100vh - #{$navbar-height});
         position: sticky;
+        top: $navbar-height;
+        height: calc(100vh - #{$navbar-height});
         top: $navbar-height;
         overflow-y: auto;
     }

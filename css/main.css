@@ -20,7 +20,7 @@
 :root {
   --background: linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%);
   --card-bg: #f7f5fb;
-  --sidebar-bg: #c2c2c2;
+  --sidebar-bg: #f5fdf5;
   --menu-bg: #FFCC66;
   --border-color: #111827;
   --text-color: #1a1a1a;
@@ -42,7 +42,7 @@
 [data-theme=dark] {
   --background: linear-gradient(180deg, #001F3F, #0D0D0D, #1a1a1a);
   --card-bg: rgba(58, 38, 103, 0.9);
-  --sidebar-bg: #FFF3E0;
+  --sidebar-bg: #111827;
   --menu-bg: #696969;
   --border-color: #1a1a1a;
   --text-color: #FFFFFF;
@@ -1196,7 +1196,8 @@ img {
 .navbar__logo img {
   height: 40px;
   width: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: transform 0.3s ease;
 }
 .navbar__logo:hover img {
@@ -1302,7 +1303,8 @@ img {
 .header__logo {
   max-width: 150px;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   color: inherit;
 }
 
@@ -1321,7 +1323,9 @@ img {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   border: 1px solid transparent;
   font-size: 1rem;
   line-height: 1.5;
@@ -1479,6 +1483,63 @@ img {
   _variables.scss (o en un _theme.scss) definiste las variables nativas en el :root, 
   debes importarlo aquí para que se impriman en el CSS final.
 */
+.sidebar {
+  background-color: var(--sidebar-bg);
+  padding: space("4");
+  display: block;
+}
+@media (min-width: 1024px) {
+  .sidebar {
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 60px);
+    top: 60px;
+    overflow-y: auto;
+  }
+}
+.sidebar__title {
+  font-size: font-size("6");
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: space("4");
+  letter-spacing: 1px;
+}
+.sidebar__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar__item {
+  margin-bottom: space("2");
+}
+.sidebar__link {
+  display: block;
+  padding: space("2") space("3");
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.sidebar__link:hover {
+  background-color: rgba(0, 116, 217, 0.1);
+  color: var(--primary);
+  padding-left: space("4");
+}
+.sidebar__link.is-active {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   MAIN.SCSS - Punto de entrada del Framework
+   ========================================================================== */
+/* 1. BASE (Configuración y Resets)
+  Aunque _variables y _mixins se importan en cada archivo, si en tu archivo 
+  _variables.scss (o en un _theme.scss) definiste las variables nativas en el :root, 
+  debes importarlo aquí para que se impriman en el CSS final.
+*/
 .card {
   background-color: var(--card-bg);
   color: var(--text-color);
@@ -1501,7 +1562,8 @@ img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card__header {
   padding: 0.9375rem 1.25rem;
@@ -1776,6 +1838,10 @@ img {
   border-radius: 4px;
   transition: all 0.3s ease;
 }
+.form__control::-moz-placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
 .form__control::placeholder {
   color: var(--text-muted);
   opacity: 0.8;
@@ -1864,8 +1930,40 @@ img {
 .footer__logo {
   max-width: 150px;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   color: inherit;
+}
+
+/* ==========================================================================
+   MAIN.SCSS - Punto de entrada del Framework
+   ========================================================================== */
+/* 1. BASE (Configuración y Resets)
+  Aunque _variables y _mixins se importan en cada archivo, si en tu archivo 
+  _variables.scss (o en un _theme.scss) definiste las variables nativas en el :root, 
+  debes importarlo aquí para que se impriman en el CSS final.
+*/
+.code-block {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: space("5");
+}
+.code-block__header {
+  background-color: #121212;
+  padding: space("2") space("4");
+  color: #d9e7eb;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.code-block__body {
+  padding: space("4");
+}
+.code-block__body pre {
+  margin: 0;
+  color: #e6e6e6;
+  font-family: "Consolas", "Monaco", monospace;
+  line-height: 1.6;
+  overflow-x: auto;
 }
 
 /* 4. UTILITIES (Clases utilitarias)
@@ -3748,15 +3846,15 @@ img {
 }
 
 .text-pale-blue {
-  color: #c2c2c2 !important;
+  color: #d9e7eb !important;
 }
 
 .bg-pale-blue {
-  background-color: #c2c2c2 !important;
+  background-color: #d9e7eb !important;
 }
 
 .border-pale-blue {
-  border-color: #c2c2c2 !important;
+  border-color: #d9e7eb !important;
 }
 
 .text-green {
@@ -3784,15 +3882,15 @@ img {
 }
 
 .text-secondary {
-  color: #CCFFCC !important;
+  color: #f5fdf5 !important;
 }
 
 .bg-secondary {
-  background-color: #CCFFCC !important;
+  background-color: #f5fdf5 !important;
 }
 
 .border-secondary {
-  border-color: #CCFFCC !important;
+  border-color: #f5fdf5 !important;
 }
 
 .text-cream {
@@ -4406,6 +4504,4 @@ img {
 .hover-opacity:hover {
   opacity: 0.8;
   cursor: pointer;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

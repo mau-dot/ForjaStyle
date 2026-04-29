@@ -1,0 +1,28 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+.code-block {
+    background-color: $dark-primary-alt; // Ese color casi negro que tienes
+    border-radius: $border-radius-md;
+    overflow: hidden;
+    margin-bottom: space("5");
+
+    &__header {
+        background-color: #121212; // Un toque más oscuro que el fondo
+        padding: space("2") space("4");
+        color: $light-pale-blue;
+        border-bottom: 1px solid rgba($light-primary, 0.05);
+    }
+
+    &__body {
+        padding: space("4");
+        
+        pre {
+            margin: 0;
+            color: #e6e6e6;
+            font-family: 'Consolas', 'Monaco', monospace;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+    }
+}

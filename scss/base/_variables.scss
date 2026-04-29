@@ -28,10 +28,10 @@ $light-primary:         #FFFFFF;
 $light-accent-gold:     #d4af37;   
 $light-blue:            #0074D9;   
 $light-blue-bright:     #7FDBFF;   
-$light-pale-blue:       #c2c2c2;   
+$light-pale-blue:       #d9e7eb;   
 $light-green:           #2ECC40;   
 $light-green-neon:      #7FFF00;   
-$light-secondary:       #CCFFCC;   
+$light-secondary:       #f5fdf5;   
 $light-cream:           #FFF3E0;   
 $light-calid-yellow:    #FFCC66;   
 $light-sand:            #F4A460;   
@@ -100,7 +100,7 @@ $border-radius-pill:    999px;
 $light-theme: (
   background:   linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%),
   card-bg:      #f7f5fb,
-  sidebar-bg:   $light-pale-blue,
+  sidebar-bg:   $light-secondary,
   menu-bg:      $light-calid-yellow,
   border-color: $dark-blue-black,
   text-color:   $dark-primary-alt,
@@ -121,7 +121,7 @@ $light-theme: (
 $dark-theme: (
   background:   linear-gradient(180deg, $dark-blue-space, $dark-primary, $dark-primary-alt),
   card-bg:      rgba(58, 38, 103, 0.9),
-  sidebar-bg:   $light-cream,
+  sidebar-bg:   $dark-blue-black,
   menu-bg:      $dark-gray-light,
   border-color: $dark-primary-alt,
   text-color:   $light-primary,

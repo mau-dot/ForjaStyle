@@ -26,12 +26,14 @@
 @use 'components/navbar';
 @use 'components/header';
 @use 'components/buttons';
+@use 'components/sidebar';
 @use 'components/cards';
 @use 'components/alerts';
 @use 'components/badges';
 @use 'components/tables';
 @use 'components/forms';
 @use 'components/footer';
+@use 'components/code';
 
 /* 4. UTILITIES (Clases utilitarias)
   Las utilidades van al final de la cascada. De esta manera, si necesitas 
