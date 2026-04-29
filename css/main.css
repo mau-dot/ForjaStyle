@@ -1548,6 +1548,7 @@ img {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
+  overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
@@ -1559,11 +1560,13 @@ img {
   transform: translateY(-5px);
 }
 .card__img {
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  height: 200px !important;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  -o-object-position: center;
+     object-position: center;
 }
 .card__header {
   padding: 0.9375rem 1.25rem;

@@ -13,6 +13,7 @@
     flex-direction: column;  // Apila header, body y footer hacia abajo
     min-width: 0;
     word-wrap: break-word;  // Evita que el texto largo rompa la tarjeta
+    overflow: hidden;
 
     //rounded y shadow reutilizables del mixin
     @include rounded('md'); // Aplica el radio de borde definido en variables
@@ -33,10 +34,11 @@
     
     // Imagen de la tarjeta
     &__img {
-        width: 100%;
-        height: auto;
+        width: 100% !important;
+        height: 200px !important;           // <--- CAMBIO CLAVE: Forzamos una altura fija
         display: block;
-        object-fit: cover;              // Ajusta la imagen sin deformarla
+        object-fit: cover !important;       // Mantiene la proporción recortando lo que sobre
+        object-position: center; // Centra la imagen en el recorte
     }
 
     //Header
