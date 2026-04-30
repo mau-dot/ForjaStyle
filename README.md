@@ -1,7 +1,7 @@
 <h1 align="center">⛏️ ¡Bienvenido a la Forja de ForjaStyle! ⛏️</h1>
 
 <p align="center">
-  <img src="assets/img/logo.png" alt="Logo ForjaStyle" width="180" style="image-rendering: pixelated;" />
+  <img src="/docs/img/logo_forja.png" alt="Logo ForjaStyle" width="180" style="image-rendering: pixelated;" />
 </p>
 
 <p align="center">
