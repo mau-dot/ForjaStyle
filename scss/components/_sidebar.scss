@@ -9,8 +9,8 @@
         position: sticky;
         top: $navbar-height;
         height: calc(100vh - #{$navbar-height});
-        top: $navbar-height;
         overflow-y: auto;
+        align-self: flex-start;
     }
 
     &__title {

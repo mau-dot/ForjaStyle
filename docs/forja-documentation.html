@@ -1,163 +1,801 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/main.css" />
     <title>ForjaStyle - Documentación Oficial</title>
-    <style>
-        /* Ajustes para el scroll y navegación */
-        [id] { scroll-margin-top: 80px; }
-        html { scroll-behavior: smooth; }
-        
-        /* Demo para el grid visual */
-        .grid-example {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar shadow-sm">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="navbar__logo">
-                <span class="text-primary font-weight-bold" style="font-size: 1.5rem;">FORJASTYLE</span>
-            </div>
-            <ul id="nav-menu" class="navbar__menu align-items-center gap-3 mb-0">
-                <li><a href="index.html" class="navbar__link">Inicio</a></li>
-                <li><a href="#" class="navbar__link">Documentación</a></li>
-                <li><a href="install.html" class="navbar__link">Instalación</a></li>
-                <li>
-                    <button class="btn btn-sm btn-outline-info mb-0 px-2 btn-theme-toggle">🌓 Tema</button>
-                </li>
-            </ul>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="navbar__logo">
+          <span class="text-dark font-weight-bold" style="font-size: 1.5rem"
+            >ForjaStyle</span
+          >
         </div>
+        <div class="d-flex align-items-center gap-2">
+          <button
+            class="btn-sm btn-outline-info d-md-none mb-0 btn-theme-toggle"
+          >
+            🌓
+          </button>
+          <button
+            id="btn-menu"
+            class="btn-sm btn-outline-primary d-md-none mb-0"
+          >
+            ☰
+          </button>
+        </div>
+
+        <ul id="nav-menu" class="navbar__menu align-items-center gap-3 mb-0">
+          <li class="hover-scale-up d-inline-block">
+            <a href="index.html" class="navbar__link">Inicio</a>
+          </li>
+          <li class="hover-scale-up d-inline-block">
+            <a href="#" class="navbar__link">Documentación</a>
+          </li>
+          <li class="hover-scale-up d-inline-block">
+            <a href="install.html" class="navbar__link">Instalación</a>
+          </li>
+          <li>
+            <button
+              class="btn btn-sm btn-outline-info mb-0 px-2 btn-theme-toggle"
+            >
+              🌓 Tema
+            </button>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <div class="container-fluid p-0">
-        <div class="row g-0">
-            <aside class="col-md-3 col-lg-2 sidebar shadow-sm">
-                <h2 class="mt-3 sidebar__title text-muted fs-4 p-3">Navegación</h2>
-                <ul class="sidebar__list d-flex flex-column gap-2 p-3 fs-5">
-                    <li class="sidebar__item hover-lift"><a href="#que-es-forja" class="sidebar__link">¿Qué es ForjaStyle?</a></li>
-                    <li class="sidebar__item hover-lift"><a href="#grid" class="sidebar__link">Grid System</a></li>
-                    <li class="sidebar__item hover-lift"><a href="#tipografia" class="sidebar__link">Tipografía</a></li>
-                    <li class="sidebar__item hover-lift"><a href="#botones" class="sidebar__link">Botones</a></li>
-                    <li class="sidebar__item hover-lift"><a href="#colores" class="sidebar__link">Colores</a></li>
-                    <li class="sidebar__item hover-lift"><a href="#utilidades" class="sidebar__link">Efectos</a></li>
-                </ul>
-            </aside>
+    <div class="container-fluid p-2 m-0">
+      <div class="row g-0">
+        <aside class="container-fluid col-lg-2 sidebar shadow-sm">
+          <h2 class="mt-3 sidebar__title text-muted fs-4 p-3">Navegación</h2>
+          <ul class="sidebar__list d-flex flex-column gap-2 p-3 fs-5">
+            <li class="sidebar__item hover-lift">
+              <a href="#que-es-forja" class="mt-4 sidebar__link"
+                >¿Qué es ForjaStyle?</a
+              >
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a
+                href="#que-es-forja"
+                class="text-muted fs-4 mt-4 mb-4 sidebar__link"
+                >Componentes</a
+              >
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#grid" class="sidebar__link">Grid System</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#tipografia" class="sidebar__link">Tipografía</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#botones" class="sidebar__link">Botones</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#colores" class="sidebar__link">Colores</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#utilidades" class="sidebar__link">Efectos</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#cards" class="sidebar__link">Cards</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#alerts-badges" class="sidebar__link">Badges & Alerts</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#formularios" class="sidebar__link">Formularios</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#tablas" class="sidebar__link">Tablas</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#header" class="sidebar__link">Header</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#navegacion" class="sidebar__link">Navegacion</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#footer" class="sidebar__link">Footer</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a
+                href="#que-es-forja"
+                class="text-muted fs-4 mt-4 mb-4 sidebar__link"
+                >Utilidades</a
+              >
+            </li>
+          </ul>
+        </aside>
 
-            <main class="col-md-9 col-lg-10 p-4">
-                
-                <section id="que-es-forja" class="mb-10">
-                    <header class="mb-5">
-                        <h1 class="fs-1 text-muted mt-2">¿QUÉ ES FORJASTYLE?</h1>
-                        <p class="fs-5 text-muted mt-4">
-                            <strong>FORJASTYLE</strong> es un sistema de diseño artesanal. No nació para ser el framework más grande del mundo, sino para ser el más preciso. Construido para quienes disfrutan de ensuciarnos las manos con el código, buscando una base sólida, limpia y estética.
-                        </p>
-                        <ul class="fs-5 text-muted mt-4 d-flex flex-column gap-3">
-                            <li><strong>Diseño con Alma:</strong> Un minimalismo funcional donde la paleta de colores guía al usuario sin esfuerzo visual.</li>
-                            <li><strong>Control Total:</strong> Basado en arquitectura SASS 7-1 para que tú mandes sobre el diseño, no el framework sobre ti.</li>
-                            <li><strong>Ligero:</strong> Sin dependencias pesadas, optimizado para una carga rápida y compilación inmediata.</li>
-                        </ul>
-                    </header>
-                </section>
+        <main class="container-fluid col-lg-10">
+          <section id="que-es-forja" class="mb-10">
+            <header class="mb-5">
+              <h1 class="fs-1 text-primary mt-2">¿QUÉ ES FORJASTYLE?</h1>
+              <p class="fs-5 text-muted mt-4">
+                <strong>FORJASTYLE</strong> es un sistema de diseño artesanal.
+                No nació para ser el framework más grande del mundo, sino para
+                ser el más preciso. Construido para quienes disfrutan de
+                ensuciarnos las manos con el código, buscando una base sólida,
+                limpia y estética.
+              </p>
+              <ul class="fs-5 text-muted mt-4 d-flex flex-column gap-3">
+                <li>
+                  <strong>Diseño con Alma:</strong> Un minimalismo funcional
+                  donde la paleta de colores guía al usuario sin esfuerzo
+                  visual.
+                </li>
+                <li>
+                  <strong>Control Total:</strong> Basado en arquitectura SASS
+                  7-1 para que tú mandes sobre el diseño, no el framework sobre
+                  ti.
+                </li>
+                <li>
+                  <strong>Ligero:</strong> Sin dependencias pesadas, optimizado
+                  para una carga rápida y compilación inmediata.
+                </li>
+              </ul>
+            </header>
+          </section>
 
-                <hr class="mb-10 opacity-10">
+          <hr class="mb-10 opacity-10" />
 
-                <section id="grid" class="mb-10">
-                    <h2 class="fs-2 text-primary mb-4">Grid System</h2>
-                    <p class="text-muted fs-5 mb-4">Sistema basado en 12 columnas flexibles mediante Flexbox para un control absoluto del layout.</p>
-                    
-                    <div class="row g-2 mb-4">
-                        <div class="col-4"><div class="grid-example shadow-sm">col-4</div></div>
-                        <div class="col-4"><div class="grid-example shadow-sm" style="background-color: var(--accent);">col-4</div></div>
-                        <div class="col-4"><div class="grid-example shadow-sm">col-4</div></div>
-                    </div>
+          <section id="grid" class="mb-10">
+    <h2 class="fs-2 text-primary mb-4">Grid System</h2>
+    <p class="text-muted fs-5 mb-4">
+        El sistema de rejilla de ForjaStyle se basa en un esquema de <strong>12 columnas</strong> flexibles utilizando Flexbox. Permite crear estructuras complejas y adaptables a cualquier dispositivo.
+    </p>
+    <div class="alert bg-light border-primary p-4 rounded-md mb-4">
+        <h4 class="text-primary fs-4 mb-2">Lógica de Columnas</h4>
+        <p class="text-muted">
+            Utilizamos la siguiente sintaxis de concatenación: <code>clase-pantalla-número</code>. 
+            El contenedor principal siempre debe llevar la clase <code>.row</code>.
+        </p>
+        <ul class="text-muted mt-3">
+            <li><strong>Contenedor:</strong> <code>.row</code> (Activa el contexto Flexbox).</li>
+            <li><strong>Columnas:</strong> <code>.col-</code> seguido del número (1 al 12).</li>
+            <li><strong>Breakpoints:</strong> <code>-md-</code>, <code>-lg-</code> para definir anchos en diferentes pantallas.</li>
+        </ul>
+    </div>
 
-                    <div class="code-block shadow-sm">
-                        <div class="code-block__header d-flex justify-content-between align-items-center">
-                            <span class="fs-6 fw-bold">HTML</span>
-                            <button class="btn btn-sm btn-outline-light mb-0 py-1 px-2" style="font-size: 0.7rem;">Copy</button>
-                        </div>
-                        <div class="code-block__body">
-                            <pre><code>&lt;div class="row"&gt;&lt;div class="col-md-4"&gt; Contenido 1 &lt;/div&gt;
-  &lt;div class="col-md-4"&gt; Contenido 2 &lt;/div&gt;
-  &lt;div class="col-md-4"&gt; Contenido 3 &lt;/div&gt;
+    <p class="text-muted fs-5 mb-2">Visualización de anchos comunes:</p>
+    <div class="row g-2 mb-4">
+        <div class="col-12"><div class="p-2 text-center bg-primary text-white rounded-sm shadow-sm">col-12 (100%)</div></div>
+        <div class="col-6"><div class="p-2 text-center bg-accent text-dark rounded-sm shadow-sm">col-6 (50%)</div></div>
+        <div class="col-6"><div class="p-2 text-center bg-accent text-dark rounded-sm shadow-sm">col-6 (50%)</div></div>
+        <div class="col-4"><div class="p-2 text-center bg-success text-white rounded-sm shadow-sm">col-4</div></div>
+        <div class="col-4"><div class="p-2 text-center bg-success text-white rounded-sm shadow-sm">col-4</div></div>
+        <div class="col-4"><div class="p-2 text-center bg-success text-white rounded-sm shadow-sm">col-4</div></div>
+    </div>
+
+    <div class="code-block shadow-sm">
+        <div class="code-block__header d-flex justify-content-between align-items-center">
+            <span class="fs-6 fw-bold p-3" style="font-family: code__title">HTML</span>
+            <button class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7">Copy</button>
+        </div>
+        <div class="code-block__body mt-2 mb-2">
+            <pre><code>&lt;!-- Estructura básica de 3 columnas --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-md-4"&gt; Columna 1 &lt;/div&gt;
+  &lt;div class="col-md-4"&gt; Columna 2 &lt;/div&gt;
+  &lt;div class="col-md-4"&gt; Columna 3 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="tipografia" class="mb-10">
-                    <h2 class="fs-2 text-primary mb-4">Tipografía</h2>
-                    <p class="text-muted fs-5 mb-4">Jerarquía visual clara utilizando escalas rem para accesibilidad.</p>
-                    <div class="card p-4 shadow-sm border-0 bg-light">
-                        <h1 class="fs-1 fw-bold mb-2 text-dark">fs-1: Título Principal</h1>
-                        <h2 class="fs-2 fw-medium mb-2 text-muted">fs-2: Subtítulo de Sección</h2>
-                        <h3 class="fs-3 mb-2">fs-3: Encabezado de Componente</h3>
-                        <p class="fs-5 m-0">fs-5: Este es el cuerpo de texto estándar para una lectura fluida.</p>
-                    </div>
-                </section>
-
-                <section id="botones" class="mb-10">
-                    <h2 class="fs-2 text-primary mb-4">Botones</h2>
-                    <p class="text-muted fs-5 mb-4">Acciones claras con estados hover integrados.</p>
-                    <div class="d-flex flex-wrap gap-3 mb-4">
-                        <button class="btn btn-primary shadow-sm hover-lift">Primary</button>
-                        <button class="btn btn-outline-info shadow-sm hover-lift">Outline Info</button>
-                        <button class="btn btn-success rounded-pill px-4">Success Pill</button>
-                        <button class="btn btn-danger hover-opacity">Danger</button>
-                    </div>
-                </section>
-
-                <section id="colores" class="mb-10">
-                    <h2 class="fs-2 text-primary mb-4">Paleta de Colores</h2>
-                    <p class="text-muted fs-5 mb-4">Variables CSS dinámicas para temas claros y oscuros.</p>
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="p-5 rounded-lg shadow-sm mb-2" style="background-color: var(--primary);"></div>
-                            <span class="fw-bold">Primary:</span> <code>--primary</code>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="p-5 rounded-lg shadow-sm mb-2" style="background-color: var(--accent);"></div>
-                            <span class="fw-bold">Accent Gold:</span> <code>--accent</code>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="p-5 rounded-lg shadow-sm mb-2" style="background-color: var(--text-muted);"></div>
-                            <span class="fw-bold">Muted Purple:</span> <code>--text-muted</code>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="utilidades" class="mb-10">
-                    <h2 class="fs-2 text-primary mb-4">Efectos de la Forja</h2>
-                    <p class="text-muted fs-5 mb-4">Clases utilitarias para dar vida a la interfaz.</p>
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="p-5 bg-white border rounded-md shadow-sm hover-lift text-center cursor-pointer">
-                                <h4 class="m-0 text-primary">Hover Lift</h4>
-                                <small class="text-muted">Levanta el elemento al pasar el mouse</small>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="p-5 bg-white border rounded-md shadow-lg text-center">
-                                <h4 class="m-0 text-primary">Shadow Large</h4>
-                                <small class="text-muted">Sombra profunda para profundidad</small>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </main>
         </div>
     </div>
 
+    <p class="text-primary fs-5 mt-4">
+        <strong>Nota:</strong> En ForjaStyle, el <code>gutter</code> (espacio entre columnas) se controla con la clase <code>g-</code> seguida del número de escala (ej. <code>g-2</code>), permitiendo una separación limpia y artesanal.
+    </p>
+</section>
+          </section>
+
+          <section id="tipografia" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Tipografía</h2>
+            <p class="text-muted fs-5 mb-4">
+              En ForjaStyle sabemos la importancia de la accesibilidad a la hora
+              de definir tamaños a las fuentes<br />Por eso nos hemos encargado
+              de definir una jerarquía visual clara utilizando escalas rem para
+              accesibilidad.
+            </p>
+            <p class="text-muted fs-5 mb-4">
+              Tambien definiendo tipografias como sans serif para una mejor
+              comprension, comodidad visual, y minimalismo
+            </p>
+            <p class="text-muted fs-5 mb-3">Los tamaños son los siguientes:</p>
+            <ul class="text-primary fs-5 d-flex flex-column">
+              <li>fs-1 = 2.5rem</li>
+              <li>fs-2 = 2rem</li>
+              <li>fs-3 = 1.75rem</li>
+              <li>fs-4 = 1.50rem</li>
+              <li>fs-5 = 1.25rem</li>
+              <li>fs-6 = 1</li>
+            </ul>
+            <p class="text-muted fs-5 mt-3 mb-3">
+              Los weight son los siguientes:
+            </p>
+            <ul class="text-primary fs-5 d-flex flex-column">
+              <li class="fw-light">fw-light = 300</li>
+              <li class="fw-normal">fw-normal = 400</li>
+              <li class="fw-medium">fw-medium = 500</li>
+              <li class="fw-bold">fw-bold = 700</li>
+            </ul>
+            <p class="text-muted fs-5 mt-3 mb-3">
+              Los estilos son los siguientes:
+            </p>
+            <ul class="text-primary fs-5 d-flex flex-column">
+              <li>font-primary = Arial</li>
+              <li>font-fallback = Sans Serif</li>
+              <li>font-family-base = $font-primary, $font-fallback</li>
+            </ul>
+            <p class="text-muted fs-5 mt-3 mb-3">la sintaxis correcta es:</p>
+            <p class="text-primary fs-5">
+              text = clase principal "-" usamos guion para concatenarlo al
+              estilo
+            </p>
+            <p class="text-primary fs-5">
+              la fuente base es Arial para el sistema
+            </p>
+            <p class="text-muted fs-5 mb-3 mt-3">
+              La manera de declararlo es la siguiente:
+            </p>
+            <p class="text-primary fs-5 mb-3">
+              class = "text-primary fs-5" //Texto con estilo primario, y tamaño
+              de fuente de 1.25 rem
+            </p>
+            <div class="code-block mt-4">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3" style="font-family: code__title"
+                  >HTML</span
+                >
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;div&gt;
+    &lt;span class="fs-1 fw-ligth text-muted"&gt;Hola mundo&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            <div class="mt-2 p-4 shadow-sm border-0 bg-light">
+              <h1 class="fs-1 fw-bold mb-2 text-dark">
+                fs-1: Título Principal
+              </h1>
+              <h2 class="fs-2 fw-medium mb-2 text-muted">
+                fs-2: Subtítulo de Sección
+              </h2>
+              <h3 class="fs-3 mb-2">fs-3: Encabezado de Componente</h3>
+              <p class="fs-5 m-0">
+                fs-5: Este es el cuerpo de texto estándar para una lectura
+                fluida.
+              </p>
+            </div>
+          </section>
+
+          <section id="botones" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Botones</h2>
+            <p class="text-muted fs-5 mb-4">
+              Los botones son parte escencial de cada sitio web, nos indican las
+              acciones que queremos realizar<br />Creando un buen y llamativo
+              diseño logramos que pase de ser un contenedor plano a algo que se
+              ajusta bien a cada proyecto
+            </p>
+            <p class="text-muted fs-5 mb-4">
+              Contamos con los siguientes tipos de botones
+            </p>
+            <ul class="text-primary mt-3">
+              <li>Boton Primario: ideal para cualquier tipo de acción</li>
+              <li>
+                Boton Outline Info: ideal para tarjetas, especialmente para
+                apartados de mostrar más
+              </li>
+              <li>
+                Boton exitoso: te haces exitoso al tocarlo, ideal para menus de
+                eleccion entre una acción positiva o negativa
+              </li>
+              <li>
+                Boton Danger: peligro, Boton diseñado especialmente en el
+                enfoque de la cancelacion de una acción
+              </li>
+            </ul>
+            <div class="fs-3 p-2 alert bg-light border-primary p-4 rounded-md mt-4 mb-4">La sintaxis correcta para usarlo debe ser en el contenedor que quieras usar <br>
+            Preferiblemente usarlos en contenedores Button. <br>Se declara <br><code> &lt;button class = "btn// clase global para botones(btn) btn-primary //diseño del boton"&gt;</code> </div>
+            <p class="text-muted fs-5 mt-3 mb-4">
+              La sintaxis para utilzarlo es la siguiente
+            </p>
+            <div class="code-block">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3" style="font-family: code__title"
+                  >HTML</span
+                >
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mb-2 mt-2">
+                <pre><code>&lt;div&gt;
+    &lt;button class "btn btn-primary shadow-sm hover-lift"&gt;Ingresar&lt;/Button&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-3 mt-3 mb-4">
+              <button class="btn btn-primary shadow-sm hover-lift">
+                Primary
+              </button>
+              <button class="btn btn-outline-info shadow-sm hover-lift">
+                Outline Info
+              </button>
+              <button class="btn btn-success rounded-pill px-4">
+                Success Pill
+              </button>
+              <button class="btn btn-danger hover-opacity text-dark">
+                <a href="" style="text-decoration: none">NO TOCAR</a>
+              </button>
+            </div>
+          </section>
+
+          <section id="colores" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Paleta de Colores</h2>
+            <p class="text-muted fs-5">
+              Lo mas importante al crear un diseño es la elección de colores
+              <br />hemos tomado una paleta de colores minimalista, se ha ideado
+              un modo claro y modo oscuro, para una mejor legibilidad y diseño
+              en base a las preferencias del usuario.
+            </p>
+            <p class="text-muted fs-5 mb-4">
+              Contamos con modo oscuro y modo claro para el sistema
+            </p>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div
+                  class="p-5 rounded-lg shadow-sm mb-2"
+                  style="background-color: var(--primary)"
+                ></div>
+                <span class="fw-bold">Primary:</span> <code>--primary</code>
+              </div>
+              <div class="col-md-4">
+                <div
+                  class="p-5 rounded-lg shadow-sm mb-2"
+                  style="background-color: var(--accent)"
+                ></div>
+                <span class="fw-bold">Accent Gold:</span> <code>--accent</code>
+              </div>
+              <div class="col-md-4">
+                <div
+                  class="p-5 rounded-lg shadow-sm mb-2"
+                  style="background-color: var(--text-muted)"
+                ></div>
+                <span class="fw-bold">Muted Purple:</span>
+                <code>--text-muted</code>
+              </div>
+            </div>
+            <p class="text-muted mt-2 fs-5">
+              el sistema de cambio de colores se encuentra integrado en los
+              componentes, de igual manera cuentas con la libertad de hacer uso
+              personalizado de ellos
+            </p>
+            <div class="code-block mt-4">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mb-2 mt-2">
+                <pre><code>&lt;div&gt;
+    &lt;span style="background-color: var(--background)"&gt;Ingresar&lt;/span&gt; //se aplicara el color de fondo
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="utilidades" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Efectos de la Forja</h2>
+            <p class="text-muted fs-5 mb-4">
+              Clases utilitarias para dar vida a la interfaz.
+            </p>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div
+                  class="p-5 bg-white border rounded-md shadow-sm hover-lift text-center cursor-pointer"
+                >
+                  <h4 class="m-0 text-primary">Hover Lift</h4>
+                  <small class="text-muted"
+                    >Levanta el elemento al pasar el mouse</small
+                  >
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div
+                  class="p-5 bg-white border rounded-md shadow-lg text-center"
+                >
+                  <h4 class="m-0 text-primary">Shadow Large</h4>
+                  <small class="text-muted"
+                    >Sombra profunda para profundidad</small
+                  >
+                </div>
+              </div>
+            </div>
+            <p class="text-muted fs-5 mt-4 mb-4">
+              La manera de integrarlo al sistema es la siguiente
+            </p>
+            <div class="code-block">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;div&gt;
+ &lt;button class="btn btn-outline-light hover-lift"&gt;Ejemplo&lt;/button&gt;
+&lt;/div&gt; </code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="cards" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Cards</h2>
+            <p class="text-muted fs-5 mb-4">
+              Contenedores que muestran la informacion que deseas, de manera que
+              sea llamativa para el usuario, similar a publicaciones en una red
+              social las cards te permiten destacar un contenido dentro de un
+              contenedor, nos hemos encargado de que el contraste de la tarjeta,
+              llame la atencion y se distinga de un contenedor normal dentro de
+              tu web
+            </p>
+            <p class="text-primary fs-5 fw-bold mb-2">
+              a continuacion un ejemplo de su visibilidad, y como se implementa
+              a nivel semantico
+            </p>
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+                <div class="card shadow-sm border-0 p-4 hover-lift">
+                  <h4 class="text-primary mb-2">Forja Card</h4>
+                  <p class="text-muted">
+                    Esta tarjeta utiliza sombras suaves y bordes redondeados
+                    para un look moderno.
+                  </p>
+                  <button class="btn btn-sm btn-outline-info mt-2">
+                    Acción
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="code-block shadow-sm">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;div class="card shadow-sm border-0 p-4"&gt;
+  &lt;h4 class="text-primary"&gt;Título&lt;/h4&gt;
+  &lt;p&gt;Contenido...&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="alerts-badges" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Alertas y Badges</h2>
+            <p class="text-muted fs-5 mb-4">
+              implementamos badges y alertas con diseño responsivo para que el
+              usuario tenga informacion de sus acciones, como inicios de sesion,
+              credenciales erroneas, datos erroneos <br /><br />
+              La manera de utilizarlas son las siguientes:
+            </p>
+            <p class="mb-3 mt-3 text-muted">Badges</p>
+            <ul class="text-primary">
+              <li>class = "badge bg-primary"</li>
+              <li>class = "badge bg-success"</li>
+              <li>class = "badge bg-danger</li>
+              <p class="mb-3 mt-3 text-muted">alertas</p>
+              <li>class = "alert alert-success"</li>
+              <li>class = "alert alert-warning"</li>
+              <li>class = "alert alert-info"</li>
+            </ul>
+            <div class="d-flex gap-2 mt-4 mb-4">
+              <span class="badge bg-primary text-white p-4 fs-5 rounded-pill"
+                >Información relevante</span
+              >
+              <span class="badge bg-success text-white p-4 fs-5 rounded-pill"
+                >Ingresado correctamente al sistema</span
+              >
+              <span class="badge bg-danger text-white p-4 fs-5 rounded-pill"
+                >Error en las credenciales, vuelva a intentarlo</span
+              >
+            </div>
+            <p class="text-dark mb-3 mt-3">
+              Las alertas tambien son parte importante de un sitio web y en este
+              apartado mostramos como utilizarlas
+            </p>
+            <div class="d-flex gap-2 mt-4 mb-4">
+              <span class="alert alert-success">Soy una alerta</span>
+              <span class="alert alert-warning">Soy una alerta</span>
+              <span class="alert alert-info">Soy una alerta</span>
+            </div>
+            <p class="mt-3 text-muted">
+              Se implementan de la siguiente manera:
+            </p>
+            <div class="code-block shadow-sm mt-3">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3" style="font-family: code__title"
+                  >HTML</span
+                >
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;div class="row"&gt;
+  //uso de alertas
+  &lt;span class=" alert alert-success"&gt; Contenido&lt;/span&gt;
+  &lt;span class=" alert alert-warning"&gt; Contenido&lt;/span&gt;
+  &lt;span class=" alert alert-info"&gt; Contenido&lt;/span&gt;
+  //uso de badges
+  &lt;span class=" badge bg-primary"&gt; Contenido&lt;/span&gt;
+  &lt;span class=" badge bg-danger"&gt; Contenido&lt;/span&gt;
+  &lt;span class=" badge bg-success"&gt; Contenido&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            <div class="alert bg-light border-primary p-3 rounded-md mb-4 mt-3">
+              <strong class="text-primary">Nota:</strong> Alertas y badges
+              sencillas pero llamativas Informan pero no molestan al usuario
+            </div>
+          </section>
+          <section id="formularios" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Formularios</h2>
+            <p class="text-muted fs-5 mb-4">
+              Estilos limpios para capturar datos de usuario con validaciones
+              visuales.
+            </p>
+
+            <div class="card p-4 shadow-sm border-0 mb-4 bg-light">
+              <form>
+                <div class="mb-3">
+                  <label class="d-block mb-1 fw-bold text-muted"
+                    >Nombre de Usuario</label
+                  >
+                  <input
+                    type="text"
+                    class="form__control w-100 p-2 rounded-md border"
+                    placeholder="Ej. CarlosLapa"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="d-block mb-1 fw-bold text-muted"
+                    >Correo Electrónico</label
+                  >
+                  <input
+                    type="email"
+                    class="form__control w-100 p-2 rounded-md border"
+                    placeholder="correo@ejemplo.com"
+                  />
+                </div>
+                <button type="button" class="btn btn-primary">
+                  Enviar Formulario
+                </button>
+              </form>
+            </div>
+
+            <div class="code-block shadow-sm">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;input type="text" class="form-control"&gt;
+&lt;button class="btn btn-primary"&gt;Enviar&lt;/button&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="tablas" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Tablas</h2>
+            <div
+              class="table-responsive shadow-sm rounded-lg overflow-hidden border"
+            >
+              <table
+                class="table w-100 text-left"
+                style="border-collapse: collapse"
+              >
+                <thead class="bg-primary text-white">
+                  <tr>
+                    <th class="p-3">Prefijo</th>
+                    <th class="p-3">Uso</th>
+                  </tr>
+                </thead>
+                <tbody class="text-muted">
+                  <tr class="border-bottom">
+                    <td class="p-3"><code>.hover-</code></td>
+                    <td class="p-3">Efectos de interacción.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3"><code>.btn-</code></td>
+                    <td class="p-3">Estilos de botones.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section id="header" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Header</h2>
+            <p class="text-muted fs-5 mb-4">
+              Componente diseñado para secciones de introducción o "Hero
+              sections" con impacto visual.
+            </p>
+
+            <header class="bg-light p-10 rounded-lg text-center shadow-sm mb-4">
+              <h1 class="fs-1 text-primary">Impulsa tu Creatividad</h1>
+              <p class="fs-5 text-muted">
+                La forja de componentes más rápida para la web moderna.
+              </p>
+              <button class="btn btn-primary mt-3">Comenzar ahora</button>
+            </header>
+
+            <div class="code-block shadow-sm">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;header class="header text-center"&gt;
+  &lt;h1 class="fs-1"&gt;Título Impactante&lt;/h1&gt;
+  &lt;button class="btn btn-primary"&gt;Acción&lt;/button&gt;
+&lt;/header&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="navegacion" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">
+              Navegación (Navbar & Sidebar)
+            </h2>
+            <p class="text-muted fs-5 mb-4">
+              Sistema coordinado para navegación superior fija y menús laterales
+              responsivos.
+            </p>
+
+            <div class="alert alert-info border-primary rounded-md p-3 mb-4">
+              <strong class="text-primary">Nota Técnica:</strong> La Navbar
+              utiliza <code>position: sticky</code> y un
+              <code>z-index</code> elevado para mantenerse siempre visible.
+            </div>
+
+            <div class="code-block shadow-sm">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;!-- Navbar Fija --&gt;
+&lt;nav class="navbar shadow-sm"&gt; ... &lt;/nav&gt;
+
+&lt;!-- Sidebar Lateral --&gt;
+&lt;aside class="sidebar shadow-sm"&gt; ... &lt;/aside&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="footer" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Footer</h2>
+            <p class="text-muted fs-5 mb-4">
+              Cierre del sitio con soporte para múltiples columnas y copyright.
+            </p>
+
+            <div class="code-block shadow-sm">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;footer class="bg-light text-dark py-8"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt; ... &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <footer class="bg-light text-dark py-8">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <!-- Columna de Copyright y Marca -->
+          <div class="col-12 col-md-4 text-center text-md-left">
+            <h4 class="fw-bold mb-1 text-primary">ForjaStyle UI</h4>
+            <p class="text-muted small mb-0">
+              © 2026 - Todos los derechos reservados.
+            </p>
+          </div>
+
+          <!-- Columna de Creadores -->
+          <div class="col-12 col-md-4 text-center">
+            <p class="fw-bold mb-2 small text-uppercase tracking-wider">
+              Desarrollado por:
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <span class="badge border-primary text-primary px-3"
+                >Luis Galeas</span
+              >
+              <span class="badge border-primary text-primary px-3"
+                >Mauricio Guatemala</span
+              >
+              <span class="badge border-primary text-primary px-3"
+                >Carlos Lapa</span
+              >
+            </div>
+          </div>
+
+          <!-- Columna de Breakpoints (Indicadores de tamaño) -->
+          <div class="col-12 col-md-4 text-center text-md-right">
+            <p class="small text-muted mb-2">Compatibilidad de Grid:</p>
+            <div
+              class="d-flex justify-content-center justify-content-md-right gap-2"
+            >
+              <span class="text-muted small fw-bold">XS</span>
+              <span class="text-muted small fw-bold">SM</span>
+              <span class="text-muted small fw-bold">MD</span>
+              <span class="text-muted small fw-bold">LG</span>
+              <span class="text-muted small fw-bold">XL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="../js/main.js"></script>
-</body>
+  </body>
 </html>
