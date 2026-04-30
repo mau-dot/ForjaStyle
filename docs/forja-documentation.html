@@ -55,8 +55,15 @@
           <h2 class="mt-3 sidebar__title text-muted fs-4 p-3">Navegación</h2>
           <ul class="sidebar__list d-flex flex-column gap-2 p-3 fs-5">
             <li class="sidebar__item hover-lift">
-              <a href="#que-es-forja" class="sidebar__link"
+              <a href="#que-es-forja" class="mt-4 sidebar__link"
                 >¿Qué es ForjaStyle?</a
+              >
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a
+                href="#que-es-forja"
+                class="text-muted fs-4 mt-4 mb-4 sidebar__link"
+                >Componentes</a
               >
             </li>
             <li class="sidebar__item hover-lift">
@@ -73,6 +80,34 @@
             </li>
             <li class="sidebar__item hover-lift">
               <a href="#utilidades" class="sidebar__link">Efectos</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#cards" class="sidebar__link">Cards</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#alerts-badges" class="sidebar__link">Badges & Alerts</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#formularios" class="sidebar__link">Formularios</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#tablas" class="sidebar__link">Tablas</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#header" class="sidebar__link">Header</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#navegacion" class="sidebar__link">Navegacion</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a href="#footer" class="sidebar__link">Footer</a>
+            </li>
+            <li class="sidebar__item hover-lift">
+              <a
+                href="#que-es-forja"
+                class="text-muted fs-4 mt-4 mb-4 sidebar__link"
+                >Utilidades</a
+              >
             </li>
           </ul>
         </aside>
@@ -110,63 +145,52 @@
           <hr class="mb-10 opacity-10" />
 
           <section id="grid" class="mb-10">
-            <h2 class="fs-2 text-primary mb-4">Grid System</h2>
-            <p class="text-muted fs-5 mb-4">
-              Sistema basado en 12 columnas flexibles mediante Flexbox para un
-              control absoluto del layout.
-            </p>
-            <p class="text-muted fs-5 mb-4">
-              Puedes hacer uso de el haciendo uso de la clase row en un
-              contenedor generico<br />El sistema de 12 columnas permite al
-              usuario dentro de un contendor alinear elementos como prefiera
-            </p>
-            <div class="row g-2 mb-4">
-              <div class="col-4">
-                <div
-                  class="grid-example shadow-sm rounded-lg p-2"
-                  style="background-color: var(--primary)"
-                >
-                  col-4
-                </div>
-              </div>
-              <div class="col-4">
-                <div
-                  class="grid-example shadow-sm rounded-lg p-2"
-                  style="background-color: var(--accent)"
-                >
-                  col-4
-                </div>
-              </div>
-              <div class="col-4">
-                <div
-                  class="grid-example shadow-sm rounded-lg p-2"
-                  style="background-color: var(--success)"
-                >
-                  col-4
-                </div>
-              </div>
-            </div>
+    <h2 class="fs-2 text-primary mb-4">Grid System</h2>
+    <p class="text-muted fs-5 mb-4">
+        El sistema de rejilla de ForjaStyle se basa en un esquema de <strong>12 columnas</strong> flexibles utilizando Flexbox. Permite crear estructuras complejas y adaptables a cualquier dispositivo.
+    </p>
+    <div class="alert bg-light border-primary p-4 rounded-md mb-4">
+        <h4 class="text-primary fs-4 mb-2">Lógica de Columnas</h4>
+        <p class="text-muted">
+            Utilizamos la siguiente sintaxis de concatenación: <code>clase-pantalla-número</code>. 
+            El contenedor principal siempre debe llevar la clase <code>.row</code>.
+        </p>
+        <ul class="text-muted mt-3">
+            <li><strong>Contenedor:</strong> <code>.row</code> (Activa el contexto Flexbox).</li>
+            <li><strong>Columnas:</strong> <code>.col-</code> seguido del número (1 al 12).</li>
+            <li><strong>Breakpoints:</strong> <code>-md-</code>, <code>-lg-</code> para definir anchos en diferentes pantallas.</li>
+        </ul>
+    </div>
 
-            <div class="code-block shadow-sm">
-              <div
-                class="code-block__header d-flex justify-content-between align-items-center"
-              >
-                <span class="fs-6 fw-bold p-3" style="font-family: code__title"
-                  >HTML</span
-                >
-                <button
-                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
-                >
-                  Copy
-                </button>
-              </div>
-              <div class="code-block__body mt-2 mb-2">
-                <pre><code>&lt;div class="row"&gt;&lt;div class="col-md-4"&gt; Contenido 1 &lt;/div&gt;
-  &lt;div class="col-md-4"&gt; Contenido 2 &lt;/div&gt;
-  &lt;div class="col-md-4"&gt; Contenido 3 &lt;/div&gt;
+    <p class="text-muted fs-5 mb-2">Visualización de anchos comunes:</p>
+    <div class="row g-2 mb-4">
+        <div class="col-12"><div class="p-2 text-center bg-primary text-white rounded-sm shadow-sm">col-12 (100%)</div></div>
+        <div class="col-6"><div class="p-2 text-center bg-accent text-dark rounded-sm shadow-sm">col-6 (50%)</div></div>
+        <div class="col-6"><div class="p-2 text-center bg-accent text-dark rounded-sm shadow-sm">col-6 (50%)</div></div>
+        <div class="col-4"><div class="p-2 text-center bg-success text-white rounded-sm shadow-sm">col-4</div></div>
+        <div class="col-4"><div class="p-2 text-center bg-success text-white rounded-sm shadow-sm">col-4</div></div>
+        <div class="col-4"><div class="p-2 text-center bg-success text-white rounded-sm shadow-sm">col-4</div></div>
+    </div>
+
+    <div class="code-block shadow-sm">
+        <div class="code-block__header d-flex justify-content-between align-items-center">
+            <span class="fs-6 fw-bold p-3" style="font-family: code__title">HTML</span>
+            <button class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7">Copy</button>
+        </div>
+        <div class="code-block__body mt-2 mb-2">
+            <pre><code>&lt;!-- Estructura básica de 3 columnas --&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-md-4"&gt; Columna 1 &lt;/div&gt;
+  &lt;div class="col-md-4"&gt; Columna 2 &lt;/div&gt;
+  &lt;div class="col-md-4"&gt; Columna 3 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-              </div>
-            </div>
+        </div>
+    </div>
+
+    <p class="text-primary fs-5 mt-4">
+        <strong>Nota:</strong> En ForjaStyle, el <code>gutter</code> (espacio entre columnas) se controla con la clase <code>g-</code> seguida del número de escala (ej. <code>g-2</code>), permitiendo una separación limpia y artesanal.
+    </p>
+</section>
           </section>
 
           <section id="tipografia" class="mb-10">
@@ -181,7 +205,7 @@
               Tambien definiendo tipografias como sans serif para una mejor
               comprension, comodidad visual, y minimalismo
             </p>
-            <p class="text-muted fs-5">Los tamaños son los siguientes:</p>
+            <p class="text-muted fs-5 mb-3">Los tamaños son los siguientes:</p>
             <ul class="text-primary fs-5 d-flex flex-column">
               <li>fs-1 = 2.5rem</li>
               <li>fs-2 = 2rem</li>
@@ -190,6 +214,38 @@
               <li>fs-5 = 1.25rem</li>
               <li>fs-6 = 1</li>
             </ul>
+            <p class="text-muted fs-5 mt-3 mb-3">
+              Los weight son los siguientes:
+            </p>
+            <ul class="text-primary fs-5 d-flex flex-column">
+              <li class="fw-light">fw-light = 300</li>
+              <li class="fw-normal">fw-normal = 400</li>
+              <li class="fw-medium">fw-medium = 500</li>
+              <li class="fw-bold">fw-bold = 700</li>
+            </ul>
+            <p class="text-muted fs-5 mt-3 mb-3">
+              Los estilos son los siguientes:
+            </p>
+            <ul class="text-primary fs-5 d-flex flex-column">
+              <li>font-primary = Arial</li>
+              <li>font-fallback = Sans Serif</li>
+              <li>font-family-base = $font-primary, $font-fallback</li>
+            </ul>
+            <p class="text-muted fs-5 mt-3 mb-3">la sintaxis correcta es:</p>
+            <p class="text-primary fs-5">
+              text = clase principal "-" usamos guion para concatenarlo al
+              estilo
+            </p>
+            <p class="text-primary fs-5">
+              la fuente base es Arial para el sistema
+            </p>
+            <p class="text-muted fs-5 mb-3 mt-3">
+              La manera de declararlo es la siguiente:
+            </p>
+            <p class="text-primary fs-5 mb-3">
+              class = "text-primary fs-5" //Texto con estilo primario, y tamaño
+              de fuente de 1.25 rem
+            </p>
             <div class="code-block mt-4">
               <div
                 class="code-block__header d-flex justify-content-between align-items-center"
@@ -205,7 +261,7 @@
               </div>
               <div class="code-block__body mt-2 mb-2">
                 <pre><code>&lt;div&gt;
-    &lt;span class="fs-1 text-muted"&gt;Hola mundo&lt;/span&gt;
+    &lt;span class="fs-1 fw-ligth text-muted"&gt;Hola mundo&lt;/span&gt;
 &lt;/div&gt;</code></pre>
               </div>
             </div>
@@ -250,6 +306,8 @@
                 enfoque de la cancelacion de una acción
               </li>
             </ul>
+            <div class="fs-3 p-2 alert bg-light border-primary p-4 rounded-md mt-4 mb-4">La sintaxis correcta para usarlo debe ser en el contenedor que quieras usar <br>
+            Preferiblemente usarlos en contenedores Button. <br>Se declara <br><code> &lt;button class = "btn// clase global para botones(btn) btn-primary //diseño del boton"&gt;</code> </div>
             <p class="text-muted fs-5 mt-3 mb-4">
               La sintaxis para utilzarlo es la siguiente
             </p>
@@ -448,9 +506,20 @@
             <p class="text-muted fs-5 mb-4">
               implementamos badges y alertas con diseño responsivo para que el
               usuario tenga informacion de sus acciones, como inicios de sesion,
-              credenciales erroneas, datos erroneos
+              credenciales erroneas, datos erroneos <br /><br />
+              La manera de utilizarlas son las siguientes:
             </p>
-            <div class="d-flex gap-2 mb-4">
+            <p class="mb-3 mt-3 text-muted">Badges</p>
+            <ul class="text-primary">
+              <li>class = "badge bg-primary"</li>
+              <li>class = "badge bg-success"</li>
+              <li>class = "badge bg-danger</li>
+              <p class="mb-3 mt-3 text-muted">alertas</p>
+              <li>class = "alert alert-success"</li>
+              <li>class = "alert alert-warning"</li>
+              <li>class = "alert alert-info"</li>
+            </ul>
+            <div class="d-flex gap-2 mt-4 mb-4">
               <span class="badge bg-primary text-white p-4 fs-5 rounded-pill"
                 >Información relevante</span
               >
@@ -519,7 +588,7 @@
                   >
                   <input
                     type="text"
-                    class="form-control w-100 p-2 rounded-md border"
+                    class="form__control w-100 p-2 rounded-md border"
                     placeholder="Ej. CarlosLapa"
                   />
                 </div>
@@ -529,7 +598,7 @@
                   >
                   <input
                     type="email"
-                    class="form-control w-100 p-2 rounded-md border"
+                    class="form__control w-100 p-2 rounded-md border"
                     placeholder="correo@ejemplo.com"
                   />
                 </div>
@@ -582,6 +651,101 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </section>
+          <section id="header" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Header</h2>
+            <p class="text-muted fs-5 mb-4">
+              Componente diseñado para secciones de introducción o "Hero
+              sections" con impacto visual.
+            </p>
+
+            <header class="bg-light p-10 rounded-lg text-center shadow-sm mb-4">
+              <h1 class="fs-1 text-primary">Impulsa tu Creatividad</h1>
+              <p class="fs-5 text-muted">
+                La forja de componentes más rápida para la web moderna.
+              </p>
+              <button class="btn btn-primary mt-3">Comenzar ahora</button>
+            </header>
+
+            <div class="code-block shadow-sm">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;header class="header text-center"&gt;
+  &lt;h1 class="fs-1"&gt;Título Impactante&lt;/h1&gt;
+  &lt;button class="btn btn-primary"&gt;Acción&lt;/button&gt;
+&lt;/header&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="navegacion" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">
+              Navegación (Navbar & Sidebar)
+            </h2>
+            <p class="text-muted fs-5 mb-4">
+              Sistema coordinado para navegación superior fija y menús laterales
+              responsivos.
+            </p>
+
+            <div class="alert alert-info border-primary rounded-md p-3 mb-4">
+              <strong class="text-primary">Nota Técnica:</strong> La Navbar
+              utiliza <code>position: sticky</code> y un
+              <code>z-index</code> elevado para mantenerse siempre visible.
+            </div>
+
+            <div class="code-block shadow-sm">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;!-- Navbar Fija --&gt;
+&lt;nav class="navbar shadow-sm"&gt; ... &lt;/nav&gt;
+
+&lt;!-- Sidebar Lateral --&gt;
+&lt;aside class="sidebar shadow-sm"&gt; ... &lt;/aside&gt;</code></pre>
+              </div>
+            </div>
+          </section>
+          <section id="footer" class="mb-10">
+            <h2 class="fs-2 text-primary mb-4">Footer</h2>
+            <p class="text-muted fs-5 mb-4">
+              Cierre del sitio con soporte para múltiples columnas y copyright.
+            </p>
+
+            <div class="code-block shadow-sm">
+              <div
+                class="code-block__header d-flex justify-content-between align-items-center"
+              >
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button
+                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="code-block__body mt-2 mb-2">
+                <pre><code>&lt;footer class="bg-light text-dark py-8"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt; ... &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+              </div>
             </div>
           </section>
         </main>
