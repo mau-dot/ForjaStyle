@@ -21,18 +21,20 @@
   --background: linear-gradient(90deg, rgba(93, 59, 140, 0.25) 0%, rgba(212, 175, 55, 0.1) 100%);
   --card-bg: #f7f5fb;
   --sidebar-bg: #f5fdf5;
-  --menu-bg: #FFCC66;
-  --border-color: #111827;
+  --menu-bg: #ffcc66;
+  --border-color: #192030;
   --text-color: #1a1a1a;
   --text-muted: #5d3b8c;
-  --navbar-bg: #FFFFFF;
-  --primary: #0074D9;
+  --navbar-bg: #ffffff;
+  --code-bg: #192030;
+  --code-header: #1a1a1a;
+  --primary: #0074d9;
   --accent: #d4af37;
   --success: rgba(96, 230, 55, 0.604);
   --danger: rgba(230, 28, 28, 0.604);
   --warning: rgba(226, 192, 42, 0.604);
-  --light: #FFFFFF;
-  --dark: #0D0D0D;
+  --light: #ffffff;
+  --dark: #0d0d0d;
   --alert-success: rgba(96, 230, 55, 0.604);
   --alert-info: rgba(90, 136, 236, 0.604);
   --alert-warning: rgba(226, 192, 42, 0.604);
@@ -40,21 +42,23 @@
 }
 
 [data-theme=dark] {
-  --background: linear-gradient(180deg, #001F3F, #0D0D0D, #1a1a1a);
+  --background: linear-gradient(180deg, #001f3f, #0d0d0d, #1a1a1a);
   --card-bg: rgba(58, 38, 103, 0.9);
   --sidebar-bg: #1a1a1a;
   --menu-bg: #696969;
   --border-color: #1a1a1a;
-  --text-color: #FFFFFF;
+  --text-color: #ffffff;
   --text-muted: #a29eb6;
-  --navbar-bg: rgba(17, 24, 39, 0.95);
-  --primary: #7FDBFF;
-  --accent: #FFCC66;
-  --success: #2ECC40;
+  --navbar-bg: #192030;
+  --code-bg: #2c2c2c;
+  --code-header: #696969;
+  --primary: #7fdbff;
+  --accent: #ffcc66;
+  --success: #2ecc40;
   --danger: #e02323;
-  --warning: #FFCC66;
-  --light: #2C2C2C;
-  --dark: #FFFFFF;
+  --warning: #ffcc66;
+  --light: #2c2c2c;
+  --dark: #ffffff;
 }
 
 /* ========== Mapa de Colores Estaticos ========== */
@@ -203,6 +207,14 @@ img {
 
 .fs-6 {
   font-size: 1rem !important;
+}
+
+.fs-7 {
+  font-size: 0.75rem !important;
+}
+
+.fs-8 {
+  font-size: 0.5rem !important;
 }
 
 .fw-light {
@@ -1194,7 +1206,8 @@ img {
 .navbar__logo img {
   height: 40px;
   width: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: transform 0.3s ease;
 }
 .navbar__logo:hover img {
@@ -1300,7 +1313,8 @@ img {
 .header__logo {
   max-width: 150px;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   color: inherit;
 }
 
@@ -1319,7 +1333,9 @@ img {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   border: 1px solid transparent;
   font-size: 1rem;
   line-height: 1.5;
@@ -1380,7 +1396,7 @@ img {
 .btn-primary {
   background-color: #d4af37;
   border-color: #d4af37;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .btn-primary:hover {
   background-color: rgb(177.7777777778, 144.8888888889, 38.2222222222);
@@ -1397,13 +1413,13 @@ img {
 }
 .btn-outline-primary:hover {
   background-color: #d4af37;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .btn-success {
-  background-color: #2ECC40;
-  border-color: #2ECC40;
-  color: #FFFFFF;
+  background-color: #2ecc40;
+  border-color: #2ecc40;
+  color: #ffffff;
 }
 .btn-success:hover {
   background-color: rgb(36.616, 162.384, 50.944);
@@ -1415,18 +1431,18 @@ img {
 
 .btn-outline-success {
   background-color: transparent;
-  border-color: #2ECC40;
-  color: #2ECC40;
+  border-color: #2ecc40;
+  color: #2ecc40;
 }
 .btn-outline-success:hover {
-  background-color: #2ECC40;
-  color: #FFFFFF;
+  background-color: #2ecc40;
+  color: #ffffff;
 }
 
 .btn-danger {
   background-color: #e02323;
   border-color: #e02323;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .btn-danger:hover {
   background-color: rgb(182.3107569721, 25.6892430279, 25.6892430279);
@@ -1443,13 +1459,13 @@ img {
 }
 .btn-outline-danger:hover {
   background-color: #e02323;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .btn-info {
-  background-color: #7FDBFF;
-  border-color: #7FDBFF;
-  color: #0D0D0D;
+  background-color: #7fdbff;
+  border-color: #7fdbff;
+  color: #0d0d0d;
 }
 .btn-info:hover {
   background-color: rgb(76, 204.65625, 255);
@@ -1461,12 +1477,12 @@ img {
 
 .btn-outline-info {
   background-color: transparent;
-  border-color: #7FDBFF;
-  color: #7FDBFF;
+  border-color: #7fdbff;
+  color: #7fdbff;
 }
 .btn-outline-info:hover {
-  background-color: #7FDBFF;
-  color: #0D0D0D;
+  background-color: #7fdbff;
+  color: #0d0d0d;
 }
 
 /* ==========================================================================
@@ -1557,8 +1573,10 @@ img {
   width: 100% !important;
   height: 200px !important;
   display: block;
-  object-fit: cover !important;
-  object-position: center;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  -o-object-position: center;
+     object-position: center;
 }
 .card__header {
   padding: 0.9375rem 1.25rem;
@@ -1833,6 +1851,10 @@ img {
   border-radius: 4px;
   transition: all 0.3s ease;
 }
+.form__control::-moz-placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
 .form__control::placeholder {
   color: var(--text-muted);
   opacity: 0.8;
@@ -1921,7 +1943,8 @@ img {
 .footer__logo {
   max-width: 150px;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   color: inherit;
 }
 
@@ -1934,7 +1957,7 @@ img {
   debes importarlo aquí para que se impriman en el CSS final.
 */
 .code-block {
-  background-color: #1a1a1a;
+  background-color: var(--code-bg);
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: space("5");
@@ -1943,7 +1966,7 @@ img {
   font-family: sans-serif;
 }
 .code-block__header {
-  background-color: #121212;
+  background-color: var(--code-header);
   padding: space("2") space("4");
   color: #d9e7eb;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -3755,27 +3778,27 @@ img {
 
 /* =============================== Colores Estaticos =============================== */
 .text-white {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
 }
 
 .bg-white {
-  background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
 }
 
 .border-white {
-  border-color: #FFFFFF !important;
+  border-color: #ffffff !important;
 }
 
 .text-black {
-  color: #0D0D0D !important;
+  color: #0d0d0d !important;
 }
 
 .bg-black {
-  background-color: #0D0D0D !important;
+  background-color: #0d0d0d !important;
 }
 
 .border-black {
-  border-color: #0D0D0D !important;
+  border-color: #0d0d0d !important;
 }
 
 .text-transparent {
@@ -3815,27 +3838,27 @@ img {
 }
 
 .text-blue {
-  color: #0074D9 !important;
+  color: #0074d9 !important;
 }
 
 .bg-blue {
-  background-color: #0074D9 !important;
+  background-color: #0074d9 !important;
 }
 
 .border-blue {
-  border-color: #0074D9 !important;
+  border-color: #0074d9 !important;
 }
 
 .text-blue-bright {
-  color: #7FDBFF !important;
+  color: #7fdbff !important;
 }
 
 .bg-blue-bright {
-  background-color: #7FDBFF !important;
+  background-color: #7fdbff !important;
 }
 
 .border-blue-bright {
-  border-color: #7FDBFF !important;
+  border-color: #7fdbff !important;
 }
 
 .text-pale-blue {
@@ -3851,27 +3874,27 @@ img {
 }
 
 .text-green {
-  color: #2ECC40 !important;
+  color: #2ecc40 !important;
 }
 
 .bg-green {
-  background-color: #2ECC40 !important;
+  background-color: #2ecc40 !important;
 }
 
 .border-green {
-  border-color: #2ECC40 !important;
+  border-color: #2ecc40 !important;
 }
 
 .text-green-neon {
-  color: #7FFF00 !important;
+  color: #7fff00 !important;
 }
 
 .bg-green-neon {
-  background-color: #7FFF00 !important;
+  background-color: #7fff00 !important;
 }
 
 .border-green-neon {
-  border-color: #7FFF00 !important;
+  border-color: #7fff00 !important;
 }
 
 .text-secondary {
@@ -3887,27 +3910,27 @@ img {
 }
 
 .text-cream {
-  color: #FFF3E0 !important;
+  color: #fff3e0 !important;
 }
 
 .bg-cream {
-  background-color: #FFF3E0 !important;
+  background-color: #fff3e0 !important;
 }
 
 .border-cream {
-  border-color: #FFF3E0 !important;
+  border-color: #fff3e0 !important;
 }
 
 .text-calid-yellow {
-  color: #FFCC66 !important;
+  color: #ffcc66 !important;
 }
 
 .bg-calid-yellow {
-  background-color: #FFCC66 !important;
+  background-color: #ffcc66 !important;
 }
 
 .border-calid-yellow {
-  border-color: #FFCC66 !important;
+  border-color: #ffcc66 !important;
 }
 
 .text-primary-alt {
@@ -3923,39 +3946,39 @@ img {
 }
 
 .text-red-deep {
-  color: #2B0000 !important;
+  color: #2b0000 !important;
 }
 
 .bg-red-deep {
-  background-color: #2B0000 !important;
+  background-color: #2b0000 !important;
 }
 
 .border-red-deep {
-  border-color: #2B0000 !important;
+  border-color: #2b0000 !important;
 }
 
 .text-red {
-  color: #8B0000 !important;
+  color: #8b0000 !important;
 }
 
 .bg-red {
-  background-color: #8B0000 !important;
+  background-color: #8b0000 !important;
 }
 
 .border-red {
-  border-color: #8B0000 !important;
+  border-color: #8b0000 !important;
 }
 
 .text-blue-space {
-  color: #001F3F !important;
+  color: #001f3f !important;
 }
 
 .bg-blue-space {
-  background-color: #001F3F !important;
+  background-color: #001f3f !important;
 }
 
 .border-blue-space {
-  border-color: #001F3F !important;
+  border-color: #001f3f !important;
 }
 
 .text-blue-deep {
@@ -3983,39 +4006,39 @@ img {
 }
 
 .text-dark-green {
-  color: #0B6623 !important;
+  color: #0b6623 !important;
 }
 
 .bg-dark-green {
-  background-color: #0B6623 !important;
+  background-color: #0b6623 !important;
 }
 
 .border-dark-green {
-  border-color: #0B6623 !important;
+  border-color: #0b6623 !important;
 }
 
 .text-gray-deep {
-  color: #2C2C2C !important;
+  color: #2c2c2c !important;
 }
 
 .bg-gray-deep {
-  background-color: #2C2C2C !important;
+  background-color: #2c2c2c !important;
 }
 
 .border-gray-deep {
-  border-color: #2C2C2C !important;
+  border-color: #2c2c2c !important;
 }
 
 .text-blue-black {
-  color: #111827 !important;
+  color: #192030 !important;
 }
 
 .bg-blue-black {
-  background-color: #111827 !important;
+  background-color: #192030 !important;
 }
 
 .border-blue-black {
-  border-color: #111827 !important;
+  border-color: #192030 !important;
 }
 
 .text-gray-light {
@@ -4497,6 +4520,4 @@ img {
 .hover-opacity:hover {
   opacity: 0.8;
   cursor: pointer;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

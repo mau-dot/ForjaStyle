@@ -1,61 +1,61 @@
-@use '../base/variables' as *;
-@use '../base/mixins' as *;
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
 
 .badge {
-    display: inline-block;
-    padding: 0.35em 0.65em;
-    font-size: 0.75rem;
-    font-weight: map-get($font-weights, "bold"); 
-    line-height: 1;
-    
-    //dinamico cambia de color segun el tema claro o oscuro
-    color: var(--text-color); 
-    
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    @include rounded('sm'); 
-    @include transition(all, 0.2s);
-    
-    // hace god el cambio de color al activar el modo oscuro
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.75rem;
+  font-weight: map-get($font-weights, "bold");
+  line-height: 1;
 
-    
-    
-    &-primary {
-        //dinamico cambia de tonalidad segun el tema claro o oscuro
-        background-color: var(--alert-info); 
-        border: 1px solid rgba($light-blue, 0.2);
-    }
+  //dinamico cambia de color segun el tema claro o oscuro
+  color: var(--text-color);
 
-    &-success {
-        //dinamico cambia de tonalidad segun el tema claro o oscuro
-        background-color: var(--alert-success);
-        border: 1px solid rgba($alert-success, 0.2);
-    }
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include rounded("sm");
+  @include transition(all, 0.2s);
 
-    &-warning {
-        //dinamico cambia de tonalidad segun el tema claro o oscuro
-        background-color: var(--alert-warning);
-        border: 1px solid rgba($alert-warning, 0.2);
-    }
+  // hace god el cambio de color al activar el modo oscuro
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
-    &-danger {
-        //dinamico cambia de tonalidad segun el tema claro o oscuro
-        background-color: var(--alert-danger);
-        border: 1px solid rgba($alert-danger, 0.2);
-    }
+  &-primary {
+    //dinamico cambia de tonalidad segun el tema claro o oscuro
+    background-color: var(--alert-info);
+    border: 1px solid rgba($light-blue, 0.2);
+  }
 
-    &-info {
-        //dinamico cambia de tonalidad segun el tema claro o oscuro
-        background-color: var(--alert-info);
-        border: 1px solid rgba($alert-info, 0.2);
-    }
+  &-success {
+    //dinamico cambia de tonalidad segun el tema claro o oscuro
+    background-color: var(--alert-success);
+    border: 1px solid rgba($alert-success, 0.2);
+  }
 
-    // --- Variantes de Forma ---
-    &-pill {
-        @include rounded('pill');
-        padding-right: 0.8em;
-        padding-left: 0.8em;
-    }
+  &-warning {
+    //dinamico cambia de tonalidad segun el tema claro o oscuro
+    background-color: var(--alert-warning);
+    border: 1px solid rgba($alert-warning, 0.2);
+  }
+
+  &-danger {
+    //dinamico cambia de tonalidad segun el tema claro o oscuro
+    background-color: var(--alert-danger);
+    border: 1px solid rgba($alert-danger, 0.2);
+  }
+
+  &-info {
+    //dinamico cambia de tonalidad segun el tema claro o oscuro
+    background-color: var(--alert-info);
+    border: 1px solid rgba($alert-info, 0.2);
+  }
+
+  // --- Variantes de Forma ---
+  &-pill {
+    @include rounded("pill");
+    padding-right: 0.8em;
+    padding-left: 0.8em;
+  }
 }
