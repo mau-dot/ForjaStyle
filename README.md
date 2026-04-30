@@ -1,7 +1,7 @@
 <h1 align="center">¡Bienvenido al repositorio de Forja Style!</h1>
 
 <p align="center">
-  <img src="https://via.placeholder.com/150" alt="Logo ForjaStyle" width="150" style="border-radius: 20px;" />
+  <img src="/docs/img/logo_forja.png" alt="Logo ForjaStyle" width="150" style="border-radius: 20px;" />
 </p>
 
 <p align="center">
