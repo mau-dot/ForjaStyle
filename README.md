@@ -35,4 +35,4 @@
 <p>No necesitas picar obsidiana. Solo copia este enlace en el <code>&lt;head&gt;</code> de tu archivo HTML:</p>
 
 ```html
-<link rel="stylesheet" href="[https://cdn.jsdelivr.net/gh/mau-dot/ForjaStyle@main/css/main.css](https://cdn.jsdelivr.net/gh/mau-dot/ForjaStyle@main/css/main.css)">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mau-dot/ForjaStyle@main/css/main.css">
