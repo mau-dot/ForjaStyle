@@ -776,65 +776,76 @@
 <code>&lt;/button&gt;</code></pre>
         </div>
     </div>
-</section>
+          </section>
 
           <section id="colores" class="mb-10">
-            <h2 class="fs-2 text-primary mb-4">Paleta de Colores</h2>
-            <p class="text-muted fs-5">
-              Lo mas importante al crear un diseño es la elección de colores
-              <br />hemos tomado una paleta de colores minimalista, se ha ideado
-              un modo claro y modo oscuro, para una mejor legibilidad y diseño
-              en base a las preferencias del usuario.
-            </p>
-            <p class="text-muted fs-5 mb-4">
-              Contamos con modo oscuro y modo claro para el sistema
-            </p>
-            <div class="row g-3">
-              <div class="col-md-4">
-                <div
-                  class="p-5 rounded-lg shadow-sm mb-2"
-                  style="background-color: var(--primary)"
-                ></div>
-                <span class="fw-bold">Primary:</span> <code>--primary</code>
-              </div>
-              <div class="col-md-4">
-                <div
-                  class="p-5 rounded-lg shadow-sm mb-2"
-                  style="background-color: var(--accent)"
-                ></div>
-                <span class="fw-bold">Accent Gold:</span> <code>--accent</code>
-              </div>
-              <div class="col-md-4">
-                <div
-                  class="p-5 rounded-lg shadow-sm mb-2"
-                  style="background-color: var(--text-muted)"
-                ></div>
-                <span class="fw-bold">Muted Purple:</span>
-                <code>--text-muted</code>
-              </div>
-            </div>
-            <p class="text-muted mt-2 fs-5">
-              el sistema de cambio de colores se encuentra integrado en los
-              componentes, de igual manera cuentas con la libertad de hacer uso
-              personalizado de ellos
-            </p>
-            <div class="code-block mt-4">
-              <div
-                class="code-block__header d-flex justify-content-between align-items-center"
-              >
-                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
-                <button
-                  class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7"
-                >
-                  Copy
-                </button>
-              </div>
-              <div class="code-block__body mb-2 mt-2">
-                <pre><code>&lt;div&gt;
-    &lt;span style="background-color: var(--background)"&gt;Ingresar&lt;/span&gt; //se aplicara el color de fondo
-&lt;/div&gt;</code></pre>
-              </div>
-            </div>
+    <h2 class="fs-2 text-primary mb-4">Colores (Colors)</h2>
+    <p class="text-muted fs-5 mb-4">
+        Lo más importante al crear un diseño es la elección de colores. 
+        Hemos forjado una paleta minimalista que se adapta automáticamente al <strong>Modo Claro y Modo Oscuro</strong> para garantizar la mejor legibilidad según las preferencias del usuario.
+    </p>
+
+    <div class="alert bg-light border-primary p-4 rounded-md mb-5 shadow-sm">
+        <h4 class="text-primary fs-4 mb-3">Nomenclatura de Clases</h4>
+        <p class="text-muted fs-6 mb-3">En lugar de escribir variables CSS a mano, utiliza nuestras clases utilitarias de prefijo para aplicar color rápidamente:</p>
+        <ul class="text-muted fs-6 mb-0 d-flex flex-column gap-2">
+            <li><code>.bg-{color}</code>: Aplica el color como fondo (ej. <code>.bg-primary</code>, <code>.bg-danger</code>).</li>
+            <li><code>.text-{color}</code>: Aplica el color al texto (ej. <code>.text-success</code>, <code>.text-muted</code>).</li>
+        </ul>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Fondos (Backgrounds)</h3>
+    <div class="row g-3 mb-5 text-center">
+        <div class="col-6 col-md-3">
+            <div class="p-4 rounded-lg shadow-sm mb-2 bg-primary text-white fw-bold">.bg-primary</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 rounded-lg shadow-sm mb-2 bg-accent text-dark fw-bold">.bg-accent</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 rounded-lg shadow-sm mb-2 bg-success text-white fw-bold">.bg-success</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 rounded-lg shadow-sm mb-2 bg-danger text-white fw-bold">.bg-danger</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 rounded-lg shadow-sm mb-2 bg-warning text-dark fw-bold">.bg-warning</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 rounded-lg shadow-sm mb-2 bg-info text-white fw-bold">.bg-info</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 rounded-lg shadow-sm mb-2 bg-dark text-white fw-bold">.bg-dark</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 rounded-lg shadow-sm mb-2 bg-light text-dark fw-bold border">.bg-light</div>
+        </div>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Colores de Texto (Text Colors)</h3>
+    <div class="card p-4 shadow-sm border-0 bg-white rounded-lg mb-4">
+        <p class="text-primary fw-bold fs-5 mb-2">.text-primary - Énfasis principal</p>
+        <p class="text-accent fw-bold fs-5 mb-2">.text-accent - Detalles y llamadas de atención</p>
+        <p class="text-success fw-bold fs-5 mb-2">.text-success - Mensajes positivos o válidos</p>
+        <p class="text-danger fw-bold fs-5 mb-2">.text-danger - Errores o peligro</p>
+        <p class="text-muted fw-bold fs-5 mb-0">.text-muted - Texto secundario o de menor jerarquía</p>
+    </div>
+
+    <div class="code-block shadow-sm">
+        <div class="code-block__header d-flex justify-content-between align-items-center">
+            <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+            <button class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7">Copy</button>
+        </div>
+        <div class="code-block__body mb-2 mt-2">
+            <pre class="m-0"><code class="text-success">&lt;!-- Aplicando color de fondo y texto --&gt;</code>
+<code>&lt;div class="bg-primary text-white p-3 rounded"&gt;</code>
+<code>  Contenedor con color adaptativo</code>
+<code>&lt;/div&gt;</code>
+
+<code class="text-success">&lt;!-- Aplicando color solo al texto --&gt;</code>
+<code>&lt;p class="text-muted"&gt;Este texto cambiará según el modo oscuro/claro.&lt;/p&gt;</code></pre>
+        </div>
+    </div>
           </section>
 
           <section id="display" class="mb-10">
