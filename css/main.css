@@ -294,6 +294,27 @@ img {
   text-transform: capitalize !important;
 }
 
+/* ======================= clases para controlar desbordamiento de Texto ======================= */
+.text-wrap {
+  white-space: normal !important;
+}
+
+.text-break {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
 /* ==========================================================================
    MAIN.SCSS - Punto de entrada del Framework
    ========================================================================== */
@@ -1239,8 +1260,7 @@ img {
 .navbar__logo img {
   height: 40px;
   width: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 .navbar__logo:hover img {
@@ -1346,8 +1366,7 @@ img {
 .header__logo {
   max-width: 150px;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   color: inherit;
 }
 
@@ -1366,9 +1385,7 @@ img {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   border: 1px solid transparent;
   font-size: 1rem;
   line-height: 1.5;
@@ -1606,10 +1623,8 @@ img {
   width: 100% !important;
   height: 200px !important;
   display: block;
-  -o-object-fit: cover !important;
-     object-fit: cover !important;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover !important;
+  object-position: center;
 }
 .card__header {
   padding: 0.9375rem 1.25rem;
@@ -1884,10 +1899,6 @@ img {
   border-radius: 4px;
   transition: all 0.3s ease;
 }
-.form__control::-moz-placeholder {
-  color: var(--text-muted);
-  opacity: 0.8;
-}
 .form__control::placeholder {
   color: var(--text-muted);
   opacity: 0.8;
@@ -1976,8 +1987,7 @@ img {
 .footer__logo {
   max-width: 150px;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   color: inherit;
 }
 
@@ -4553,4 +4563,6 @@ img {
 .hover-opacity:hover {
   opacity: 0.8;
   cursor: pointer;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
