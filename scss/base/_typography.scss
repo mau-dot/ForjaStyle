@@ -23,3 +23,29 @@
 .text-uppercase { text-transform: uppercase !important; }
 .text-lowercase { text-transform: lowercase !important; }
 .text-capitalize { text-transform: capitalize !important; }
+
+/* ======================= clases para controlar desbordamiento de Texto ======================= */
+
+// 1. Fuerza al texto a saltar de línea (Ideal para sobrescribir comportamientos de badges o botones)
+.text-wrap {
+  white-space: normal !important;
+}
+
+// 2. Rompe palabras extremadamente largas (como URLs, correos o palabras compuestas)
+.text-break {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+// 3. Corta el texto largo con puntos suspensivos (...) si no cabe en una línea
+.text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+// 4. Mantiene el texto en una sola línea pase lo que pase (opuesto a text-wrap)
+.text-nowrap {
+  white-space: nowrap !important;
+}
