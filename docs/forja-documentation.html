@@ -919,7 +919,90 @@
           </section>
 
           <section id="efectos" class="mb-10">
-            <!-- Aca la documentacion todas la clases que genera _effects.scss -->
+    <h2 class="fs-2 text-primary mb-4">Efectos y Sombras (Effects)</h2>
+    <p class="text-muted fs-5 mb-4">
+        Añade profundidad, interactividad y fluidez a tus elementos con nuestras utilidades de sombras, estados de cursor y efectos de transformación al pasar el mouse.
+    </p>
+
+    <div class="alert bg-light border-primary p-4 rounded-md mb-5 shadow-sm">
+        <h4 class="text-primary fs-4 mb-3">Nomenclatura de Clases</h4>
+        <ul class="text-muted fs-6 mb-0 d-flex flex-column gap-2">
+            <li><code>.shadow-{tamaño}</code>: Controla la elevación del elemento (ej. <code>-sm</code>, <code>-lg</code>, <code>-none</code>).</li>
+            <li><code>.cursor-{tipo}</code>: Define el comportamiento del puntero (ej. <code>-pointer</code>, <code>-not-allowed</code>).</li>
+            <li><code>.hover-{efecto}</code>: Añade una micro-interacción al pasar el mouse (ej. <code>-lift</code>, <code>-scale</code>). Requiere la clase <code>.transition-base</code> para suavidad.</li>
+        </ul>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Sombras (Box Shadow)</h3>
+    <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded-lg shadow-none border text-muted small">.shadow-none</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded-lg shadow-sm text-dark fw-bold">.shadow-sm</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded-lg shadow text-dark fw-bold">.shadow</div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="p-4 bg-white rounded-lg shadow-lg text-dark fw-bold">.shadow-lg</div>
+        </div>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Cursores (Cursors)</h3>
+    <div class="d-flex flex-wrap gap-3 mb-5">
+        <div class="p-3 bg-light border rounded cursor-pointer text-primary fw-bold shadow-sm">
+            Pasa el mouse: .cursor-pointer
+        </div>
+        <div class="p-3 bg-light border rounded cursor-not-allowed text-danger fw-bold shadow-sm">
+            Pasa el mouse: .cursor-not-allowed
+        </div>
+        <div class="p-3 bg-light border rounded cursor-default text-muted shadow-sm">
+            Cursor Default
+        </div>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Interacciones (Hover Effects)</h3>
+    <p class="text-muted fs-6 mb-4">Combina estas clases con <code>.transition-base</code> para crear interfaces modernas y responsivas al tacto.</p>
+    
+    <div class="row g-4 mb-4 text-center">
+        <div class="col-md-4">
+            <div class="p-4 bg-primary text-white rounded-lg transition-base hover-lift cursor-pointer shadow">
+                <strong>.hover-lift</strong><br>
+                <small>Se eleva sutilmente</small>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-accent text-dark rounded-lg transition-base hover-scale-up cursor-pointer shadow">
+                <strong>.hover-scale-up</strong><br>
+                <small>Crece un poco</small>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-success text-white rounded-lg transition-base hover-opacity cursor-pointer shadow">
+                <strong>.hover-opacity</strong><br>
+                <small>Cambia transparencia</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="code-block shadow-sm">
+        <div class="code-block__header d-flex justify-content-between align-items-center">
+            <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+            <button class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7">Copy</button>
+        </div>
+        <div class="code-block__body mb-2 mt-2">
+            <pre class="m-0"><code class="text-success">&lt;!-- Una tarjeta con sombra y efecto de elevación --&gt;</code>
+<code>&lt;div class="card shadow-sm transition-base hover-lift p-4"&gt;</code>
+<code>  Contenido de la tarjeta</code>
+<code>&lt;/div&gt;</code>
+
+<code class="text-success">&lt;!-- Botón con cursor de prohibido --&gt;</code>
+<code>&lt;button class="btn btn-dark cursor-not-allowed" disabled&gt;</code>
+<code>  No disponible</code>
+<code>&lt;/button&gt;</code></pre>
+        </div>
+    </div>
           </section>
 
           <section id="flexbox" class="mb-10">
