@@ -726,8 +726,57 @@
           </div>
 
           <section id="bordes" class="mb-10">
-            <!-- Aca la documentacion todas la clases que genera _borders.scss -->
-          </section>
+            <h2 class="fs-2 text-primary mb-4">Bordes (Borders)</h2>
+              <p class="text-muted fs-5 mb-4">
+                Las utilidades de bordes te permiten añadir o quitar contornos, cambiar su color y modificar el radio de las esquinas (border-radius) de forma rápida y sin tocar el CSS.
+              </p>
+
+              <div class="alert bg-light border-primary p-4 rounded-md mb-5 shadow-sm">
+                <h4 class="text-primary fs-4 mb-3">Nomenclatura de Clases</h4>
+                <ul class="text-muted fs-6 mb-0 d-flex flex-column gap-2">
+                  <li><code>.border</code>: Añade un borde sólido base (generalmente 1px gris).</li>
+                  <li><code>.border-0</code>: Elimina todos los bordes de un elemento.</li>
+                  <li><code>.border-{color}</code>: Aplica el color del tema (ej. <code>.border-primary</code>, <code>.border-danger</code>).</li>
+                  <li><code>.rounded-{tamaño}</code>: Modifica el radio de las esquinas. Usa <code>-sm</code> (pequeño), <code>-lg</code> (grande), <code>-pill</code> (píldora), o <code>-0</code> (cuadrado perfecto). La clase <code>.rounded</code> por sí sola aplica el tamaño medio.</li>
+                </ul>
+              </div>
+
+            <h3 class="fs-4 text-dark mb-3">Radios de Esquina (Border Radius)</h3>
+            <div class="d-flex flex-wrap gap-3 mb-5 text-center">
+              <div class="p-3 bg-white border border-dark rounded-0 shadow-sm text-muted">.rounded-0</div>
+              <div class="p-3 bg-white border border-dark rounded-sm shadow-sm text-muted">.rounded-sm</div>
+              <div class="p-3 bg-white border border-dark rounded shadow-sm text-dark fw-bold">.rounded</div>
+              <div class="p-3 bg-white border border-dark rounded-lg shadow-sm text-primary fw-bold">.rounded-lg</div>
+              <div class="p-3 bg-white border border-dark rounded-pill shadow-sm text-success fw-bold px-4">.rounded-pill</div>
+            </div>
+
+            <h3 class="fs-4 text-dark mb-3">Colores de Borde</h3>
+            <div class="d-flex flex-wrap gap-3 mb-4 text-center">
+              <div class="p-3 bg-white border border-primary text-primary rounded shadow-sm">.border-primary</div>
+              <div class="p-3 bg-white border border-success text-success rounded shadow-sm">.border-success</div>
+              <div class="p-3 bg-white border border-danger text-danger rounded shadow-sm">.border-danger</div>
+              <div class="p-3 bg-white border border-warning text-dark rounded shadow-sm">.border-warning</div>
+              <div class="p-3 bg-white border border-info text-info rounded shadow-sm">.border-info</div>
+            </div>
+
+            <div class="code-block shadow-sm">
+              <div class="code-block__header d-flex justify-content-between align-items-center">
+                <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+                <button class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7">Copy</button>
+            </div>
+        <div class="code-block__body mt-2 mb-2">
+            <pre class="m-0"><code class="text-success">&lt;!-- Ejemplo combinando utilidades --&gt;</code>
+<code>&lt;div class="border border-primary rounded-lg p-3"&gt;</code>
+<code>  Caja con borde primario y esquinas redondeadas grandes.</code>
+<code>&lt;/div&gt;</code>
+
+<code class="text-success">&lt;!-- Botón estilo píldora usando borde rojo --&gt;</code>
+<code>&lt;button class="border border-danger text-danger rounded-pill px-4 py-2 bg-white"&gt;</code>
+<code>  Cancelar</code>
+<code>&lt;/button&gt;</code></pre>
+        </div>
+    </div>
+</section>
 
           <section id="colores" class="mb-10">
             <h2 class="fs-2 text-primary mb-4">Paleta de Colores</h2>
