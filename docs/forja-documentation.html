@@ -849,7 +849,73 @@
           </section>
 
           <section id="display" class="mb-10">
-            <!-- Aca la documentacion todas la clases que genera _display.css -->
+    <h2 class="fs-2 text-primary mb-4">Display (Visualización)</h2>
+    <p class="text-muted fs-5 mb-4">
+        Alterna rápida y eficientemente el valor de la propiedad <code>display</code> de tus elementos. 
+        Estas clases incluyen soporte completo para diseño responsivo, permitiendo mostrar u ocultar elementos según el dispositivo del usuario.
+    </p>
+
+    <div class="alert bg-light border-primary p-4 rounded-md mb-5 shadow-sm">
+        <h4 class="text-primary fs-4 mb-3">Nomenclatura de Clases</h4>
+        <ul class="text-muted fs-6 mb-0 d-flex flex-column gap-2">
+            <li><code>.d-{valor}</code>: Aplica la propiedad desde pantallas móviles hacia arriba (ej. <code>.d-none</code>, <code>.d-block</code>, <code>.d-inline-block</code>, <code>.d-flex</code>).</li>
+            <li><code>.d-{breakpoint}-{valor}</code>: Aplica la propiedad solo a partir del tamaño de pantalla indicado (ej. <code>.d-md-none</code>, <code>.d-lg-block</code>).</li>
+        </ul>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Comportamiento Base</h3>
+    <div class="p-4 border rounded bg-white shadow-sm mb-5 d-flex flex-column gap-3">
+        
+        <div>
+            <div class="p-3 bg-primary text-white rounded d-inline-block shadow-sm mb-2 mb-md-0">.d-inline-block</div>
+            <div class="p-3 bg-accent text-dark rounded d-inline-block shadow-sm">.d-inline-block</div>
+            <p class="text-muted fs-7 mt-2 mb-0">Los elementos <code>inline-block</code> se colocan uno al lado del otro y respetan el padding y margin.</p>
+        </div>
+        
+        <hr class="opacity-10 border-primary m-0">
+
+        <div>
+            <div class="p-3 bg-success text-white rounded d-block shadow-sm">.d-block</div>
+            <p class="text-muted fs-7 mt-2 mb-0">Un elemento <code>block</code> ocupará todo el ancho disponible por defecto, empujando otros elementos hacia abajo.</p>
+        </div>
+
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Visualización Responsiva (Ocultar / Mostrar)</h3>
+    <p class="text-muted fs-6 mb-3">Para dominar las interfaces modernas, a menudo necesitas que ciertos bloques solo existan en teléfonos o solo en PC. <strong class="text-primary">¡Cambia el tamaño de la ventana de tu navegador para ver el efecto!</strong></p>
+    
+    <div class="row g-3 mb-4 text-center">
+        <div class="col-12">
+            <div class="p-4 bg-info text-white rounded shadow-sm d-none d-md-block">
+                <span class="fs-4 d-block mb-2">🖥️</span>
+                <strong>¡Magia de Escritorio!</strong><br> Este elemento usa <code>.d-none .d-md-block</code>. Está oculto en móviles, pero visible en pantallas medianas y grandes.
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="p-4 bg-warning text-dark rounded shadow-sm d-block d-md-none">
+                <span class="fs-4 d-block mb-2">📱</span>
+                <strong>¡Exclusivo de Móvil!</strong><br> Este elemento usa <code>.d-block .d-md-none</code>. Solo es visible en teléfonos móviles. ¡Desaparece en PC!
+            </div>
+        </div>
+    </div>
+
+    <div class="code-block shadow-sm">
+        <div class="code-block__header d-flex justify-content-between align-items-center">
+            <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+            <button class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7">Copy</button>
+        </div>
+        <div class="code-block__body mb-2 mt-2">
+            <pre class="m-0"><code class="text-success">&lt;!-- Elementos en línea --&gt;</code>
+<code>&lt;div class="d-inline-block bg-primary p-3"&gt;Caja 1&lt;/div&gt;</code>
+<code>&lt;div class="d-inline-block bg-success p-3"&gt;Caja 2&lt;/div&gt;</code>
+
+<code class="text-success">&lt;!-- Ocultar en móvil, mostrar en Desktop --&gt;</code>
+<code>&lt;div class="d-none d-md-block"&gt;Visible solo en PC&lt;/div&gt;</code>
+
+<code class="text-success">&lt;!-- Mostrar en móvil, ocultar en Desktop --&gt;</code>
+<code>&lt;div class="d-block d-md-none"&gt;Visible solo en móviles&lt;/div&gt;</code></pre>
+        </div>
+    </div>
           </section>
 
           <section id="efectos" class="mb-10">
