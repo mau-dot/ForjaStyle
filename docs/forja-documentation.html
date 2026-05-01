@@ -1124,8 +1124,98 @@
     </div>
           </section>
           
-          <section id="espaciado" class="mb-10">  
-            <!-- Aca la documentacion todas la clases que genera _spacing.scss -->
+          <section id="espaciado" class="mb-10">
+    <h2 class="fs-2 text-primary mb-4">Espaciado (Margin & Padding)</h2>
+    <p class="text-muted fs-5 mb-4">
+        Dale respiro a tus componentes. ForjaStyle incluye una amplia gama de clases utilitarias para modificar márgenes (margin) y rellenos (padding) de forma rápida, basadas en una escala proporcional de tamaños.
+    </p>
+
+    <div class="alert bg-light border-primary p-4 rounded-lg mb-5 shadow-sm">
+        <h4 class="text-primary fs-4 mb-3">Nomenclatura de Clases</h4>
+        <p class="text-muted fs-6 mb-3">La fórmula de las clases de espaciado se construye así: <code>{propiedad}{lados}-{tamaño}</code> o <code>{propiedad}{lados}-md-{tamaño}</code> para escritorio.</p>
+        
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <h5 class="text-dark fs-6 fw-bold">1. Propiedad</h5>
+                <ul class="text-muted fs-6 mb-0 d-flex flex-column gap-1">
+                    <li><code>m</code> - Margin (Margen exterior)</li>
+                    <li><code>p</code> - Padding (Relleno interior)</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4">
+                <h5 class="text-dark fs-6 fw-bold">2. Lados</h5>
+                <ul class="text-muted fs-6 mb-0 d-flex flex-column gap-1">
+                    <li><code>t</code> - Top (Arriba)</li>
+                    <li><code>b</code> - Bottom (Abajo)</li>
+                    <li><code>s</code> - Start (Izquierda)</li>
+                    <li><code>e</code> - End (Derecha)</li>
+                    <li><code>x</code> - Eje Horizontal (Izquierda y Derecha)</li>
+                    <li><code>y</code> - Eje Vertical (Arriba y Abajo)</li>
+                    <li><em>(vacío)</em> - Los 4 lados a la vez</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4">
+                <h5 class="text-dark fs-6 fw-bold">3. Escala y Responsividad</h5>
+                <ul class="text-muted fs-6 mb-0 d-flex flex-column gap-1">
+                    <li><strong>Tamaños:</strong> Del <code>0</code> al <code>10</code>.</li>
+                    <li><strong>Responsivo:</strong> Agrega <code>-md-</code> en medio para aplicar el espacio solo a partir de pantallas Laptop/PC (Ej: <code>.mt-md-5</code>).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Ejemplos de Relleno (Padding)</h3>
+    <div class="d-flex flex-wrap gap-4 mb-5 align-items-end text-center">
+        <div class="bg-primary text-white p-2 rounded shadow-sm">
+            .p-2
+        </div>
+        <div class="bg-primary text-white p-4 rounded shadow-sm">
+            .p-4
+        </div>
+        <div class="bg-accent text-dark px-5 py-2 rounded shadow-sm fw-bold">
+            .px-5 .py-2
+        </div>
+        <div class="bg-success text-white pt-4 pb-1 ps-4 pe-2 rounded shadow-sm">
+            Múltiples (pt-4, pb-1...)
+        </div>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Ejemplos de Margen (Margin)</h3>
+    <div class="bg-light border border-dark rounded p-0 mb-5 shadow-sm overflow-hidden d-flex flex-column">
+        <div class="bg-warning text-dark p-3 m-3 rounded text-center fw-bold shadow-sm">
+            .m-3 (Márgenes en todos los lados)
+        </div>
+        <div class="bg-info text-white p-3 mx-5 mb-3 rounded text-center shadow-sm">
+            .mx-5 .mb-3 (Margen horizontal amplio, margen inferior normal)
+        </div>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Espaciado Responsivo (.md)</h3>
+    <p class="text-muted fs-6 mb-3">Las clases que incluyen <code>-md-</code> son perfectas para adaptar tu diseño. <strong class="text-primary">Achica tu ventana</strong> para ver cómo esta caja pierde su relleno inmenso en móviles.</p>
+    
+    <div class="bg-light border rounded mb-5 text-center transition-base p-2 p-md-5">
+        <div class="bg-dark text-white rounded p-3 shadow-sm">
+            <span class="d-block d-md-none fw-bold">Modo Móvil: .p-2</span>
+            <span class="d-none d-md-block fw-bold">Modo Escritorio: .p-md-5</span>
+        </div>
+    </div>
+
+    <div class="code-block shadow-sm">
+        <div class="code-block__header d-flex justify-content-between align-items-center">
+            <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+            <button class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7">Copy</button>
+        </div>
+        <div class="code-block__body mb-2 mt-2">
+            <pre class="m-0"><code class="text-success">&lt;!-- Botón con padding horizontal (x) y vertical (y) --&gt;</code>
+<code>&lt;button class="bg-primary text-white px-4 py-2 rounded"&gt;Aceptar&lt;/button&gt;</code>
+
+<code class="text-success">&lt;!-- Tarjeta con margen inferior y padding interno --&gt;</code>
+<code>&lt;div class="card p-4 mb-3"&gt;...&lt;/div&gt;</code>
+
+<code class="text-success">&lt;!-- Espaciado Responsivo: Mucho padding en PC, poco en Móvil --&gt;</code>
+<code>&lt;div class="p-2 p-md-5 bg-light"&gt;...&lt;/div&gt;</code></pre>
+        </div>
+    </div>
           </section>
 
           <section id="tipografia" class="mb-10">
