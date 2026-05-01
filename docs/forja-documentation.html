@@ -1006,7 +1006,122 @@
           </section>
 
           <section id="flexbox" class="mb-10">
-            <!-- Aca la documentacion todas la clases que genera _flex.scss -->
+    <h2 class="fs-2 text-primary mb-4">Flexbox (Alineación y Distribución)</h2>
+    <p class="text-muted fs-5 mb-4">
+        Controla rápidamente la dirección, justificación, alineación y el espaciado de tus elementos utilizando el poder de Flexbox sin necesidad de escribir CSS adicional. Nuestras utilidades cubren el 100% de las necesidades de maquetación moderna.
+    </p>
+
+    <div class="alert bg-light border-primary p-4 rounded-lg mb-5 shadow-sm">
+        <h4 class="text-primary fs-4 mb-3">Nomenclatura de Clases Básicas</h4>
+        <p class="text-muted fs-6 mb-3">Todo comienza aplicando <code>.d-flex</code> o <code>.d-inline-flex</code> al contenedor padre. A partir de ahí, puedes usar todo este arsenal:</p>
+        
+        <div class="row g-3">
+            <div class="col-12 col-md-6">
+                <ul class="text-muted fs-6 mb-0 d-flex flex-column gap-2">
+                    <li><strong>Dirección:</strong> <code>.flex-row</code>, <code>.flex-row-reverse</code>, <code>.flex-column</code>, <code>.flex-column-reverse</code>.</li>
+                    <li><strong>Envoltura (Wrap):</strong> <code>.flex-wrap</code>, <code>.flex-nowrap</code>, <code>.flex-wrap-reverse</code>.</li>
+                    <li><strong>Eje Principal (Justify):</strong> <code>.justify-content-{start|end|center|between|around|evenly}</code>.</li>
+                    <li><strong>Eje Cruzado (Align Items):</strong> <code>.align-items-{start|end|center|baseline|stretch}</code>.</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6">
+                <ul class="text-muted fs-6 mb-0 d-flex flex-column gap-2">
+                    <li><strong>Hijos Individuales (Align Self):</strong> <code>.align-self-{start|end|center|baseline|stretch}</code>.</li>
+                    <li><strong>Comportamiento (Grow/Shrink):</strong> <code>.flex-grow-0</code>, <code>.flex-grow-1</code>, <code>.flex-shrink-0</code>, <code>.flex-shrink-1</code>, <code>.flex-basis-auto</code>.</li>
+                    <li><strong>Ordenamiento:</strong> <code>.order-first</code>, <code>.order-last</code>, <code>.order-0</code> al <code>.order-5</code>.</li>
+                    <li><strong>Separación (Gap):</strong> <code>.gap</code>, o escalado desde <code>.gap-0</code> hasta <code>.gap-10</code>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-primary opacity-10 my-4">
+
+        <h4 class="text-primary fs-4 mb-3">Variantes Responsivas</h4>
+        <p class="text-muted fs-6 mb-2"><strong>Casi todas las clases anteriores tienen variantes para cada tamaño de pantalla (sm, md, lg, xl).</strong> La fórmula es insertar el breakpoint justo después del prefijo de la clase:</p>
+        <ul class="text-dark fw-bold fs-6 mb-0 d-flex flex-column gap-2 bg-white p-3 rounded border">
+            <li>Direccion: <code class="text-success">.flex-{breakpoint}-row</code> (Ej: <code>.flex-md-column</code>)</li>
+            <li>Alineación: <code class="text-success">.justify-content-{breakpoint}-center</code> (Ej: <code>.justify-content-lg-between</code>)</li>
+            <li>Wrap: <code class="text-success">.flex-{breakpoint}-wrap</code> (Ej: <code>.flex-sm-nowrap</code>)</li>
+            <li>Orden: <code class="text-success">.order-{breakpoint}-2</code> (Ej: <code>.order-xl-last</code>)</li>
+        </ul>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Dirección y Espaciado (Gap)</h3>
+    <div class="row g-4 mb-5">
+        <div class="col-12 col-md-6">
+            <div class="p-3 bg-white border rounded shadow-sm">
+                <p class="fw-bold text-muted mb-2 small">.d-flex .flex-row .gap-3</p>
+                <div class="d-flex flex-row gap-3">
+                    <div class="p-3 bg-primary text-white rounded">Caja 1</div>
+                    <div class="p-3 bg-primary text-white rounded">Caja 2</div>
+                    <div class="p-3 bg-primary text-white rounded">Caja 3</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="p-3 bg-white border rounded shadow-sm">
+                <p class="fw-bold text-muted mb-2 small">.d-flex .flex-column .gap-2</p>
+                <div class="d-flex flex-column gap-2">
+                    <div class="p-2 bg-accent text-dark rounded fw-bold text-center">Fila 1</div>
+                    <div class="p-2 bg-accent text-dark rounded fw-bold text-center">Fila 2</div>
+                    <div class="p-2 bg-accent text-dark rounded fw-bold text-center">Fila 3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Alineación Horizontal (Justify Content)</h3>
+    <div class="d-flex flex-column gap-3 mb-5">
+        <div class="p-3 bg-white border rounded shadow-sm">
+            <p class="fw-bold text-muted mb-2 small">.justify-content-start (Por defecto)</p>
+            <div class="d-flex justify-content-start gap-2 bg-light p-2 rounded">
+                <div class="p-2 px-3 bg-success text-white rounded">1</div>
+                <div class="p-2 px-3 bg-success text-white rounded">2</div>
+            </div>
+        </div>
+        <div class="p-3 bg-white border rounded shadow-sm">
+            <p class="fw-bold text-muted mb-2 small">.justify-content-center</p>
+            <div class="d-flex justify-content-center gap-2 bg-light p-2 rounded">
+                <div class="p-2 px-3 bg-success text-white rounded">1</div>
+                <div class="p-2 px-3 bg-success text-white rounded">2</div>
+            </div>
+        </div>
+        <div class="p-3 bg-white border rounded shadow-sm">
+            <p class="fw-bold text-muted mb-2 small">.justify-content-between</p>
+            <div class="d-flex justify-content-between bg-light p-2 rounded">
+                <div class="p-2 px-3 bg-success text-white rounded">1</div>
+                <div class="p-2 px-3 bg-success text-white rounded">2</div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="fs-4 text-dark mb-3">Ejemplo Práctico Responsivo</h3>
+    <p class="text-muted fs-6 mb-3">Cambia el tamaño de tu navegador. Las cajas estarán en columna en móviles, y pasarán a estar en fila separada en pantallas medianas.</p>
+    <div class="p-4 bg-light border rounded shadow-sm mb-5">
+        <p class="fw-bold text-muted mb-3 small">.d-flex .flex-column .flex-md-row .justify-content-md-between .gap-2</p>
+        <div class="d-flex flex-column flex-md-row justify-content-md-between gap-2">
+            <div class="p-3 bg-primary text-white rounded text-center">Elemento 1</div>
+            <div class="p-3 bg-primary text-white rounded text-center">Elemento 2</div>
+            <div class="p-3 bg-primary text-white rounded text-center">Elemento 3</div>
+        </div>
+    </div>
+
+    <div class="code-block shadow-sm">
+        <div class="code-block__header d-flex justify-content-between align-items-center">
+            <span class="fs-6 fw-bold p-3 code__title">HTML</span>
+            <button class="btn btn-sm btn-outline-light mb-0 p-1 text-muted me-1 fs-7">Copy</button>
+        </div>
+        <div class="code-block__body mb-2 mt-2">
+            <pre class="m-0"><code class="text-success">&lt;!-- Navbar Responsiva (En móvil es columna, en PC es fila) --&gt;</code>
+<code>&lt;div class="d-flex flex-column flex-md-row justify-content-md-between align-items-center p-3 bg-dark text-white"&gt;</code>
+<code>  &lt;h1 class="mb-3 mb-md-0 fs-4"&gt;Logo&lt;/h1&gt;</code>
+<code>  &lt;div class="d-flex flex-wrap gap-3"&gt;</code>
+<code>    &lt;a href="#" class="text-white"&gt;Inicio&lt;/a&gt;</code>
+<code>    &lt;a href="#" class="text-white"&gt;Perfil&lt;/a&gt;</code>
+<code>  &lt;/div&gt;</code>
+<code>&lt;/div&gt;</code></pre>
+        </div>
+    </div>
           </section>
           
           <section id="espaciado" class="mb-10">  
