@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mau-dot/ForjaStyle@main/css/main.css">
   <title>Inicio ForjaStyle</title>
 </head>
 
@@ -12,22 +12,28 @@
 
   <nav class="navbar">
     <div class="container d-flex justify-content-between align-items-center">
+
       <div class="navbar__logo">
-        <span class="text-dark font-weight-bold" style="font-size: 1.5rem">ForjaStyle</span>
+        <a href="index.html" class="d-flex align-items-center gap-2">
+          <img src="/docs/img/logo_forja.png" class="navbar__img" width="40">
+        </a>
       </div>
+
       <div class="d-flex align-items-center gap-2">
         <button class="btn-sm btn-outline-info d-md-none mb-0 btn-theme-toggle">🌓</button>
         <button id="btn-menu" class="btn-sm btn-outline-primary d-md-none mb-0">☰</button>
       </div>
 
       <ul id="nav-menu" class="navbar__menu align-items-center gap-3 mb-0">
-        <li class="hover-scale-up d-inline-block"><a href="#" class="navbar__link">Inicio</a></li>
-        <li class="hover-scale-up d-inline-block"><a href="forja-documentation.html" class="navbar__link">Documentación</a></li>
+        <li class="hover-scale-up d-inline-block"><a href="index.html" class="navbar__link">Inicio</a></li>
+        <li class="hover-scale-up d-inline-block"><a href="forja-documentation.html"
+            class="navbar__link">Documentación</a></li>
         <li class="hover-scale-up d-inline-block"><a href="install.html" class="navbar__link">Instalación</a></li>
         <li>
           <button class="btn btn-sm btn-outline-info mb-0 px-2 btn-theme-toggle">🌓 Tema</button>
         </li>
       </ul>
+
     </div>
   </nav>
 
@@ -43,7 +49,8 @@
           </p>
 
           <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-            <a href="components.html" class="btn btn-outline-info btn-lg mb-0 badge-warning rounded-pill text-dark">Ver
+            <a href="forja-documentation.html"
+              class="btn btn-outline-info btn-lg mb-0 badge-warning rounded-pill text-dark">Ver
               Componentes</a>
             <a href="https://github.com/mau-dot/ForjaStyle" target="_blank" rel="noopener noreferrer"
               class="btn btn-outline-info btn-lg mb-0 badge-info text-dark rounded-pill">
