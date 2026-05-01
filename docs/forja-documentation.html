@@ -51,9 +51,9 @@
 
     <div class="container-fluid p-2 m-0">
       <div class="row g-0">
-        <aside class="container-fluid col-lg-2 sidebar shadow-sm">
+        <aside class="container-fluid col-lg-2 sidebar shadow-sm text-wrap text-break">
           <h2 class="mt-3 sidebar__title text-muted fs-4 p-3">Navegación</h2>
-          <ul class="sidebar__list d-flex flex-column gap-2 p-3 fs-5 text-wrap text-break">
+          <ul class="sidebar__list d-flex flex-column gap-2 p-3 fs-5">
             <li class="sidebar__item hover-lift"><a href="#que-es-forja" class="mt-4 sidebar__link">¿Qué es ForjaStyle?</a></li>
 
             <li class="sidebar__item hover-lift"><a href="#Layout" class="text-muted fs-4 mt-4 mb-4 sidebar__link">-> Layout</a></li>
@@ -86,12 +86,12 @@
 
 
 
-        <main class="container-fluid col-lg-10">
+        <main class="container-fluid col-lg-10 text-wrap text-break">
           <!-- INTRODUCCION SOBRE QUE ES FORJA-STYLE -->
           <section id="que-es-forja" class="mb-10">
             <header class="mb-5">
-              <h1 class="fs-1 text-primary mt-2 text-wrap text-break">¿QUÉ ES FORJASTYLE?</h1>
-              <p class="fs-5 text-muted mt-4 text-wrap text-break">
+              <h1 class="fs-1 text-primary mt-2">¿QUÉ ES FORJASTYLE?</h1>
+              <p class="fs-5 text-muted mt-4">
                 <strong>FORJASTYLE</strong> es un sistema de diseño artesanal.
                 No nació para ser el framework más grande del mundo, sino para
                 ser el más preciso. Construido para quienes disfrutan de
@@ -118,7 +118,7 @@
           </section>
           <!-- APARTADO DE LAYOUT -->
           <div id="Layout" class="my-10 w-100">
-            <div class="bg-dark p-5 rounded-lg shadow-lg text-center d-flex flex-column align-items-center justify-content-center transition-base hover-scale-up">
+            <div class="bg-dark p-5 rounded-lg shadow-lg text-center d-flex flex-column align-items-center justify-content-center transition-base hover-scale-up text-wrap text-break">
               <h2 class="fs-1 fw-bold text-primary mb-3">LAYOUT</h2>
               <p class="text-muted fs-5 mb-0">
                Grid Layout y Container La Base de Forja Style 
@@ -126,7 +126,7 @@
             </div>
           </div>
 
-          <section id="grid" class="mb-10 text-wrap text-break">
+          <section id="grid" class="mb-10">
             <h2 class="fs-2 text-primary mb-4">Grid System</h2>
             <p class="text-muted fs-5 mb-4">El sistema de rejilla de ForjaStyle se basa en un esquema de <strong>12 columnas</strong>
                flexibles utilizando Flexbox. Permite crear estructuras complejas y adaptables a cualquier dispositivo.
@@ -174,7 +174,7 @@
               </p>
           </section>
           
-          <section id="container" class="mb-10 text-wrap text-break">
+          <section id="container" class="mb-10">
               <h2 class="fs-2 text-primary mb-4">Containers (Contenedores)</h2>
               <p class="text-muted fs-5 mb-4">
                   Los contenedores son el elemento de diseño fundamental en <strong>ForjaStyle</strong>. 
@@ -223,8 +223,8 @@
 
 
           <!-- APARTADO DE COMPONENTES -->
-          <div id="Layout" class="my-10 w-100 text-wrap text-break">
-            <div class="bg-dark p-5 rounded-lg shadow-lg text-center d-flex flex-column align-items-center justify-content-center transition-base hover-scale-up">
+          <div id="Componentes" class="my-10 w-100">
+            <div class="bg-dark p-5 rounded-lg shadow-lg text-center d-flex flex-column align-items-center justify-content-center transition-base hover-scale-up text-wrap text-break">
               <h2 class="fs-1 fw-bold text-primary mb-3">COMPONENTS</h2>
               <p class="text-muted fs-5 mb-0">
                Botones, Tarjetas, Alertas, Header, Formularios y muchos mas componentes para dar vida a tus paginas web 
@@ -349,6 +349,8 @@
             </div>
           </section>         
 
+
+
           <section id="alerts-badges" class="mb-10">
             <h2 class="fs-2 text-primary mb-4">Alertas y Badges</h2>
             <p class="text-muted fs-5 mb-4">
@@ -367,7 +369,7 @@
               <li>class = "alert alert-warning"</li>
               <li>class = "alert alert-info"</li>
             </ul>
-            <div class="container-fluid d-flex flex-xs-column flex-xs-column flex-md-row gap-2 mt-4 mb-4">
+            <div class="container-fluid d-flex flex-column flex-xs-column flex-md-row gap-2 mt-4 mb-4">
               <span class="badge bg-primary text-white p-4 fs-5 rounded-pill text-wrap text-break"
                 >Información relevante</span
               >
@@ -571,7 +573,7 @@
         <div class="col-md-6 col-xs-12">
             <h3 class="fs-4 text-dark mb-3">Formulario Estándar</h3>
             <div class="card p-4 shadow-sm border-0 bg-white rounded-lg">
-                <form>
+                <form >
                     <div class="mb-3">
                         <label class="d-block mb-1 fw-bold text-dark fs-6">Nombre de Héroe</label>
                         <input type="text" class="w-100 p-2 rounded border transition-base" placeholder="Ej. Izuku Midoriya" style="outline: none; border-color: var(--text-muted);">
@@ -714,8 +716,14 @@
          </section>
 
           <!-- APARTADO DE UTILIDADES -->
-          <hr class="mb-10 opacity-10"/>
-          <h2 id="Utilidades">Utilidades</h2>
+          <div id="Utilidades" class="my-10 w-100">
+            <div class="bg-dark p-5 rounded-lg shadow-lg text-center d-flex flex-column align-items-center justify-content-center transition-base hover-scale-up text-wrap text-break">
+              <h2 class="fs-1 fw-bold text-primary mb-3">Utilidades</h2>
+              <p class="text-muted fs-5 mb-0">
+               
+              </p>
+            </div>
+          </div>
 
           <section id="bordes" class="mb-10">
             <!-- Aca la documentacion todas la clases que genera _borders.scss -->
@@ -886,7 +894,7 @@
         </main>
       </div>
     </div>
-    <footer class="bg-light text-dark py-8">
+    <footer class="container-fluid text-dark py-8">
       <div class="container">
         <div class="row g-4 align-items-center">
           <!-- Columna de Copyright y Marca -->
